@@ -3,6 +3,8 @@ import './App.css';
 import { Route, Switch } from 'react-router-dom';
 import Login from './pages/Login';
 
+// Iniciando o header
+
 function App() {
   return (
     <Switch>
