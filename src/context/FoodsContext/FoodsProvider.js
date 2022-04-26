@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ProfileContext from './FoodsContext';
+import FoodsContext from './FoodsContext';
 
 function FoodsProvider({ children }) {
   const contextValue = {
 
   };
   return (
-    <ProfileContext.Provider value={ contextValue }>
+    <FoodsContext.Provider value={ contextValue }>
       { children }
-    </ProfileContext.Provider>
+    </FoodsContext.Provider>
 
   );
 }
