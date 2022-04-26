@@ -10,6 +10,12 @@ function Login() {
     disableButton,
   } = useContext(ProfileContext);
 
+  function handleClick() {
+    localStorage.setItem('mealsToken', 1);
+    localStorage.setItem('cocktailsToken', 1);
+    localStorage.setItem('user', email);
+  }
+
   console.log(disableButton);
   return (
     <form>
@@ -39,10 +45,10 @@ function Login() {
         />
       </label>
       <button
-        type="submit"
+        type="button"
         data-testid="login-submit-btn"
         disabled={ disableButton }
-        onClick={ handleClick }
+        onClick={ () => handleClick() }
       >
         Enter
       </button>

@@ -21,7 +21,7 @@ function ProfileProvider({ children }) {
 
   useEffect(() => {
     const numberSix = 6;
-    const verifyPassword = password.length >= numberSix;
+    const verifyPassword = password === undefined ? false : password.length >= numberSix;
     const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
     const verifyEmail = emailRegex.test(email);
 
