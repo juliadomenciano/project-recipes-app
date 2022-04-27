@@ -10,7 +10,6 @@ export default function Header() {
   const [showSearch, setShowSearch] = useState(false);
   const path = useLocation().pathname;
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     function changeHeader() { // REFATORAR
       switch (path) {
@@ -62,7 +61,7 @@ export default function Header() {
           <img src={ profileIcon } alt="Ícone do perfil" />
         </button>
       </Link>
-      {title && <h1 data-testid="page-title">{title}</h1>}
+      <h1 data-testid="page-title">{title}</h1>
       {
         searchPaths.includes(path)
         && (
