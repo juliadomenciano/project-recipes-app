@@ -4,7 +4,7 @@ import profileIcon from '../images/profileIcon.svg';
 import searchIcon from '../images/searchIcon.svg';
 import SearchBar from './SearchBar';
 
-export default function Header() {
+function Header(props) {
   const searchPaths = ['/foods', '/drinks', '/explore/foods/nationalities'];
   const [title, setTitle] = useState('');
   const [showSearch, setShowSearch] = useState(false);
@@ -76,7 +76,9 @@ export default function Header() {
           </button>
         )
       }
-      {showSearch && <SearchBar />}
+      {showSearch && <SearchBar props={ props } />}
     </div>
   );
 }
+
+export default Header;

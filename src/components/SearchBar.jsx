@@ -1,19 +1,31 @@
 import React, { useState, useContext } from 'react';
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 import requestFoodApi from '../services/FoodApi';
 import ProfileContext from '../context/ProfileContext/ProfileContext';
 
-export default function SearchBar() {
+function SearchBar(props) {
   const [selectedFilter, setSelectedFilter] = useState();
   const [inputSearch, setInputSearch] = useState();
   const {
     foodOrDrink,
   } = useContext(ProfileContext);
 
-  function onClick() {
+  async function onClick() {
+    const { history } = props;
     if (selectedFilter === 'First letter' && inputSearch.length > 1) {
       global.alert('Your search must have only 1 (one) character');
     } else {
-      return requestFoodApi(foodOrDrink, selectedFilter, inputSearch);
+      const apiRequest = await requestFoodApi(foodOrDrink, selectedFilter, inputSearch);
+      if (foodOrDrink === 'food') {
+        if (apiRequest.meals.length === 1) {
+          history.push(`/foods/${apiRequest.meals[0].idMeal}`);
+        } return apiRequest;
+      } if (foodOrDrink === 'drinks') {
+        if (apiRequest.drinks.length === 1) {
+          history.push(`/drinks/${apiRequest.drinks[0].idDrink}`);
+        } return apiRequest;
+      }
     }
   }
 
@@ -72,3 +84,9 @@ export default function SearchBar() {
     </form>
   );
 }
+
+SearchBar.propTypes = {
+  history: PropTypes.func.isRequired,
+};
+
+export default withRouter(SearchBar);
