@@ -9,49 +9,51 @@ export default function Header() {
   const [title, setTitle] = useState('');
   const [showSearch, setShowSearch] = useState(false);
   const path = useLocation().pathname;
-  const changeHeader = () => { // REFATORAR
-    switch (path) {
-    case '/foods':
-      setTitle('Foods');
-      break;
-    case '/drinks':
-      setTitle('Drinks');
-      break;
-    case '/explore':
-      setTitle('Explore');
-      break;
-    case '/explore/foods':
-      setTitle('Explore Foods');
-      break;
-    case '/explore/drinks':
-      setTitle('Explore Drinks');
-      break;
-    case '/explore/foods/ingredients':
-      setTitle('Explore Ingredients');
-      break;
-    case '/explore/drinks/ingredients':
-      setTitle('Explore Ingredients');
-      break;
-    case '/explore/foods/nationalities':
-      setTitle('Explore Nationalities');
-      break;
-    case '/done-recipes':
-      setTitle('Done Recipes');
-      break;
-    case '/favorite-recipes':
-      setTitle('Favorite Recipes');
-      break;
-    case '/profile':
-      setTitle('Profile');
-      break;
-
-    default:
-      break;
-    }
-  };
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => { changeHeader(); }, []);
+  useEffect(() => {
+    function changeHeader() { // REFATORAR
+      switch (path) {
+      case '/foods':
+        setTitle('Foods');
+        break;
+      case '/drinks':
+        setTitle('Drinks');
+        break;
+      case '/explore':
+        setTitle('Explore');
+        break;
+      case '/explore/foods':
+        setTitle('Explore Foods');
+        break;
+      case '/explore/drinks':
+        setTitle('Explore Drinks');
+        break;
+      case '/explore/foods/ingredients':
+        setTitle('Explore Ingredients');
+        break;
+      case '/explore/drinks/ingredients':
+        setTitle('Explore Ingredients');
+        break;
+      case '/explore/foods/nationalities':
+        setTitle('Explore Nationalities');
+        break;
+      case '/done-recipes':
+        setTitle('Done Recipes');
+        break;
+      case '/favorite-recipes':
+        setTitle('Favorite Recipes');
+        break;
+      case '/profile':
+        setTitle('Profile');
+        break;
+
+      default:
+        break;
+      }
+    }
+    changeHeader();
+  });
 
   return (
     <div>
