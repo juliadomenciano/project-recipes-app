@@ -1,5 +1,5 @@
 import { createContext } from 'react';
 
-const ProfileContext = createContext;
+const ProfileContext = createContext();
 
 export default ProfileContext;
