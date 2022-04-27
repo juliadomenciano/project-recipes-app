@@ -4,7 +4,7 @@ import ProfileContext from '../context/ProfileContext/ProfileContext';
 
 function Login(props) {
   const {
-    email,
+    userEmail,
     setEmail,
     password,
     setPassword,
@@ -12,11 +12,12 @@ function Login(props) {
   } = useContext(ProfileContext);
 
   function handleClick() {
+    const userObject = { email: userEmail };
     const { history } = props;
     localStorage.setItem('mealsToken', 1);
     localStorage.setItem('cocktailsToken', 1);
-    localStorage.setItem('user', email);
-    history.push('/explore');
+    localStorage.setItem('user', JSON.stringify(userObject));
+    history.push('/foods');
   }
 
   console.log(disableButton);
@@ -31,7 +32,7 @@ function Login(props) {
           placeholder="coloque seu melhor e-mail"
           data-testid="email-input"
           required="required"
-          value={ email }
+          value={ userEmail }
           onChange={ ({ target }) => setEmail(target.value) }
         />
       </label>

@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import ProfileContext from './ProfileContext';
 
 function ProfileProvider({ children }) {
-  const [email, setEmail] = useState();
+  const [userEmail, setEmail] = useState();
   const [password, setPassword] = useState();
   const [disableButton, setDisablebutton] = useState(true);
 
   const contextValue = {
-    email,
+    userEmail,
     setEmail,
     password,
     setPassword,
@@ -21,16 +21,16 @@ function ProfileProvider({ children }) {
 
   useEffect(() => {
     const numberSix = 6;
-    const verifyPassword = password === undefined ? false : password.length >= numberSix;
+    const verifyPassword = password === undefined ? false : password.length > numberSix;
     const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-    const verifyEmail = emailRegex.test(email);
+    const verifyEmail = emailRegex.test(userEmail);
 
     if (verifyPassword && verifyEmail) {
       setDisablebutton(false);
     } else {
       setDisablebutton(true);
     }
-  }, [email, password]);
+  }, [userEmail, password]);
 
   return (
     <ProfileContext.Provider value={ contextValue }>
