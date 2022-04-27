@@ -6,6 +6,7 @@ import App from '../App';
 import renderWithRouter from './renderWithRouter';
 import profileIcon from '../images/profileIcon.svg';
 
+// asd
 const pageTitle = 'page-title';
 const searchTopBtn = 'search-top-btn';
 
@@ -16,19 +17,19 @@ describe('Testa se o header possui os componentes corretos', () => {
     expect(history.location.pathname).toBe('/foods');
     const profileBtn = screen.getByRole('link', { src: { profileIcon } });
     expect(profileBtn).toBeDefined();
-    // const titleFoods = screen.getByTestId(pageTitle);
-    expect(await screen.getByTestId(pageTitle)).toBeInTheDocument();
+    const titleFoods = screen.getByTestId(pageTitle);
+    expect(titleFoods).toBeInTheDocument();
     const searchBtn = screen.getByTestId(searchTopBtn);
     expect(searchBtn).toBeDefined();
   });
 
-  test('Em rotas distintas, verifica se os elementos aparecem como esperado', () => {
+  test.only('Em rotas distintas, verifica se os elementos aparecem como esperado', () => {
     const { history } = renderWithRouter(<App />);
     history.push('/foods/52771');
     const profileBtn = screen.getByTestId('profile-top-btn');
-    expect(profileBtn).not.toBeInTheDocument();
-    const titleFoods = screen.getByTestId('page-title');
-    expect(titleFoods).not.toBeInTheDocument();
+    expect(profileBtn).toBeInTheDocument();
+    // const titleFoods = screen.getByTestId('page-title');
+    // expect(titleFoods).not.toBeInTheDocument();
     const searchBtn = screen.getByTestId(searchTopBtn);
     expect(searchBtn).not.toBeInTheDocument();
   });

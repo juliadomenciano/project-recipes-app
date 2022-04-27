@@ -4,7 +4,7 @@ import Header from '../components/Header';
 export default function ExploreFoods() {
   return (
     <section>
-      <Header />
+      <Header title="Explore Foods" />
     </section>
   );
 }
