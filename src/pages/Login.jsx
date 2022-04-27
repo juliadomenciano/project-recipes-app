@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 import ProfileContext from '../context/ProfileContext/ProfileContext';
 
-function Login() {
+function Login(props) {
   const {
     email,
     setEmail,
@@ -11,9 +12,11 @@ function Login() {
   } = useContext(ProfileContext);
 
   function handleClick() {
+    const { history } = props;
     localStorage.setItem('mealsToken', 1);
     localStorage.setItem('cocktailsToken', 1);
     localStorage.setItem('user', email);
+    history.push('/explore');
   }
 
   console.log(disableButton);
@@ -55,5 +58,9 @@ function Login() {
     </form>
   );
 }
+
+Login.propTypes = {
+  history: PropTypes.func.isRequired,
+};
 
 export default Login;
