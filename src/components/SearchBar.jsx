@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import requestFoodApi from '../services/FoodApi';
 import ProfileContext from '../context/ProfileContext/ProfileContext';
+import CSS from './SearchBar.module.css';
 
 function SearchBar(props) {
   const [selectedFilter, setSelectedFilter] = useState();
@@ -30,8 +31,8 @@ function SearchBar(props) {
   }
 
   return (
-    <form>
-      <label htmlFor="searchInput">
+    <form className={ CSS.conteiner_form }>
+      <label className={ CSS.input_search } htmlFor="searchInput">
         <input
           name="searchInput"
           type="text"
@@ -39,7 +40,7 @@ function SearchBar(props) {
           onChange={ ({ target }) => setInputSearch(target.value) }
         />
       </label>
-      <fieldset>
+      <fieldset className={ CSS.radio_search }>
         <label htmlFor="ingredient">
           <input
             id="ingredient"
@@ -75,6 +76,7 @@ function SearchBar(props) {
         </label>
       </fieldset>
       <button
+        className={ CSS.button_search }
         data-testid="exec-search-btn"
         type="button"
         onClick={ () => onClick() }
