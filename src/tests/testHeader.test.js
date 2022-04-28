@@ -1,12 +1,11 @@
+import '@testing-library/jest-dom/extend-expect';
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
 import App from '../App';
-import renderWithRouter from './renderWithRouter';
 import profileIcon from '../images/profileIcon.svg';
+import renderWithRouter from './renderWithRouter';
 
-// asd
 const pageTitle = 'page-title';
 const searchTopBtn = 'search-top-btn';
 
