@@ -3,14 +3,16 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import requestFoodApi from '../services/FoodApi';
 import ProfileContext from '../context/ProfileContext/ProfileContext';
+import FoodsContext from '../context/FoodsContext/FoodsContext';
+import DrinksContext from '../context/DrinksContext/DrinksContext';
 import CSS from './SearchBar.module.css';
 
 function SearchBar(props) {
   const [selectedFilter, setSelectedFilter] = useState();
   const [inputSearch, setInputSearch] = useState();
-  const {
-    foodOrDrink,
-  } = useContext(ProfileContext);
+  const { setSearchFoodsResults } = useContext(FoodsContext);
+  const { setSearchDrinksResults } = useContext(DrinksContext);
+  const { foodOrDrink } = useContext(ProfileContext);
 
   async function onClick() {
     const { history } = props;
@@ -19,13 +21,17 @@ function SearchBar(props) {
     } else {
       const apiRequest = await requestFoodApi(foodOrDrink, selectedFilter, inputSearch);
       if (foodOrDrink === 'food') {
-        if (apiRequest.meals.length === 1) {
+        if (apiRequest.meals === null) {
+          global.alert('Sorry, we haven\'t found any recipes for these filters.');
+        } else if (apiRequest.meals.length === 1) {
           history.push(`/foods/${apiRequest.meals[0].idMeal}`);
-        } return apiRequest;
+        } return setSearchFoodsResults(apiRequest);
       } if (foodOrDrink === 'drinks') {
-        if (apiRequest.drinks.length === 1) {
+        if (apiRequest.drinks === null) {
+          global.alert('Sorry, we haven\'t found any recipes for these filters.');
+        } else if (apiRequest.drinks.length === 1) {
           history.push(`/drinks/${apiRequest.drinks[0].idDrink}`);
-        } return apiRequest;
+        } return setSearchDrinksResults(apiRequest);
       }
     }
   }
