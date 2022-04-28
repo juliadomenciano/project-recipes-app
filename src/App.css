@@ -1,3 +1,18 @@
 .meals {
   background: #0fa36b;
 }
+
+header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer {
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  position: fixed;
+  width: 100%;
+}
