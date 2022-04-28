@@ -1,10 +1,10 @@
+import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import profileIcon from '../images/profileIcon.svg';
 import searchIcon from '../images/searchIcon.svg';
-import SearchBar from './SearchBar';
 import CSS from './Header.module.css';
+import SearchBar from './SearchBar';
 
 export default function Header({ title }) {
   const searchPaths = ['/foods', '/drinks', '/explore/foods/nationalities'];
@@ -12,8 +12,7 @@ export default function Header({ title }) {
   const path = useLocation().pathname;
 
   return (
-    <div className={ CSS.nav_conteiner }>
-    <header>
+    <header className={ CSS.nav_conteiner }>
       <Link to="/profile">
         {/* pq a imagem esta sendo passada no button? */}
         <button
