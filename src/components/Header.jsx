@@ -13,7 +13,7 @@ export default function Header({ title }) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
 
   return (
-    <div>
+    <header>
       <Link to="/profile">
         <button type="button" data-testid="profile-top-btn" src={ profileIcon }>
           <img src={ profileIcon } alt="Ícone do perfil" />
@@ -35,7 +35,7 @@ export default function Header({ title }) {
         )
       }
       {showSearch && <SearchBar />}
-    </div>
+    </header>
   );
 }
 
