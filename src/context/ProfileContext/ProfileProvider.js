@@ -6,6 +6,7 @@ function ProfileProvider({ children }) {
   const [userEmail, setEmail] = useState();
   const [password, setPassword] = useState();
   const [disableButton, setDisablebutton] = useState(true);
+  const [foodOrDrink, setFoodOrDrink] = useState('food');
 
   const contextValue = {
     userEmail,
@@ -13,6 +14,8 @@ function ProfileProvider({ children }) {
     password,
     setPassword,
     disableButton,
+    foodOrDrink,
+    setFoodOrDrink,
   };
 
   useEffect(() => {

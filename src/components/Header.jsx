@@ -10,8 +10,6 @@ export default function Header({ title }) {
   const [showSearch, setShowSearch] = useState(false);
   const path = useLocation().pathname;
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-
   return (
     <header>
       <Link to="/profile">
