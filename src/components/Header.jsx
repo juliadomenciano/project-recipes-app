@@ -14,7 +14,6 @@ export default function Header({ title }) {
   return (
     <header className={ CSS.nav_conteiner }>
       <Link to="/profile">
-        {/* pq a imagem esta sendo passada no button? */}
         <button
           type="button"
           data-testid="profile-top-btn"
@@ -33,6 +32,7 @@ export default function Header({ title }) {
             type="button"
             data-testid="search-top-btn"
             src={ searchIcon }
+            className={ CSS.magnifying_button }
             onClick={ () => { setShowSearch(!showSearch); } }
 
           >
