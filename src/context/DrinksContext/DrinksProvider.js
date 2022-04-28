@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import DrinksContext from './DrinksContext';
 
 function DrinksProvider({ children }) {
-  const contextValue = {
+  const [searchDrinksResults, setSearchDrinksResults] = useState();
 
+  const contextValue = {
+    searchDrinksResults,
+    setSearchDrinksResults,
   };
   return (
     <DrinksContext.Provider value={ contextValue }>
