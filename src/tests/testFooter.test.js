@@ -49,7 +49,7 @@ describe('Testa o componente footer', () => {
       expect(screen.getByTestId('footer')).toBeDefined();
     });
   });
-  
+
   test('Verifica se o footer não é renderizado nas rotas corretas', () => {
     footerInvalidPaths.forEach((path) => {
       cleanup();
