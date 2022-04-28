@@ -47,22 +47,22 @@ function App() {
       <Route exact path="/favorite-recipes" component={ FavoriteRecipes } />
       <Route
         exact
-        path="/foods/{id-da-receita}/in-progress"
+        path="/foods/:id/in-progress"
         component={ FoodInProgress }
       />
       <Route
         exact
-        path="/drinks/{id-da-receita}/in-progress"
+        path="/drinks/:id/in-progress"
         component={ DrinksInProgress }
       />
       <Route
         exact
-        path="/foods/{id-da-receita}"
+        path="/foods/:id"
         component={ FoodDetails }
       />
       <Route
         exact
-        path="/drinks/{id-da-receita}"
+        path="/drinks/:id"
         component={ DrinksDetails }
       />
     </Switch>
