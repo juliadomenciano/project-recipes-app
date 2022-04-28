@@ -4,18 +4,14 @@ import '@testing-library/jest-dom/extend-expect';
 import React from 'react';
 import App from '../App';
 import renderWithRouter from './renderWithRouter';
-import drinkIcon from '../images/drinkIcon.svg';
-import exploreIcon from '../images/exploreIcon.svg';
-import mealIcon from '../images/mealIcon.svg';
 
- const footerValidPaths = ['/foods', '/drinks', '/explore', '/explore/drinks',
- '/explore/foods', '/explore/foods/nationalities', '/explore/foods/ingredients',
- '/explore/drinks/ingredients', '/profile' ]
- const footerInvalidPaths = ['/', '/foods/{id-da-receita}', '/drinks/{id-da-receita}', '/foods/{id-da-receita}/in-progress',
- '/drinks/{id-da-receita}/in-progress', '/done-recipes', '/favorite-recipes' ]
-
+const footerValidPaths = ['/foods', '/drinks', '/explore', '/explore/drinks',
+  '/explore/foods', '/explore/foods/nationalities', '/explore/foods/ingredients',
+  '/explore/drinks/ingredients', '/profile'];
+const footerInvalidPaths = ['/', '/foods/{id-da-receita}', '/drinks/{id-da-receita}',
+  '/foods/{id-da-receita}/in-progress', '/drinks/{id-da-receita}/in-progress',
+  '/done-recipes', '/favorite-recipes'];
 describe('Testa o componente footer', () => {
-  
   test('Em /foods, verifica se existem os elementos esperados', () => {
     const { history } = renderWithRouter(<App />);
     history.push('/foods');
@@ -51,9 +47,9 @@ describe('Testa o componente footer', () => {
       history.push(path);
       expect(history.location.pathname).toBe(path);
       expect(screen.getByTestId('footer')).toBeDefined();
-    })
+    });
   });
-
+  
   test('Verifica se o footer não é renderizado nas rotas corretas', () => {
     footerInvalidPaths.forEach((path) => {
       cleanup();
@@ -61,7 +57,6 @@ describe('Testa o componente footer', () => {
       history.push(path);
       expect(history.location.pathname).toBe(path);
       expect(screen.queryByTestId('footer')).toBeNull();
-    })
+    });
   });
-
 });
