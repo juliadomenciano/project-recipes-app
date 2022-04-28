@@ -10,11 +10,13 @@ class RecipeCard extends React.Component {
         <h1 data-testid={ `${index}-card-name` }>
           { name }
         </h1>
-        <img
-          src={ image }
-          alt={ `imagem da receita ${name}` }
-          data-testid={ `${index}-card-img` }
-        />
+        <div>
+          <img
+            src={ image }
+            alt={ `imagem da receita ${name}` }
+            data-testid={ `${index}-card-img` }
+          />
+        </div>
       </div>
     );
   }
