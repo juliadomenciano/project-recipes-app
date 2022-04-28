@@ -20,7 +20,6 @@ function Login(props) {
     history.push('/foods');
   }
 
-  console.log(disableButton);
   return (
     <form>
       <label htmlFor="email">
