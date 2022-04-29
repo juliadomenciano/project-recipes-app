@@ -1,17 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import CSS from '../modules/RecipeCard.module.css';
 
 class RecipeCard extends React.Component {
   render() {
     const { name, image, index } = this.props;
     console.log(index);
+    console.log(name);
     return (
-      <div data-testid={ `${index}-recipe-card` }>
+      <div className={ CSS.cards } data-testid={ `${index}-recipe-card` }>
         <h1 data-testid={ `${index}-card-name` }>
           { name }
         </h1>
         <div>
           <img
+            className={ CSS.image }
             src={ image }
             alt={ `imagem da receita ${name}` }
             data-testid={ `${index}-card-img` }

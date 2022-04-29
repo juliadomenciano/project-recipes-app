@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import profileIcon from '../images/profileIcon.svg';
 import searchIcon from '../images/searchIcon.svg';
-import CSS from './Header.module.css';
+import CSS from '../modules/Header.module.css';
 import SearchBar from './SearchBar';
 
 export default function Header({ title }) {
@@ -20,11 +20,10 @@ export default function Header({ title }) {
           className={ CSS.profile_button }
           src={ profileIcon }
         >
-          <img src={ profileIcon } alt="Ícone do perfil" />
+          {/* <img src={ profileIcon } alt="Ícone do perfil" /> */}
         </button>
       </Link>
       <h1 className={ CSS.nav_title } data-testid="page-title">{title}</h1>
-      <h1 data-testid="page-title">{ title }</h1>
       {
         searchPaths.includes(path)
         && (
@@ -36,7 +35,7 @@ export default function Header({ title }) {
             onClick={ () => { setShowSearch(!showSearch); } }
 
           >
-            <img src={ searchIcon } alt="Lupa" />
+            {/* <img src={ searchIcon } alt="Lupa" /> */}
           </button>
         )
       }

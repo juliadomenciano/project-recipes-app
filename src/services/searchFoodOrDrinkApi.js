@@ -1,4 +1,4 @@
-const requestFoodApi = async (foodOrDrink, typeSearch, search) => {
+const searchFoodOrDrinkApi = async (foodOrDrink, typeSearch, search) => {
   if (foodOrDrink === 'food') {
     if (typeSearch === 'Ingredient') {
       const request = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${search}`);
@@ -40,4 +40,4 @@ const requestFoodApi = async (foodOrDrink, typeSearch, search) => {
   }
 };
 
-export default requestFoodApi;
+export default searchFoodOrDrinkApi;
