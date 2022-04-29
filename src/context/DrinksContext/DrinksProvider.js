@@ -6,13 +6,13 @@ import { drinkApi, drinkCategoryApi } from '../../services/drinkApi';
 function DrinksProvider({ children }) {
   const [searchDrinksResults, setSearchDrinksResults] = useState();
   const [drinksResults, setDrinksResults] = useState();
+  const [drinksResultsRecover, setDrinksResultsRecover] = useState();
   const [recipeCategories, setRecipeCategories] = useState();
 
   async function filterByCategory(category) {
     const response = await
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${category}`);
     const data = await response.json();
-    console.log('AAAAAAAAAAAAAAAAAAAAAAAAAA');
     setDrinksResults(data);
   }
 
@@ -22,6 +22,7 @@ function DrinksProvider({ children }) {
       const dataCategorys = await drinkCategoryApi();
       setRecipeCategories(dataCategorys);
       setDrinksResults(data);
+      setDrinksResultsRecover(data);
     };
     apiRequest();
   }, []);
@@ -32,6 +33,7 @@ function DrinksProvider({ children }) {
     setDrinksResults,
     recipeCategories,
     filterByCategory,
+    drinksResultsRecover,
   };
   return (
     <DrinksContext.Provider value={ contextValue }>

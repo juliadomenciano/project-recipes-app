@@ -6,6 +6,7 @@ import { foodApi, foodCategory } from '../../services/foodApi';
 function FoodsProvider({ children }) {
   const [searchFoodsResults, setSearchFoodsResults] = useState();
   const [foodsResults, setFoodsResults] = useState();
+  const [foodsResultsRecover, setFoodsResultsRecover] = useState();
   const [recipeCategories, setFoodsCategories] = useState();
 
   async function filterByCategory(category) {
@@ -19,6 +20,7 @@ function FoodsProvider({ children }) {
       const data = await foodApi();
       const dataCategories = await foodCategory();
       setFoodsResults(data);
+      setFoodsResultsRecover(data);
       setFoodsCategories(dataCategories);
     };
     apiRequest();
@@ -30,6 +32,8 @@ function FoodsProvider({ children }) {
     setSearchFoodsResults,
     recipeCategories,
     filterByCategory,
+    foodsResultsRecover,
+    setFoodsResults,
   };
   return (
     <FoodsContext.Provider value={ contextValue }>
