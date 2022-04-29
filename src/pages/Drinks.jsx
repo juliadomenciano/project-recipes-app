@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import ProfileContext from '../context/ProfileContext/ProfileContext';
 import DrinksContext from '../context/DrinksContext/DrinksContext';
 import RecipeCard from '../components/RecipeCard';
-import CSS2 from '../modules/RecipeCard.module.css';
+import CSS from '../modules/FoodsDrinks.modules.css';
 
 export default function Drinks() {
   const { setFoodOrDrink } = useContext(ProfileContext);
@@ -27,7 +27,7 @@ export default function Drinks() {
     <div>
       <div>
         <Header title="Drinks" />
-        <section className={ CSS2.mainContainer }>
+        <section className={ CSS.mainContainer }>
           <div>
             {recipeCategoriesFake.map((category, index) => (
               <button
@@ -40,7 +40,7 @@ export default function Drinks() {
               </button>
             ))}
           </div>
-          <div className={ CSS2.CardsContainer }>
+          <div className={ CSS.CardsContainer }>
             {results ? (
               results.map((drink, index) => (
                 index > maxRecipesOnScreen ? '' : (

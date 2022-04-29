@@ -12,7 +12,7 @@ class RecipeCard extends React.Component {
         <h1 data-testid={ `${index}-card-name` }>
           { name }
         </h1>
-        <div>
+        <div className={ CSS.conteiner_image }>
           <img
             className={ CSS.image }
             src={ image }

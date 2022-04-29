@@ -5,8 +5,8 @@ import ProfileContext from '../context/ProfileContext/ProfileContext';
 import FoodsContext from '../context/FoodsContext/FoodsContext';
 import RecipeCard from '../components/RecipeCard';
 
-import CSS from '../modules/Foods.modules.css';
-import CSS2 from '../modules/RecipeCard.module.css';
+import CSS from '../modules/FoodsDrinks.modules.css';
+import CSS2 from '../modules/FoodsAndDrinks.modules.css';
 
 export default function Foods() {
   const { setFoodOrDrink } = useContext(ProfileContext);
@@ -26,10 +26,10 @@ export default function Foods() {
 
   const maxRecipesOnScreen = 11;
   return (
-    <div className={ CSS.conteiner_foods }>
+    <div>
       <Header title="Foods" />
-      <section className={ CSS2.mainContainer }>
-        <div>
+      <section className={ CSS2.main_container }>
+        <div className={ CSS.filters }>
           {recipeCategoriesFake.map((category, index) => (
             <button
               type="button"
@@ -41,7 +41,7 @@ export default function Foods() {
             </button>
           ))}
         </div>
-        <div className={ CSS2.CardsContainer }>
+        <div className={ CSS.CardsContainer }>
           {results ? (
             results.map((food, index) => (
               index > maxRecipesOnScreen ? '' : (
