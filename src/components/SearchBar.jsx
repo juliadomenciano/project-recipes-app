@@ -1,11 +1,11 @@
 import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-import requestFoodApi from '../services/FoodApi';
+import searchFoodOrDrinkApi from '../services/searchFoodOrDrinkApi';
 import ProfileContext from '../context/ProfileContext/ProfileContext';
 import FoodsContext from '../context/FoodsContext/FoodsContext';
 import DrinksContext from '../context/DrinksContext/DrinksContext';
-import CSS from './SearchBar.module.css';
+import CSS from '../modules/SearchBar.module.css';
 
 function SearchBar(props) {
   const [selectedFilter, setSelectedFilter] = useState();
@@ -19,7 +19,9 @@ function SearchBar(props) {
     if (selectedFilter === 'First letter' && inputSearch.length > 1) {
       global.alert('Your search must have only 1 (one) character');
     } else {
-      const apiRequest = await requestFoodApi(foodOrDrink, selectedFilter, inputSearch);
+      const apiRequest = await searchFoodOrDrinkApi(
+        foodOrDrink, selectedFilter, inputSearch,
+      );
       if (foodOrDrink === 'food') {
         if (apiRequest.meals === null) {
           global.alert('Sorry, we haven\'t found any recipes for these filters.');
