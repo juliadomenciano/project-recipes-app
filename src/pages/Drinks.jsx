@@ -4,7 +4,8 @@ import Header from '../components/Header';
 import ProfileContext from '../context/ProfileContext/ProfileContext';
 import DrinksContext from '../context/DrinksContext/DrinksContext';
 import RecipeCard from '../components/RecipeCard';
-import CSS from '../modules/FoodsDrinks.modules.css';
+
+import CSS from '../modules/RecipeCard.module.css';
 
 export default function Drinks() {
   const { setFoodOrDrink } = useContext(ProfileContext);
@@ -28,7 +29,7 @@ export default function Drinks() {
       <div>
         <Header title="Drinks" />
         <section className={ CSS.mainContainer }>
-          <div>
+          <div className={ CSS.filters }>
             {recipeCategoriesFake.map((category, index) => (
               <button
                 type="button"
