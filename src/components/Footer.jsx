@@ -4,9 +4,11 @@ import drinkIcon from '../images/drinkIcon.svg';
 import exploreIcon from '../images/exploreIcon.svg';
 import mealIcon from '../images/mealIcon.svg';
 
+import css from '../modules/Footer.module.css';
+
 export default function Footer() {
   return (
-    <footer data-testid="footer">
+    <footer className={ css.conteiner_footer } data-testid="footer">
       <Link to="/drinks">
         <button
           type="button"

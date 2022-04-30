@@ -5,7 +5,7 @@ import ProfileContext from '../context/ProfileContext/ProfileContext';
 import FoodsContext from '../context/FoodsContext/FoodsContext';
 import RecipeCard from '../components/RecipeCard';
 
-import CSS from '../modules/RecipeCard.module.css';
+import CSS from '../modules/FoodsDrinks.module.css';
 
 export default function Foods() {
   const { setFoodOrDrink } = useContext(ProfileContext);

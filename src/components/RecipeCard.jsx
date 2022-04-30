@@ -9,7 +9,7 @@ class RecipeCard extends React.Component {
     console.log(name);
     return (
       <div className={ CSS.cards } data-testid={ `${index}-recipe-card` }>
-        <h1 data-testid={ `${index}-card-name` }>
+        <h1 className={ CSS.card_title } data-testid={ `${index}-card-name` }>
           { name }
         </h1>
         <div className={ CSS.conteiner_image }>

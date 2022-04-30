@@ -1,9 +1,7 @@
 .nav_conteiner {
-  background-color: #cdcdcd;
+  background-color: #d6d6d6;
   display: grid;
   grid-template-columns: 50px 1fr 50px;
-  grid-template-rows: 50px;
-  height: 70px;
   max-width: 100%;
   padding: 10px 20px;
   position: relative;
