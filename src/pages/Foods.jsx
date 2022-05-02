@@ -54,7 +54,7 @@ function Foods(props) {
   return (
     <div>
       <Header title="Foods" />
-      <section className={ CSS2.mainContainer }>
+      <section className={ CSS.mainContainer }>
         <div className={ CSS.filters }>
           <button
             data-testid="All-category-filter"

@@ -55,7 +55,7 @@ function Drinks(props) {
     <div>
       <div>
         <Header title="Drinks" />
-        <section className={ CSS2.mainContainer }>
+        <section className={ CSS.mainContainer }>
           <div className={ CSS.filters }>
             <button
               data-testid="All-category-filter"
