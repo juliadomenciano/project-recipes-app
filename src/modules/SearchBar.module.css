@@ -29,7 +29,6 @@
   font-size: 1.4rem;
   grid-area: 1 / 1 / 1 / 4;
   justify-content: space-evenly;
-  text-transform: uppercase;
 
   /* grid-column-start: 1;
     grid-column-end: 4;
