@@ -1,42 +1,40 @@
- .nav_conteiner {
-    background-color: #cdcdcd;
-    display: grid;
-    grid-template-columns: 50px 1fr 50px;
-    grid-template-rows: 50px;
-    height: 70px;
-    min-width: 100%;
-    padding: 10px 20px;
-    position: relative;
-    width: 100vw;
-  }
-  
-  .nav_title {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .profile_button {
-    background: url('../images/profileIcon.svg') no-repeat center;
-    background-size: 50%;
-    border: none;
-    cursor: pointer;
-    height: 50px;
-    width: 50px;
-  }
-  
-  .magnifying_button {
-    background: url('../images/searchIcon.svg') no-repeat center tomato;
-    background-size: 54%;
-    border: none;
-    border-radius: 100%;
-    cursor: pointer;
-    height: 50px;
-    padding-top: 20px;
-    width: 50px;
-  }
-  
-  .magnifying_button:hover {
-    background: url('../images/searchIcon.svg') no-repeat center white;
-    background-size: 54%;
-  }
+.nav_conteiner {
+  background-color: #d6d6d6;
+  display: grid;
+  grid-template-columns: 50px 1fr 50px;
+  max-width: 100%;
+  padding: 10px 20px;
+  position: relative;
+  width: 100vw;
+}
+
+.nav_title {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.profile_button {
+  background: url('../images/profileIcon.svg') no-repeat center;
+  background-size: 50%;
+  border: none;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+}
+
+.magnifying_button {
+  background: url('../images/searchIcon.svg') no-repeat center tomato;
+  background-size: 54%;
+  border: none;
+  border-radius: 100%;
+  cursor: pointer;
+  height: 50px;
+  padding-top: 20px;
+  width: 50px;
+}
+
+.magnifying_button:hover {
+  background: url('../images/searchIcon.svg') no-repeat center white;
+  background-size: 54%;
+}
