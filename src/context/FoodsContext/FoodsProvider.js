@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import FoodsContext from './FoodsContext';
+import React, { useEffect, useState } from 'react';
 import { foodApi, foodCategory } from '../../services/foodApi';
+import FoodsContext from './FoodsContext';
 
 function FoodsProvider({ children }) {
   const [searchFoodsResults, setSearchFoodsResults] = useState();
