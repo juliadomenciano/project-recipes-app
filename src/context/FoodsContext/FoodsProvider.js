@@ -22,6 +22,7 @@ function FoodsProvider({ children }) {
       setFoodsResults(data);
       setFoodsResultsRecover(data);
       setFoodsCategories(dataCategories);
+      console.log(data);
     };
     apiRequest();
   }, []);
