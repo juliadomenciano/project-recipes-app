@@ -16,18 +16,20 @@ class IngredientsList extends React.Component {
     ));
     console.log(data);
     return (
-      <ol>
-        { foodOrDrink === 'food' ? (keysIngredientFood.map((key, index) => (
-          <div key={ index } data-testid={ `${index}-ingredient-name-and-measure` }>
-            <li>{data[key]}</li>
-            <li>{data[quant[index]]}</li>
-          </div>
-        ))) : (keysIngredientDrink.map((key, index1) => (
-          <div key={ index1 } data-testid={ `${index1}-ingredient-name-and-measure` }>
-            <li>{data[key]}</li>
-            <li>{data[quant[index1]]}</li>
-          </div>)))}
-      </ol>
+      <section className="carousel" aria-label="Gallery">
+        <ol>
+          { foodOrDrink === 'food' ? (keysIngredientFood.map((key, index) => (
+            <div key={ index } data-testid={ `${index}-ingredient-name-and-measure` }>
+              <li>{data[key]}</li>
+              <li>{data[quant[index]]}</li>
+            </div>
+          ))) : (keysIngredientDrink.map((key, index1) => (
+            <div key={ index1 } data-testid={ `${index1}-ingredient-name-and-measure` }>
+              <li>{data[key]}</li>
+              <li>{data[quant[index1]]}</li>
+            </div>)))}
+        </ol>
+      </section>
     );
   }
 }

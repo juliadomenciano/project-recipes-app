@@ -1,10 +1,10 @@
 .cards {
   display: flex;
   align-items: center;
-  margin: 15px;
+  margin: 25px;
   background: rgb(88, 88, 95);
   display: flex;
-  width: 300px;
+  width: 150px;
 }
 .image  {
   width: 100px;
@@ -19,4 +19,12 @@
   max-width: 100%;
   position: absolute;
   top:200px
+}
+
+.carousel {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  width: 100%;
 }

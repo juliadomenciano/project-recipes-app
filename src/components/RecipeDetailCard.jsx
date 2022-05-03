@@ -2,6 +2,7 @@ import PropTypes, { object } from 'prop-types';
 import React, { useContext } from 'react';
 import DrinksContext from '../context/DrinksContext/DrinksContext';
 import FoodsContext from '../context/FoodsContext/FoodsContext';
+import CSS from '../modules/RecipeCard.module.css';
 import IngredientsList from './IngredientsList';
 import RecipeCard from './RecipeCard';
 
@@ -51,33 +52,34 @@ function RecipeDetailCard(props) {
           src={ `https://www.youtube.com/embed/${youtubeVideoId}` }
         />
       )}
-      {
-        results && (
-          foodOrDrink === 'food' ? (
-            results.map((meal, index) => (index < magicNumber && (
-              <div data-testid={ `${index}-recomendation-card` }>
+      <section className={ CSS.carousel }>
+        {
+          results && (
+            foodOrDrink === 'drink' ? (
+              results.map((meal, index) => (index < magicNumber && (
                 <RecipeCard
                   key={ index }
+                  testid={ [
+                    `${index}-recomendation-card`, `${index}-recomendation-title`] }
                   name={ meal.strMeal }
                   image={ meal.strMealThumb }
                   index={ index }
                 />
-              </div>
-            )))
-          ) : resultsDrinks && (
-            resultsDrinks.map((drink, index) => (index < magicNumber && (
-              <div data-testid={ `${index}-recomendation-card` }>
+              )))
+            ) : resultsDrinks && (
+              resultsDrinks.map((drink, index) => (index < magicNumber && (
                 <RecipeCard
                   key={ index }
+                  testid={ [
+                    `${index}-recomendation-card`, `${index}-recomendation-title`] }
                   name={ drink.strDrink }
                   image={ drink.strDrinkThumb }
                   index={ index }
                 />
-              </div>
-            )))
-          ))
-
-      }
+              )))
+            ))
+        }
+      </section>
       <button
         type="button"
         data-testid="start-recipe-btn"

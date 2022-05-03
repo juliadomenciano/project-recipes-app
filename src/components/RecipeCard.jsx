@@ -4,12 +4,15 @@ import CSS from '../modules/RecipeCard.module.css';
 
 class RecipeCard extends React.Component {
   render() {
-    const { name, image, index } = this.props;
+    const { name, image, index, testid } = this.props;
     console.log(index);
     console.log(name);
     return (
-      <div className={ CSS.cards } data-testid={ `${index}-recipe-card` }>
-        <h1 data-testid={ `${index}-card-name` }>
+      <div
+        className={ CSS.cards }
+        data-testid={ testid[0] }
+      >
+        <h1 data-testid={ testid[1] }>
           { name }
         </h1>
         <div>
@@ -29,6 +32,7 @@ RecipeCard.propTypes = {
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
+  testid: PropTypes.string.isRequired,
 };
 
 export default RecipeCard;
