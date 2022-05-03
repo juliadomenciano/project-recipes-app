@@ -1,11 +1,57 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import RecipeCard from '../components/RecipeCard';
+import FoodsContext from '../context/FoodsContext/FoodsContext';
 
 export default function ExploreFoodsNationalities() {
+  const { nationalities, nationalitiesCards,
+    handleChange } = useContext(FoodsContext);
+
   return (
     <section>
       <Header title="Explore Nationalities" />
+      <form>
+        <input
+          type="text"
+          onChange={ handleChange }
+        />
+        <label htmlFor="explore">
+          <select
+            data-testid="explore-by-nationality-dropdown"
+            name="explore"
+            onChange={ handleChange }
+          >
+            {/*  <option
+              value="all"
+              onChange={ handleChange }
+            >
+              All
+            </option> */}
+            { nationalities
+      && nationalities.map((item, index) => (
+        <option
+          key={ index }
+          value={ item.strArea }
+          data-testid={ `${item.strArea}-option` }
+        >
+          {item.strArea}
+        </option>
+      ))}
+          </select>
+        </label>
+      </form>
+      <div>
+        {nationalitiesCards
+        && nationalitiesCards.map((item, index) => (
+          <RecipeCard
+            key={ index }
+            name={ item.strMeal }
+            image={ item.strMealThumb }
+            index={ index }
+          />
+        ))}
+      </div>
       <Footer />
     </section>
   );

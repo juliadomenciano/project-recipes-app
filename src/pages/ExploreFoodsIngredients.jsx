@@ -12,15 +12,17 @@ export default function ExploreFoodsIngredients() {
   return (
     <section>
       <Header title="Explore Ingredients" />
-      {ingredients
-      && ingredients.map((item, index) => (
-        <Ingredients
-          key={ index }
-          name={ item.strIngredient }
-          index={ index }
-        />
+      <div>
+        {ingredients
+        && ingredients.map((item, index) => (
+          <Ingredients
+            key={ index }
+            name={ item.strIngredient }
+            index={ index }
+          />
 
-      ))}
+        ))}
+      </div>
       <Footer />
     </section>
   );
