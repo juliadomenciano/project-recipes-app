@@ -14,7 +14,6 @@ class IngredientsList extends React.Component {
     const quant = onlyKeys.filter((key) => (
       key.match('strMeasure') && data[key] !== null
     ));
-    console.log(data);
     return (
       <section className="carousel" aria-label="Gallery">
         <ol>

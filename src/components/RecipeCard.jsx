@@ -5,8 +5,6 @@ import CSS from '../modules/RecipeCard.module.css';
 class RecipeCard extends React.Component {
   render() {
     const { name, image, index, testid } = this.props;
-    console.log(index);
-    console.log(name);
     return (
       <div
         className={ CSS.cards }
@@ -32,7 +30,7 @@ RecipeCard.propTypes = {
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
-  testid: PropTypes.string.isRequired,
+  testid: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
 };
 
 export default RecipeCard;

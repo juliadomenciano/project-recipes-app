@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import RecipeDetailCard from '../components/RecipeDetailCard';
+import RecipeDetailsCardDrink from '../components/RecipeDetailsCardDrink';
 import { drinkDetails } from '../services/detailsRequestApi';
 
 export default function DrinksDetails() {
@@ -21,7 +21,7 @@ export default function DrinksDetails() {
     drinkDetailsData === undefined ? '' : (
       <>
         <div>DrinkDetails</div>
-        <RecipeDetailCard
+        <RecipeDetailsCardDrink
           foodOrDrink="drink"
           data={ drinkDetailsData.drinks[0] }
         />

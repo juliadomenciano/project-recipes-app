@@ -1,41 +1,37 @@
 import PropTypes, { object } from 'prop-types';
 import React, { useContext, useEffect, useState } from 'react';
-import DrinksContext from '../context/DrinksContext/DrinksContext';
 import FoodsContext from '../context/FoodsContext/FoodsContext';
 import { handleStartRecipe } from '../helpers/RecipeDetailHelpers';
 import CSS from '../modules/RecipeCard.module.css';
 import IngredientsList from './IngredientsList';
 import RecipeCard from './RecipeCard';
 
-function RecipeDetailCard(props) {
+function RecipeDetailsCardDrink(props) {
   const { foodOrDrink, data } = props;
-  const { foodsResults } = useContext(FoodsContext);
-  const { drinksResults } = useContext(DrinksContext);
-  const youtubeVideoId = data.strYoutube.replace('https://www.youtube.com/watch?v=', '');
-  const results = foodsResults ? foodsResults.meals : foodsResults;
-  const resultsDrinks = drinksResults ? drinksResults.drinks : drinksResults;
-  const image = data.strMealThumb;
-  const title = data.strMeal;
-  const category = data.strCategory;
   const instructions = data.strInstructions;
+  const { foodsResults } = useContext(FoodsContext);
   const magicNumber = 6;
+  const [inProgress, setInProgress] = useState();
+  const results = foodsResults ? foodsResults.meals : foodsResults;
+  const image = data.strDrinkThumb;
+  const title = data.strDrink;
+  const category = data.strAlcoholic;
   const onlyKeys = Object.keys(data);
   const keysIngredientFood = onlyKeys.filter((key) => (
     key.match('strIngredient') && data[key] !== ''
   ));
   const ingredients = keysIngredientFood.map((ingredient) => data[ingredient]);
-  const [inProgress, setInProgress] = useState();
 
   useEffect(() => {
     function isInProgress() {
       const receitas = JSON.parse(localStorage.getItem('inProgressRecipes'));
-      const keys = receitas ? Object.keys(receitas.meals) : '';
-      const result = keys ? keys.find((key) => key === data.idMeal) : false;
+      const keys = receitas ? Object.keys(receitas.cocktails) : '';
+      const result = keys ? keys.find((key) => key === data.idDrink) : false;
       console.log(result);
       return result ? setInProgress(true) : setInProgress(false);
     }
     isInProgress();
-  }, [data.idMeal, inProgress]);
+  }, [data.idDrink, inProgress]);
 
   return (
     <div>
@@ -65,27 +61,19 @@ function RecipeDetailCard(props) {
       <p data-testid="recipe-category">{category}</p>
       <IngredientsList foodOrDrink={ foodOrDrink } data={ data } />
       <p data-testid="instructions">{instructions}</p>
-      <iframe
-        title={ title }
-        data-testid="video"
-        width="420"
-        height="315"
-        src={ `https://www.youtube.com/embed/${youtubeVideoId}` }
-      />
       <section className={ CSS.carousel }>
         {
-          results && resultsDrinks && (
-            resultsDrinks.map((drink, index) => (index < magicNumber && (
+          results && (
+            results.map((meal, index) => (index < magicNumber && (
               <RecipeCard
                 key={ index }
                 testid={ [
                   `${index}-recomendation-card`, `${index}-recomendation-title`] }
-                name={ drink.strDrink }
-                image={ drink.strDrinkThumb }
+                name={ meal.strMeal }
+                image={ meal.strMealThumb }
                 index={ index }
               />
-            )))
-          )
+            ))))
         }
       </section>
       {inProgress ? (
@@ -103,7 +91,7 @@ function RecipeDetailCard(props) {
           type="button"
           data-testid="start-recipe-btn"
           onClick={ () => [handleStartRecipe(foodOrDrink,
-            data.idMeal, ingredients),
+            data.idDrink, ingredients),
           setInProgress(true)] }
         >
           Iniciar receita
@@ -112,9 +100,9 @@ function RecipeDetailCard(props) {
   );
 }
 
-RecipeDetailCard.propTypes = {
+RecipeDetailsCardDrink.propTypes = {
   data: PropTypes.shape(object),
   foodOrDrink: PropTypes.string,
 }.isRequired;
 
-export default RecipeDetailCard;
+export default RecipeDetailsCardDrink;
