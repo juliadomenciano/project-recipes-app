@@ -25,6 +25,17 @@ function DrinksProvider({ children }) {
     setIngredients(arrWithTwelve);
   };
 
+  const fetchByDrinkIngredient = async (ingredient) => {
+    /*     const twelve = 12; */
+    const request = await
+    fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredient}`);
+    const data = await request.json();
+    /*     const arrWithTwelve = data.meals.slice(0, twelve); */
+    console.log(data);
+    setDrinksResults(data);
+    console.log(drinksResults);
+  };
+
   useEffect(() => {
     const apiRequest = async () => {
       const data = await drinkApi();
@@ -45,6 +56,7 @@ function DrinksProvider({ children }) {
     drinksResultsRecover,
     DrinksIngredients,
     ingredients,
+    fetchByDrinkIngredient,
   };
   return (
     <DrinksContext.Provider value={ contextValue }>

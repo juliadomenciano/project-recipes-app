@@ -59,6 +59,15 @@ function FoodsProvider({ children }) {
     }
   };
 
+  const fetchByIngredient = async (ingredient) => {
+    /*     const twelve = 12; */
+    const request = await
+    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`);
+    const data = await request.json();
+    /*     const arrWithTwelve = data.meals.slice(0, twelve); */
+    setFoodsResults(data);
+  };
+
   useEffect(() => {
     const apiRequest = async () => {
       const data = await foodApi();
@@ -88,6 +97,7 @@ function FoodsProvider({ children }) {
     ...filter,
     filterByNationality,
     FoodsApiWithTwelve,
+    fetchByIngredient,
   };
   return (
     <FoodsContext.Provider value={ contextValue }>
