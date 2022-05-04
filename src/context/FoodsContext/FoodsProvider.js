@@ -34,9 +34,9 @@ function FoodsProvider({ children }) {
     setNationalities(arr);
   };
 
-  const FoodsApiWithTwelve = async () => {
+  const FoodsApiWithTwelve = async (url) => {
     const twelve = 12;
-    const request = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=');
+    const request = await fetch(url);
     const data = await request.json();
     const arrWithTwelve = data.meals.slice(0, twelve);
     setNationalitiesCards(arrWithTwelve);
@@ -50,13 +50,12 @@ function FoodsProvider({ children }) {
 
   const filterByNationality = async () => {
     const { option } = filter;
-    const url = `https://www.themealdb.com/api/json/v1/1/filter.php?a=${option}`;
+    const urlFilter = `https://www.themealdb.com/api/json/v1/1/filter.php?a=${option}`;
+    const urlAll = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
     if (option === 'all') {
-      FoodsApiWithTwelve();
+      FoodsApiWithTwelve(urlAll);
     } else {
-      const request = await fetch(url);
-      const data = await request.json();
-      setNationalitiesCards(data.meals);
+      FoodsApiWithTwelve(urlFilter);
     }
   };
 

@@ -47,6 +47,7 @@ export default function ExploreFoodsNationalities() {
           <RecipeCard
             key={ index }
             name={ item.strMeal }
+            id={ item.idMeal }
             image={ item.strMealThumb }
             index={ index }
           />
