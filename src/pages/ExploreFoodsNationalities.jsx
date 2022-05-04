@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import RecipeCard from '../components/RecipeCard';
@@ -6,28 +6,28 @@ import FoodsContext from '../context/FoodsContext/FoodsContext';
 
 export default function ExploreFoodsNationalities() {
   const { nationalities, nationalitiesCards,
-    handleChange } = useContext(FoodsContext);
+    handleChange, option, filterByNationality } = useContext(FoodsContext);
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => { filterByNationality(); console.log(option); }, [option]);
 
   return (
     <section>
       <Header title="Explore Nationalities" />
       <form>
-        <input
-          type="text"
-          onChange={ handleChange }
-        />
-        <label htmlFor="explore">
+        <label htmlFor="filter">
           <select
             data-testid="explore-by-nationality-dropdown"
-            name="explore"
+            name="filter"
+            value={ option }
             onChange={ handleChange }
           >
-            {/*  <option
+            <option
               value="all"
-              onChange={ handleChange }
+              data-testid="all-option"
             >
               All
-            </option> */}
+            </option>
             { nationalities
       && nationalities.map((item, index) => (
         <option

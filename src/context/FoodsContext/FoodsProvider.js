@@ -11,7 +11,7 @@ function FoodsProvider({ children }) {
   const [ingredients, setIngredients] = useState();
   const [nationalities, setNationalities] = useState();
   const [nationalitiesCards, setNationalitiesCards] = useState();
-  const [filter, setFilter] = useState();
+  const [filter, setFilter] = useState({ option: 'all' });
 
   async function filterByCategory(category) {
     const request = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`);
@@ -42,18 +42,22 @@ function FoodsProvider({ children }) {
     setNationalitiesCards(arrWithTwelve);
   };
 
-  const filterByNationality = async () => {
-    const request = await fetch(`www.themealdb.com/api/json/v1/1/filter.php?a=${filter}`);
-    const data = await request.json();
-    setNationalitiesCards(data);
-    console.log('oiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii');
-  };
-
   const handleChange = (e) => {
     // const { value } = target;
-    setFilter(e.target.value);
+    setFilter({ option: e.target.value });
     console.log(filter);
-    filterByNationality();
+  };
+
+  const filterByNationality = async () => {
+    const { option } = filter;
+    const url = `https://www.themealdb.com/api/json/v1/1/filter.php?a=${option}`;
+    if (option === 'all') {
+      FoodsApiWithTwelve();
+    } else {
+      const request = await fetch(url);
+      const data = await request.json();
+      setNationalitiesCards(data.meals);
+    }
   };
 
   useEffect(() => {
@@ -66,7 +70,6 @@ function FoodsProvider({ children }) {
     };
     apiRequest();
     fetchNationalities();
-    FoodsApiWithTwelve();
   }, []);
 
   const contextValue = {
@@ -83,6 +86,9 @@ function FoodsProvider({ children }) {
     nationalities,
     handleChange,
     nationalitiesCards,
+    ...filter,
+    filterByNationality,
+    FoodsApiWithTwelve,
   };
   return (
     <FoodsContext.Provider value={ contextValue }>
