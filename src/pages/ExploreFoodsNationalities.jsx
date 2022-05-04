@@ -41,7 +41,7 @@ export default function ExploreFoodsNationalities() {
           </select>
         </label>
       </form>
-      <div className="conteiner_foods">
+      <div className="container_foods">
         {nationalitiesCards
         && nationalitiesCards.map((item, index) => (
           <RecipeCard
