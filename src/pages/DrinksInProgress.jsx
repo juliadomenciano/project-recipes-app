@@ -2,9 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { drinkDetails } from '../services/detailsRequestApi';
 
+const IN_PROGRESS_KEY = 'inProgressRecipes';
+
 export default function DrinkInProgress() {
   const [drinkData, setDrinkData] = useState({});
   const [scribbled, setScribbled] = useState([]);
+  const progressStorage = JSON.parse(localStorage.getItem(IN_PROGRESS_KEY));
   const path = useLocation().pathname;
   const pathId = path.replace('/drinks/', '').replace('/in-progress', '');
   const { strDrinkThumb, strDrink, strAlcoholic, strInstructions } = drinkData;
@@ -17,13 +20,43 @@ export default function DrinkInProgress() {
       setDrinkData(await data.drinks[0]);
     };
     apiRequest();
+    const checkStorage = progressStorage
+      ? Object.keys(progressStorage).includes('drinks')
+      : false;
+    const saveObject = {
+      ...progressStorage,
+      drinks: checkStorage
+        ? {
+          ...progressStorage.drinks,
+          [pathId]: progressStorage.drinks[pathId] || scribbled,
+        }
+        : { [pathId]: [] },
+    };
+    localStorage.setItem(IN_PROGRESS_KEY, JSON.stringify(saveObject));
   }, []);
 
-  const handleChange = ({ target: { id } }) => (
-    scribbled.includes(id)
-      ? setScribbled(scribbled.filter((ingredient) => ingredient !== id))
-      : setScribbled([...scribbled, id])
-  );
+  const handleChange = ({ target: { id } }) => {
+    const saveObject = (updatedList) => ({
+      ...progressStorage, drinks: { ...progressStorage.drinks, [pathId]: updatedList },
+    });
+    if (scribbled.includes(id)) {
+      const removeIngredient = scribbled.filter((ingredient) => ingredient !== id);
+      setScribbled(removeIngredient);
+      return localStorage
+        .setItem(IN_PROGRESS_KEY, JSON.stringify(saveObject(removeIngredient)));
+    } const addIngredient = [...scribbled, id];
+    setScribbled(addIngredient);
+    return localStorage
+      .setItem(IN_PROGRESS_KEY, JSON.stringify(saveObject(addIngredient)));
+  };
+
+  const handleChecked = (ingredient) => {
+    if (!progressStorage) {
+      return scribbled.includes(ingredient);
+    }
+    const savedMeals = progressStorage ? progressStorage.drinks[pathId] : '';
+    return savedMeals.includes(ingredient);
+  };
 
   return (
     <div>
@@ -49,7 +82,8 @@ export default function DrinkInProgress() {
                           type="checkbox"
                           id={ ingredient[1] }
                           onChange={ handleChange }
-                          checked={ scribbled.includes(ingredient[1]) }
+                          checked={ handleChecked(ingredient[1]) }
+                          className="ingredients-checkbox"
                         />
                         { ingredient[1] }
                       </li>))

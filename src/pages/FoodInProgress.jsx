@@ -2,28 +2,62 @@ import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { foodDetails } from '../services/detailsRequestApi';
 
+const IN_PROGRESS_KEY = 'inProgressRecipes';
+
 export default function FoodInProgress() {
   const [foodData, setFoodData] = useState({});
   const [scribbled, setScribbled] = useState([]);
+  const progressStorage = JSON.parse(localStorage.getItem(IN_PROGRESS_KEY));
   const path = useLocation().pathname;
   const pathId = path.replace('/foods/', '').replace('/in-progress', '');
   const { strMealThumb, strMeal, strCategory, strInstructions } = foodData;
   const ingredients = Object.entries(foodData)
     .filter((entry) => entry[0].match('strIngredient') && entry[1]) || [];
 
+  // Funciona como didMount buscando a receita na API pelo seu "id"
   useEffect(() => {
     const apiRequest = async () => {
       const data = await foodDetails(pathId);
       setFoodData(await data.meals[0]);
     };
     apiRequest();
-  }, [pathId]);
+    const checkStorage = progressStorage
+      ? Object.keys(progressStorage).includes('meals')
+      : false;
+    const saveObject = {
+      ...progressStorage,
+      meals: checkStorage
+        ? {
+          ...progressStorage.meals,
+          [pathId]: progressStorage.meals[pathId] || scribbled,
+        }
+        : { [pathId]: [] },
+    };
+    localStorage.setItem(IN_PROGRESS_KEY, JSON.stringify(saveObject));
+  }, []);
 
-  const handleChange = ({ target: { id } }) => (
-    scribbled.includes(id)
-      ? setScribbled(scribbled.filter((ingredient) => ingredient !== id))
-      : setScribbled([...scribbled, id])
-  );
+  const handleChange = ({ target: { id } }) => {
+    const saveObject = (updatedList) => ({
+      ...progressStorage, meals: { ...progressStorage.meals, [pathId]: updatedList },
+    });
+    if (scribbled.includes(id)) {
+      const removeIngredient = scribbled.filter((ingredient) => ingredient !== id);
+      setScribbled(removeIngredient);
+      return localStorage
+        .setItem(IN_PROGRESS_KEY, JSON.stringify(saveObject(removeIngredient)));
+    } const addIngredient = [...scribbled, id];
+    setScribbled(addIngredient);
+    return localStorage
+      .setItem(IN_PROGRESS_KEY, JSON.stringify(saveObject(addIngredient)));
+  };
+
+  const handleChecked = (ingredient) => {
+    if (!progressStorage) {
+      return scribbled.includes(ingredient);
+    }
+    const savedMeals = progressStorage ? progressStorage.meals[pathId] : '';
+    return savedMeals.includes(ingredient);
+  };
 
   return (
     <div>
@@ -49,7 +83,7 @@ export default function FoodInProgress() {
                           type="checkbox"
                           id={ ingredient[1] }
                           onChange={ handleChange }
-                          checked={ scribbled.includes(ingredient[1]) }
+                          checked={ handleChecked(ingredient[1]) }
                         />
                         { ingredient[1] }
                       </li>))
