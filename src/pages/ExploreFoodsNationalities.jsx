@@ -24,7 +24,7 @@ export default function ExploreFoodsNationalities() {
           >
             <option
               value="all"
-              data-testid="all-option"
+              data-testid="All-option"
             >
               All
             </option>
@@ -47,6 +47,7 @@ export default function ExploreFoodsNationalities() {
           <RecipeCard
             key={ index }
             name={ item.strMeal }
+            id={ item.idMeal }
             image={ item.strMealThumb }
             index={ index }
           />
