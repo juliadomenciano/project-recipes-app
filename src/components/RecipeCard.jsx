@@ -10,9 +10,9 @@ class RecipeCard extends React.Component {
     return (
       <div
         className={ CSS.cards }
-        data-testid={ testid[0] }
+        data-testid={ testid ? testid[0] : '' }
       >
-        <h1 data-testid={ testid[1] }>
+        <h1 data-testid={ testid ? testid[1] : '' }>
           { name }
         </h1>
         <div>

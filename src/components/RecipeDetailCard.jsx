@@ -81,6 +81,7 @@ function RecipeDetailCard(props) {
         }
       </section>
       <button
+        className={ CSS.start_recipe }
         type="button"
         data-testid="start-recipe-btn"
       >
