@@ -12,7 +12,7 @@ export default function ExploreFoodsIngredients() {
   return (
     <section>
       <Header title="Explore Ingredients" />
-      <div>
+      <div className="conteiner_foods_ingredidentes">
         {ingredients
         && ingredients.map((item, index) => (
           <Ingredients

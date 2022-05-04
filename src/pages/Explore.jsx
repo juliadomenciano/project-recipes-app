@@ -7,7 +7,7 @@ export default function Explore() {
   return (
     <section>
       <Header title="Explore" />
-      <div>
+      <div className="conteiner_explore">
         <Link to="explore/foods">
           <button
             type="button"

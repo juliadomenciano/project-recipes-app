@@ -24,7 +24,7 @@ export default function ExploreFoodsNationalities() {
           >
             <option
               value="all"
-              data-testid="all-option"
+              data-testid="All-option"
             >
               All
             </option>
@@ -41,7 +41,7 @@ export default function ExploreFoodsNationalities() {
           </select>
         </label>
       </form>
-      <div>
+      <div className="conteiner_foods">
         {nationalitiesCards
         && nationalitiesCards.map((item, index) => (
           <RecipeCard
