@@ -1,9 +1,9 @@
 .cards {
   align-items: center;
-  background: rgb(88, 88, 95);
+  /*   background-color: rgb(88, 88, 95); */
   display: flex;
-  margin: 25px;
-  width: 150px;
+  margin: 15px;
+  width: 300px;
 }
 
 .image {

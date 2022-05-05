@@ -1,11 +1,11 @@
-import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
+import React, { useContext, useState } from 'react';
 import { withRouter } from 'react-router-dom';
-import searchFoodOrDrinkApi from '../services/searchFoodOrDrinkApi';
-import ProfileContext from '../context/ProfileContext/ProfileContext';
-import FoodsContext from '../context/FoodsContext/FoodsContext';
 import DrinksContext from '../context/DrinksContext/DrinksContext';
+import FoodsContext from '../context/FoodsContext/FoodsContext';
+import ProfileContext from '../context/ProfileContext/ProfileContext';
 import CSS from '../modules/SearchBar.module.css';
+import searchFoodOrDrinkApi from '../services/searchFoodOrDrinkApi';
 
 function SearchBar(props) {
   const [selectedFilter, setSelectedFilter] = useState();

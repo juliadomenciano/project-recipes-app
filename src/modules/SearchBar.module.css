@@ -1,8 +1,9 @@
 .conteiner_form {
   display: grid;
-  grid-gap: 20px;
+
+  grid-gap: 10px;
   grid-template-columns: 50px 1fr 50px;
-  grid-template-rows: 50px 50px;
+  grid-template-rows: 25px 25px;
   padding: 10px 20px;
   position: absolute;
   top: 70px;
@@ -10,7 +11,7 @@
 }
 
 .input_search {
-  grid-area: 1 / 2 / 2 / 3;
+  grid-area: 2 / 1 / 2 / 3;
   position: relative;
 }
 
@@ -27,10 +28,12 @@
   border: none;
   display: flex;
   font-size: 1.4rem;
-  grid-area: 2 / 1 / 3 / 4;
-  justify-content: space-between;
-  padding: 0 60px;
-  text-transform: uppercase;
+  grid-area: 1 / 1 / 1 / 4;
+  justify-content: space-evenly;
+  /* grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3; */
 }
 
 .radio_search label {
@@ -45,5 +48,5 @@
 }
 
 .button_search {
-  grid-area: 1 / 3 / 2 / 4;
+  grid-area: 2 / 3 / 2 / 3;
 }
