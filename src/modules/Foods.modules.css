@@ -1,0 +1,14 @@
+section .conteiner_cards_food {
+  background-color: blue;
+  font-size: 40px;
+  margin-top: 200px;
+  width: 20vw;
+}
+
+.conteiner_foods {
+  background: tomato;
+}
+
+/* div[ class ^= 'conteiner' ] {
+  background-color: turquoise;
+} */

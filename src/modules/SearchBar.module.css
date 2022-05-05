@@ -29,7 +29,6 @@
   font-size: 1.4rem;
   grid-area: 1 / 1 / 1 / 4;
   justify-content: space-evenly;
-  text-transform: uppercase;
 
   /* grid-column-start: 1;
     grid-column-end: 4;
@@ -40,22 +39,5 @@
 .radio_search label {
   align-items: center;
   display: flex;
-  justify-content: center;
-}
-
-.radio_search input {
-  height: 15px;
-  width: 25px;
-}
-
-.button_search {
   grid-area: 2 / 3 / 2 / 3;
 }
-
-/*   @media screen and (max-width: 360px) {
-    .radio_search {
-      grid-area: 1 / 1 / 1 / 4;
-      background-color: tomato;
-    }
-  }
-   */
