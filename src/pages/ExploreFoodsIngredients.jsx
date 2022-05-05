@@ -1,14 +1,20 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Ingredients from '../components/Ingredients';
-import FoodsContext from '../context/FoodsContext/FoodsContext';
-/* import searchFoodOrDrinkApi from '../services/searchFoodOrDrinkApi'; */
 
 export default function ExploreFoodsIngredients() {
-  const { ingredients, foodIngredients } = useContext(FoodsContext);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => { foodIngredients(); }, []);
+  const [ingredients, setIngredients] = useState();
+  useEffect(() => {
+    const foodIngredients = async () => {
+      const twelve = 12;
+      const request = await fetch('https://www.themealdb.com/api/json/v1/1/list.php?i=list');
+      const data = await request.json();
+      const arrWithTwelve = data.meals.slice(0, twelve);
+      setIngredients(arrWithTwelve);
+    };
+    foodIngredients();
+  }, []);
   return (
     <section>
       <Header title="Explore Ingredients" />

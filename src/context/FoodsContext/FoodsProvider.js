@@ -8,7 +8,6 @@ function FoodsProvider({ children }) {
   const [foodsResults, setFoodsResults] = useState();
   const [foodsResultsRecover, setFoodsResultsRecover] = useState();
   const [recipeCategories, setFoodsCategories] = useState();
-  const [ingredients, setIngredients] = useState();
   const [nationalities, setNationalities] = useState();
   const [nationalitiesCards, setNationalitiesCards] = useState();
   const [filter, setFilter] = useState({ option: 'all' });
@@ -18,14 +17,6 @@ function FoodsProvider({ children }) {
     const data = await request.json();
     setFoodsResults(data);
   }
-
-  const foodIngredients = async () => {
-    const twelve = 12;
-    const request = await fetch('https://www.themealdb.com/api/json/v1/1/list.php?i=list');
-    const data = await request.json();
-    const arrWithTwelve = data.meals.slice(0, twelve);
-    setIngredients(arrWithTwelve);
-  };
 
   const fetchNationalities = async () => {
     const request = await fetch('https://www.themealdb.com/api/json/v1/1/list.php?a=list');
@@ -88,8 +79,6 @@ function FoodsProvider({ children }) {
     filterByCategory,
     foodsResultsRecover,
     setFoodsResults,
-    foodIngredients,
-    ingredients,
     fetchNationalities,
     nationalities,
     handleChange,

@@ -8,8 +8,8 @@ export default function ExploreFoodsNationalities() {
   const { nationalities, nationalitiesCards,
     handleChange, option, filterByNationality } = useContext(FoodsContext);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => { filterByNationality(); console.log(option); }, [option]);
+  useEffect(() => { filterByNationality(); console.log(option); }, [option,
+    filterByNationality]);
 
   return (
     <section>
