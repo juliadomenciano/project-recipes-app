@@ -57,3 +57,42 @@ export function handleContinueRecipe(foodOrDrink, id, history) {
   return foodOrDrink === 'food' ? history.push(`/foods/${id}/in-progress`) : (
     history.push(`/drinks/${id}/in-progress`));
 }
+
+export function handleFavoriteRecipe(data, foodOrDrink) {
+  const favorite = foodOrDrink === 'food' ? (
+    {
+      id: data.idMeal,
+      type: 'food',
+      nationality: data.strArea,
+      category: data.strCategory,
+      alcoholicOrNot: '',
+      name: data.strMeal,
+      image: data.strMealThumb,
+    }
+  ) : (
+    {
+      id: data.idDrink,
+      type: 'drink',
+      nationality: '',
+      category: data.strCategory,
+      alcoholicOrNot: data.strAlcoholic,
+      name: data.strDrink,
+      image: data.strDrinkThumb,
+    }
+  );
+  const previousRecipes = JSON.parse(localStorage
+    .getItem('favoriteRecipes')) ? JSON.parse(
+      localStorage.getItem('favoriteRecipes'),
+    ) : '';
+  const newStorage = [...previousRecipes, favorite];
+  localStorage.setItem('favoriteRecipes', JSON.stringify(newStorage));
+}
+
+export function handleRemoveFavorite(data, foodOrDrink) {
+  const isFavorite = JSON.parse(localStorage.getItem('favoriteRecipes'));
+  const isFoodOrDrink = foodOrDrink === 'food' ? (
+    isFavorite && isFavorite.filter((key) => key.id !== data.idMeal)
+  ) : isFavorite && isFavorite.filter((key) => key.id !== data.idDrink);
+  console.log(isFoodOrDrink);
+  localStorage.setItem('favoriteRecipes', JSON.stringify(isFoodOrDrink));
+}
