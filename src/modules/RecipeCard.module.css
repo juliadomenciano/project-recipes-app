@@ -2,7 +2,6 @@
   align-items: center;
   background: rgb(88, 88, 95);
   display: flex;
-  display: flex;
   margin: 25px;
   width: 150px;
 }
@@ -47,8 +46,9 @@
 }
 
 .start_recipe p {
-  color: #fff;
-  font-family: arial;
+  color: white;
+
+  /* font-family: Arial; */
   font-weight: 900;
   text-transform: uppercase;
 }
