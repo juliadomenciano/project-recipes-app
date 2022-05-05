@@ -1,15 +1,34 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import RecipeCard from '../components/RecipeCard';
 import FoodsContext from '../context/FoodsContext/FoodsContext';
 
 export default function ExploreFoodsNationalities() {
-  const { nationalities, nationalitiesCards,
-    handleChange, option, filterByNationality } = useContext(FoodsContext);
+  const { nationalities,
+    handleChange, option } = useContext(FoodsContext);
 
-  useEffect(() => { filterByNationality(); console.log(option); }, [option,
-    filterByNationality]);
+  const [nationalitiesCards, setNationalitiesCards] = useState();
+  const FoodsApiWithTwelve = async (url) => {
+    const twelve = 12;
+    const request = await fetch(url);
+    const data = await request.json();
+    const arrWithTwelve = data.meals.slice(0, twelve);
+    setNationalitiesCards(arrWithTwelve);
+  };
+
+  useEffect(() => {
+    const filterByNationality = async () => {
+      const urlFilter = `https://www.themealdb.com/api/json/v1/1/filter.php?a=${option}`;
+      const urlAll = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
+      if (option === 'all') {
+        FoodsApiWithTwelve(urlAll);
+      } else {
+        FoodsApiWithTwelve(urlFilter);
+      }
+    };
+    filterByNationality();
+  }, [option]);
 
   return (
     <section>

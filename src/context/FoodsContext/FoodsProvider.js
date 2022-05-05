@@ -9,7 +9,6 @@ function FoodsProvider({ children }) {
   const [foodsResultsRecover, setFoodsResultsRecover] = useState();
   const [recipeCategories, setFoodsCategories] = useState();
   const [nationalities, setNationalities] = useState();
-  const [nationalitiesCards, setNationalitiesCards] = useState();
   const [filter, setFilter] = useState({ option: 'all' });
 
   async function filterByCategory(category) {
@@ -23,14 +22,6 @@ function FoodsProvider({ children }) {
     const data = await request.json();
     const arr = data.meals;
     setNationalities(arr);
-  };
-
-  const FoodsApiWithTwelve = async (url) => {
-    const twelve = 12;
-    const request = await fetch(url);
-    const data = await request.json();
-    const arrWithTwelve = data.meals.slice(0, twelve);
-    setNationalitiesCards(arrWithTwelve);
   };
 
   const handleChange = (e) => {
@@ -82,10 +73,8 @@ function FoodsProvider({ children }) {
     fetchNationalities,
     nationalities,
     handleChange,
-    nationalitiesCards,
     ...filter,
     filterByNationality,
-    FoodsApiWithTwelve,
     fetchByIngredient,
   };
   return (
