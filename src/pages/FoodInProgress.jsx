@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import copy from 'clipboard-copy';
 import InProgressCard from '../components/InProgressCard';
@@ -7,10 +7,20 @@ import notFavorited from '../images/whiteHeartIcon.svg';
 import favorited from '../images/blackHeartIcon.svg';
 import InProgressContext from '../context/InProgressContext/InProgressContext';
 
+const FAVORITE_KEY = 'favoriteRecipes';
+
 export default function FoodInProgress() {
   const [copied, setCopied] = useState(false);
-  const { scribbled, handleFavorite, isFavorite } = useContext(InProgressContext);
+  const { scribbled, handleFavorite,
+    isFavorite, setIsFavorite } = useContext(InProgressContext);
   const { id } = useParams();
+
+  useEffect(() => {
+    const favoriteStorage = JSON.parse(localStorage.getItem(FAVORITE_KEY)) || [];
+    if (favoriteStorage.some((fav) => fav.id === id)) {
+      return setIsFavorite(true);
+    } setIsFavorite(false);
+  }, []);
 
   const shareRecipe = () => {
     copy(`http://localhost:3000/foods/${id}`);
@@ -41,6 +51,7 @@ export default function FoodInProgress() {
         data-testid="favorite-btn"
         type="button"
         onClick={ handleFavorite }
+        src={ isFavorite ? favorited : notFavorited }
       >
         <img src={ isFavorite ? favorited : notFavorited } alt="Ícone de favoritar" />
       </button>

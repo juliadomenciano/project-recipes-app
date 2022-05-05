@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import InProgressContext from './InProgressContext';
 
 const FAVORITE_KEY = 'favoriteRecipes';
+const ALCOHOLIC_KEY = 'strAlcoholic';
 
 export default function InProgressProvider({ children }) {
   const [recipeData, setRecipeData] = useState({});
@@ -15,12 +16,12 @@ export default function InProgressProvider({ children }) {
     const favoriteStorage = JSON.parse(localStorage.getItem(FAVORITE_KEY)) || [];
     const updateFavorite = {
       id: recipeData[id],
-      // type: '',
-      // nationality: '',
-      // category: '',
-      // alcoholicOrNot: false,
-      // name: '',
-      // image: '',
+      type: id !== 'idMeal' ? 'drink' : 'food',
+      nationality: id !== 'idMeal' ? '' : recipeData.strArea,
+      category: recipeData.strCategory,
+      alcoholicOrNot: recipeData[ALCOHOLIC_KEY] || '',
+      name: id !== 'idMeal' ? recipeData.strDrink : recipeData.strMeal,
+      image: id !== 'idMeal' ? recipeData.strDrinkThumb : recipeData.strMealThumb,
     };
     if (favoriteStorage.some((fav) => fav.id === recipeData[id])) {
       const filteredFavorites = favoriteStorage

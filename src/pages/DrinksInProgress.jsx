@@ -1,19 +1,32 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import copy from 'clipboard-copy';
 import InProgressCard from '../components/InProgressCard';
 import shareIcon from '../images/shareIcon.svg';
+import notFavorited from '../images/whiteHeartIcon.svg';
+import favorited from '../images/blackHeartIcon.svg';
 import InProgressContext from '../context/InProgressContext/InProgressContext';
+
+const FAVORITE_KEY = 'favoriteRecipes';
 
 export default function DrinksInProgress() {
   const [copied, setCopied] = useState(false);
-  const { scribbled } = useContext(InProgressContext);
   const { id } = useParams();
+  const { scribbled, handleFavorite,
+    isFavorite, setIsFavorite } = useContext(InProgressContext);
 
   const shareRecipe = async () => {
     copy(`http://localhost:3000/drinks/${id}`);
     setCopied(true);
   };
+
+  useEffect(() => {
+    const favoriteStorage = JSON.parse(localStorage.getItem(FAVORITE_KEY)) || [];
+    if (favoriteStorage.some((fav) => fav.id === id)) {
+      // console.log(recipeData.idMeal);
+      return setIsFavorite(true);
+    } setIsFavorite(false);
+  }, []);
 
   const enableFinishBtn = () => {
     const checkboxes = Array.from(document.querySelectorAll('input'));
@@ -38,9 +51,10 @@ export default function DrinksInProgress() {
       <button
         data-testid="favorite-btn"
         type="button"
-        onClick={ () => { } }
+        onClick={ handleFavorite }
+        src={ isFavorite ? favorited : notFavorited }
       >
-        Add to Favorites
+        <img src={ isFavorite ? favorited : notFavorited } alt="Ícone de favoritar" />
       </button>
       <Link to="/done-recipes">
         <button
