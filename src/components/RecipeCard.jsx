@@ -1,12 +1,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import CSS from '../modules/RecipeCard.module.css';
 
 class RecipeCard extends React.Component {
   render() {
-    const { name, image, index, testid } = this.props;
+    const { name, image, index, id } = this.props;
     return (
-      <section data-testid={ `${index}-recipe-card` }>
+      <Link to={ `/foods/${id}` }>
+        <section data-testid={ `${index}-recipe-card` }>
         <div
           className={ CSS.cards }
           data-testid={ testid ? testid[0] : `data-testid=${index}-recipe-card` }
@@ -24,6 +26,7 @@ class RecipeCard extends React.Component {
           </div>
         </div>
       </section>
+      </Link>
     );
   }
 }
@@ -33,6 +36,10 @@ RecipeCard.propTypes = {
   image: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
   testid: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+  id: PropTypes.string,
+};
+RecipeCard.defaultProps = {
+  id: '',
 };
 
 export default RecipeCard;

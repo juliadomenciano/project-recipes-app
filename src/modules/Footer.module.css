@@ -1,0 +1,10 @@
+.conteiner_footer {
+  background-color: black;
+  bottom: 0;
+  display: flex;
+  height: 60px;
+  justify-content: space-around;
+  margin: 0 auto;
+  position: fixed;
+  width: 100%;
+}

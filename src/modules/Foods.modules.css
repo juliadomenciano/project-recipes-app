@@ -1,8 +1,8 @@
 section .conteiner_cards_food {
-    background-color: blue;
-    margin-top: 200px;
-    width: 20vw;
-    font-size: 40px;
+  background-color: blue;
+  font-size: 40px;
+  margin-top: 200px;
+  width: 20vw;
 }
 
 .conteiner_foods {

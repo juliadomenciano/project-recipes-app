@@ -22,7 +22,7 @@ describe('Testa se o header possui os componentes corretos', () => {
     expect(searchBtn).toBeDefined();
   });
 
-  test.only('Em rotas distintas, verifica se os elementos aparecem como esperado', () => {
+  test('Em rotas distintas, verifica se os elementos aparecem como esperado', () => {
     const { history } = renderWithRouter(<App />);
     history.push('/foods/52771');
     const profileBtn = screen.getByTestId('profile-top-btn');

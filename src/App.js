@@ -1,22 +1,24 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
-import Login from './pages/Login';
-import Foods from './pages/Foods';
-import Profile from './pages/Profile';
-import Drinks from './pages/Drinks';
-import Explore from './pages/Explore';
-import ExploreFoods from './pages/ExploreFoods';
-import ExploreDrinks from './pages/ExploreDrinks';
-import ExploreFoodsIngredients from './pages/ExploreFoodsIngredients';
-import ExploreDrinksIngredients from './pages/ExploreDrinksIngredients';
-import ExploreFoodsNationalities from './pages/ExploreFoodsNationalities';
 import DoneRecipes from './pages/DoneRecipes';
-import FavoriteRecipes from './pages/FavoriteRecipes';
-import FoodInProgress from './pages/FoodInProgress';
-import DrinksInProgress from './pages/DrinksInProgress';
-import FoodDetails from './pages/FoodDetails';
+import Drinks from './pages/Drinks';
 import DrinksDetails from './pages/DrinksDetails';
+import DrinksInProgress from './pages/DrinksInProgress';
+import Explore from './pages/Explore';
+import ExploreDrinks from './pages/ExploreDrinks';
+import ExploreDrinksIngredients from './pages/ExploreDrinksIngredients';
+import ExploreFoods from './pages/ExploreFoods';
+import ExploreFoodsIngredients from './pages/ExploreFoodsIngredients';
+import ExploreFoodsNationalities from './pages/ExploreFoodsNationalities';
+import FavoriteRecipes from './pages/FavoriteRecipes';
+import FoodDetails from './pages/FoodDetails';
+import InProgressProvider from './context/InProgressContext/InProgressProvider';
+import FoodInProgress from './pages/FoodInProgress';
+import Foods from './pages/Foods';
+import Login from './pages/Login';
+import NotFound from './pages/NotFound';
+import Profile from './pages/Profile';
 
 function App() {
   return (
@@ -48,12 +50,16 @@ function App() {
       <Route
         exact
         path="/foods/:id/in-progress"
-        component={ FoodInProgress }
+        render={
+          () => <InProgressProvider><FoodInProgress /></InProgressProvider>
+        }
       />
       <Route
         exact
         path="/drinks/:id/in-progress"
-        component={ DrinksInProgress }
+        render={
+          () => <InProgressProvider><DrinksInProgress /></InProgressProvider>
+        }
       />
       <Route
         exact
@@ -64,6 +70,11 @@ function App() {
         exact
         path="/drinks/:id"
         component={ DrinksDetails }
+      />
+      <Route
+        exact
+        path="/explore/drinks/nationalities"
+        component={ NotFound }
       />
     </Switch>
   );

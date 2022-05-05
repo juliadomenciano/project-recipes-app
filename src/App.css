@@ -1,5 +1,9 @@
 * {
+<<<<<<< HEAD
 background-color: rgb(102, 101, 101);
+=======
+  background-color: rgb(102, 101, 101);
+>>>>>>> e0fa09a1696e8b065e3d94da0f44f9b41fee0ae0
 }
 
 .selected {
@@ -14,13 +18,4 @@ header {
   align-items: center;
   display: flex;
   justify-content: space-between;
-}
-
-footer {
-  bottom: 0;
-  display: flex;
-  justify-content: space-around;
-  margin: 0 auto;
-  position: fixed;
-  width: 100%;
 }
