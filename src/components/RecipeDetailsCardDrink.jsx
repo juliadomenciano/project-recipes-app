@@ -68,6 +68,8 @@ function RecipeDetailsCardDrink(props) {
                 name={ meal.strMeal }
                 image={ meal.strMealThumb }
                 index={ index }
+                foodOrDrink={ foodOrDrink }
+                id={ meal.idMeal }
               />
             ))))
         }

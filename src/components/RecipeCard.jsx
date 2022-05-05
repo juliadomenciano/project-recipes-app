@@ -5,28 +5,51 @@ import CSS from '../modules/RecipeCard.module.css';
 
 class RecipeCard extends React.Component {
   render() {
-    const { name, image, index, id, testid } = this.props;
+    const { name, image, index, id, testid, foodOrDrink } = this.props;
     return (
-      <Link to={ `/foods/${id}` }>
-        <section data-testid={ `${index}-recipe-card` }>
-          <div
-            className={ CSS.cards }
-            data-testid={ testid ? testid[0] : `data-testid=${index}-recipe-card` }
-          >
-            <div data-testid={ testid ? testid[1] : '' }>
-              <h1 data-testid={ `${index}-card-name` }>
-                { name }
-              </h1>
-              <img
-                className={ CSS.image }
-                src={ image }
-                alt={ `imagem da receita ${name}` }
-                data-testid={ `${index}-card-img` }
-              />
+      foodOrDrink === 'food' ? (
+        <Link to={ `/drinks/${id}` }>
+          <section data-testid={ `${index}-recipe-card` }>
+            <div
+              className={ CSS.cards }
+              data-testid={ testid ? testid[0] : `data-testid=${index}-recipe-card` }
+            >
+              <div data-testid={ testid ? testid[1] : '' }>
+                <h1 data-testid={ `${index}-card-name` }>
+                  { name }
+                </h1>
+                <img
+                  className={ CSS.image }
+                  src={ image }
+                  alt={ `imagem da receita ${name}` }
+                  data-testid={ `${index}-card-img` }
+                />
+              </div>
             </div>
-          </div>
-        </section>
-      </Link>
+          </section>
+        </Link>
+      ) : (
+        <Link to={ `/foods/${id}` }>
+          <section data-testid={ `${index}-recipe-card` }>
+            <div
+              className={ CSS.cards }
+              data-testid={ testid ? testid[0] : `data-testid=${index}-recipe-card` }
+            >
+              <div data-testid={ testid ? testid[1] : '' }>
+                <h1 data-testid={ `${index}-card-name` }>
+                  { name }
+                </h1>
+                <img
+                  className={ CSS.image }
+                  src={ image }
+                  alt={ `imagem da receita ${name}` }
+                  data-testid={ `${index}-card-img` }
+                />
+              </div>
+            </div>
+          </section>
+        </Link>
+      )
     );
   }
 }
@@ -37,6 +60,7 @@ RecipeCard.propTypes = {
   index: PropTypes.number.isRequired,
   testid: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
   id: PropTypes.string,
+  foodOrDrink: PropTypes.string.isRequired,
 };
 RecipeCard.defaultProps = {
   id: '',
