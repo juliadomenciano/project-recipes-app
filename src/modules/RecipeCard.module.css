@@ -1,6 +1,5 @@
 .cards {
   align-items: center;
-  /*   background-color: rgb(88, 88, 95); */
   display: flex;
   margin: 15px;
   width: 300px;
@@ -12,8 +11,6 @@
 
 .mainContainer {
   align-items: center;
-
-  /*   background-color: red; */
   display: flex;
   flex-flow: wrap;
   flex-direction: column;

@@ -23,7 +23,6 @@ export default function DrinksInProgress() {
   useEffect(() => {
     const favoriteStorage = JSON.parse(localStorage.getItem(FAVORITE_KEY)) || [];
     if (favoriteStorage.some((fav) => fav.id === id)) {
-      // console.log(recipeData.idMeal);
       return setIsFavorite(true);
     } setIsFavorite(false);
   }, [id, setIsFavorite]);
