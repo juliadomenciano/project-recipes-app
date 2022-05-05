@@ -6,22 +6,24 @@ class RecipeCard extends React.Component {
   render() {
     const { name, image, index, testid } = this.props;
     return (
-      <div
-        className={ CSS.cards }
-        data-testid={ testid ? testid[0] : '' }
-      >
-        <h1 data-testid={ testid ? testid[1] : '' }>
-          { name }
-        </h1>
-        <div>
-          <img
-            className={ CSS.image }
-            src={ image }
-            alt={ `imagem da receita ${name}` }
-            data-testid={ `${index}-card-img` }
-          />
+      <section data-testid={ `${index}-recipe-card` }>
+        <div
+          className={ CSS.cards }
+          data-testid={ testid ? testid[0] : `data-testid=${index}-recipe-card` }
+        >
+          <div data-testid={ testid ? testid[1] : '' }>
+            <h1 data-testid={ `${index}-card-name` }>
+              { name }
+            </h1>
+            <img
+              className={ CSS.image }
+              src={ image }
+              alt={ `imagem da receita ${name}` }
+              data-testid={ `${index}-card-img` }
+            />
+          </div>
         </div>
-      </div>
+      </section>
     );
   }
 }
