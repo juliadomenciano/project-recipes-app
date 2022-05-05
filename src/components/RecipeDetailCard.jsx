@@ -1,37 +1,41 @@
 import PropTypes, { object } from 'prop-types';
 import React, { useContext, useEffect, useState } from 'react';
+import { withRouter } from 'react-router-dom';
 import DrinksContext from '../context/DrinksContext/DrinksContext';
 import FoodsContext from '../context/FoodsContext/FoodsContext';
-import { handleStartRecipe } from '../helpers/RecipeDetailHelpers';
 import CSS from '../modules/RecipeCard.module.css';
+import ContinueRecipeButton from './ContinueRecipeButton';
+import FavoriteAndShareButton from './FavoriteAndShareButton';
 import IngredientsList from './IngredientsList';
 import RecipeCard from './RecipeCard';
+import StartRecipeButton from './StartRecipeButton';
 
 function RecipeDetailCard(props) {
   const { foodOrDrink, data } = props;
   const { foodsResults } = useContext(FoodsContext);
   const { drinksResults } = useContext(DrinksContext);
   const youtubeVideoId = data.strYoutube.replace('https://www.youtube.com/watch?v=', '');
-  const results = foodsResults ? foodsResults.meals : foodsResults;
-  const resultsDrinks = drinksResults ? drinksResults.drinks : drinksResults;
+  const results = foodsResults && foodsResults.meals;
+  const resultsDrinks = drinksResults && drinksResults.drinks;
   const image = data.strMealThumb;
-  const title = data.strMeal;
   const category = data.strCategory;
   const instructions = data.strInstructions;
+  const title = data.strMeal;
   const magicNumber = 6;
   const onlyKeys = Object.keys(data);
   const keysIngredientFood = onlyKeys.filter((key) => (
     key.match('strIngredient') && data[key] !== ''
   ));
   const ingredients = keysIngredientFood.map((ingredient) => data[ingredient]);
+  const { history } = props;
   const [inProgress, setInProgress] = useState();
+  const [linkCopied, setLinkCopied] = useState();
 
   useEffect(() => {
     function isInProgress() {
       const receitas = JSON.parse(localStorage.getItem('inProgressRecipes'));
       const keys = receitas ? Object.keys(receitas.meals) : '';
-      const result = keys ? keys.find((key) => key === data.idMeal) : false;
-      console.log(result);
+      const result = keys && keys.find((key) => key === data.idMeal);
       return result ? setInProgress(true) : setInProgress(false);
     }
     isInProgress();
@@ -47,22 +51,14 @@ function RecipeDetailCard(props) {
           className={ CSS.img_detail_page }
         />
       </div>
-      <h1 data-testid="recipe-title">{title}</h1>
-      <button
-        type="button"
-        data-testid="share-btn"
-        onClick={ () => console.log('') }
-      >
-        compartilhar
-      </button>
-      <button
-        type="button"
-        data-testid="favorite-btn"
-        onClick={ () => console.log('') }
-      >
-        favoritar
-      </button>
       <p data-testid="recipe-category">{category}</p>
+      <h1 data-testid="recipe-title">{title}</h1>
+      <FavoriteAndShareButton
+        data={ data }
+        setLinkCopied={ setLinkCopied }
+        foodOrDrink={ foodOrDrink }
+      />
+      {linkCopied && <p>Link copied!</p>}
       <IngredientsList foodOrDrink={ foodOrDrink } data={ data } />
       <p data-testid="instructions">{instructions}</p>
       <iframe
@@ -89,25 +85,20 @@ function RecipeDetailCard(props) {
         }
       </section>
       {inProgress ? (
-        <button
-          className={ CSS.start_recipe }
-          type="button"
-          data-testid="start-recipe-btn"
-          onClick={ () => console.log('tAAAAAAAAAAAAAAAAAAAAa funfando') }
-        >
-          Continue Recipe
-        </button>
+        <ContinueRecipeButton
+          foodOrDrink={ foodOrDrink }
+          data={ data }
+          history={ history }
+        />
       ) : (
-        <button
-          className={ CSS.start_recipe }
-          type="button"
-          data-testid="start-recipe-btn"
-          onClick={ () => [handleStartRecipe(foodOrDrink,
-            data.idMeal, ingredients),
-          setInProgress(true)] }
-        >
-          Iniciar receita
-        </button>)}
+        <StartRecipeButton
+          foodOrDrink={ foodOrDrink }
+          data={ data }
+          ingredients={ ingredients }
+          history={ history }
+          setInProgress={ setInProgress }
+        />
+      )}
     </div>
   );
 }
@@ -117,4 +108,4 @@ RecipeDetailCard.propTypes = {
   foodOrDrink: PropTypes.string,
 }.isRequired;
 
-export default RecipeDetailCard;
+export default withRouter(RecipeDetailCard);

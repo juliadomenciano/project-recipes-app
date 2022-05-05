@@ -4,30 +4,33 @@ import React from 'react';
 class IngredientsList extends React.Component {
   render() {
     const { data, foodOrDrink } = this.props;
-    const onlyKeys = Object.keys(data);
-    const keysIngredientDrink = onlyKeys.filter((key) => (
+    const onlyKeys = data && Object.keys(data);
+    const keysIngredientDrink = onlyKeys && onlyKeys.filter((key) => (
       key.match('strIngredient') && data[key] !== null
     ));
-    const keysIngredientFood = onlyKeys.filter((key) => (
+    const keysIngredientFood = onlyKeys && onlyKeys.filter((key) => (
       key.match('strIngredient') && data[key] !== ''
     ));
-    const quant = onlyKeys.filter((key) => (
+    const quant = onlyKeys && onlyKeys.filter((key) => (
       key.match('strMeasure') && data[key] !== null
     ));
     return (
-      <section className="carousel" aria-label="Gallery">
-        <ol>
+      <section className="ingredientes">
+        <h2>Ingredients</h2>
+        <ul>
           { foodOrDrink === 'food' ? (keysIngredientFood.map((key, index) => (
-            <div key={ index } data-testid={ `${index}-ingredient-name-and-measure` }>
-              <li>{data[key]}</li>
-              <li>{data[quant[index]]}</li>
-            </div>
+            <li key={ index } data-testid={ `${index}-ingredient-name-and-measure` }>
+              <span className="ingredient">{data[key]}</span>
+              <span className="divider"> </span>
+              <span className="amount">{data[quant[index]]}</span>
+            </li>
           ))) : (keysIngredientDrink.map((key, index1) => (
-            <div key={ index1 } data-testid={ `${index1}-ingredient-name-and-measure` }>
-              <li>{data[key]}</li>
-              <li>{data[quant[index1]]}</li>
-            </div>)))}
-        </ol>
+            <li key={ index1 } data-testid={ `${index1}-ingredient-name-and-measure` }>
+              <span className="ingredient">{data[key]}</span>
+              <span className="divider"> </span>
+              <span className="amount">{data[quant[index1]]}</span>
+            </li>)))}
+        </ul>
       </section>
     );
   }
