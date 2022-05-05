@@ -28,7 +28,7 @@ export function handleRecipeDone(foodOrDrink, data) {
   localStorage.setItem('doneRecipes', JSON.stringify(newStorage));
 }
 
-export function handleStartRecipe(foodOrDrink, id, ingredientList) {
+export function handleStartRecipe(foodOrDrink, id, ingredientList, history) {
   const localStorageObj = JSON.parse(localStorage.getItem('inProgressRecipes')) ? (
     JSON.parse(localStorage.getItem('inProgressRecipes'))) : '';
   const { cocktails, meals } = localStorageObj;
@@ -49,4 +49,11 @@ export function handleStartRecipe(foodOrDrink, id, ingredientList) {
     },
   };
   localStorage.setItem('inProgressRecipes', JSON.stringify(currentRecipe));
+  return foodOrDrink === 'food' ? history.push(`/foods/${id}/in-progress`) : (
+    history.push(`/drinks/${id}/in-progress`));
+}
+
+export function handleContinueRecipe(foodOrDrink, id, history) {
+  return foodOrDrink === 'food' ? history.push(`/foods/${id}/in-progress`) : (
+    history.push(`/drinks/${id}/in-progress`));
 }

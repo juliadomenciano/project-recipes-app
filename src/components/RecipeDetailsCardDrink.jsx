@@ -1,10 +1,13 @@
 import PropTypes, { object } from 'prop-types';
 import React, { useContext, useEffect, useState } from 'react';
+import { withRouter } from 'react-router-dom';
 import FoodsContext from '../context/FoodsContext/FoodsContext';
-import { handleStartRecipe } from '../helpers/RecipeDetailHelpers';
+import { handleContinueRecipe } from '../helpers/RecipeDetailHelpers';
 import CSS from '../modules/RecipeCard.module.css';
+import FavoriteAndShareButton from './FavoriteAndShareButton';
 import IngredientsList from './IngredientsList';
 import RecipeCard from './RecipeCard';
+import StartRecipeButton from './StartRecipeButton';
 
 function RecipeDetailsCardDrink(props) {
   const { foodOrDrink, data } = props;
@@ -17,11 +20,12 @@ function RecipeDetailsCardDrink(props) {
   const title = data.strDrink;
   const category = data.strAlcoholic;
   const onlyKeys = Object.keys(data);
+  const { history } = props;
+  const [linkCopied, setLinkCopied] = useState();
   const keysIngredientFood = onlyKeys.filter((key) => (
     key.match('strIngredient') && data[key] !== ''
   ));
   const ingredients = keysIngredientFood.map((ingredient) => data[ingredient]);
-
   useEffect(() => {
     function isInProgress() {
       const receitas = JSON.parse(localStorage.getItem('inProgressRecipes'));
@@ -43,22 +47,14 @@ function RecipeDetailsCardDrink(props) {
           className={ CSS.img_detail_page }
         />
       </div>
-      <h1 data-testid="recipe-title">{title}</h1>
-      <button
-        type="button"
-        data-testid="share-btn"
-        onClick={ () => console.log('') }
-      >
-        compartilhar
-      </button>
-      <button
-        type="button"
-        data-testid="favorite-btn"
-        onClick={ () => console.log('') }
-      >
-        favoritar
-      </button>
       <p data-testid="recipe-category">{category}</p>
+      <h1 data-testid="recipe-title">{title}</h1>
+      <FavoriteAndShareButton
+        data={ data }
+        setLinkCopied={ setLinkCopied }
+        foodOrDrink={ foodOrDrink }
+      />
+      {linkCopied ? <p>Link copied!</p> : ''}
       <IngredientsList foodOrDrink={ foodOrDrink } data={ data } />
       <p data-testid="instructions">{instructions}</p>
       <section className={ CSS.carousel }>
@@ -81,21 +77,20 @@ function RecipeDetailsCardDrink(props) {
           className={ CSS.start_recipe }
           type="button"
           data-testid="start-recipe-btn"
-          onClick={ () => console.log('tAAAAAAAAAAAAAAAAAAAAa funfando') }
+          onClick={ () => handleContinueRecipe(foodOrDrink,
+            data.idDrink, history) }
         >
           Continue Recipe
         </button>
       ) : (
-        <button
-          className={ CSS.start_recipe }
-          type="button"
-          data-testid="start-recipe-btn"
-          onClick={ () => [handleStartRecipe(foodOrDrink,
-            data.idDrink, ingredients),
-          setInProgress(true)] }
-        >
-          Iniciar receita
-        </button>)}
+        <StartRecipeButton
+          foodOrDrink={ foodOrDrink }
+          data={ data }
+          ingredients={ ingredients }
+          history={ history }
+          setInProgress={ setInProgress }
+        />
+      )}
     </div>
   );
 }
@@ -105,4 +100,4 @@ RecipeDetailsCardDrink.propTypes = {
   foodOrDrink: PropTypes.string,
 }.isRequired;
 
-export default RecipeDetailsCardDrink;
+export default withRouter(RecipeDetailsCardDrink);
