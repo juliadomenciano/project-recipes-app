@@ -1,17 +1,24 @@
-import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useState, useContext } from 'react';
+import { useParams, Link } from 'react-router-dom';
 import copy from 'clipboard-copy';
 import InProgressCard from '../components/InProgressCard';
 import shareIcon from '../images/shareIcon.svg';
+import InProgressContext from '../context/InProgressContext/InProgressContext';
 
 export default function DrinksInProgress() {
   const [copied, setCopied] = useState(false);
+  const { scribbled } = useContext(InProgressContext);
   const { id } = useParams();
 
   const shareRecipe = async () => {
-    console.log(id);
     copy(`http://localhost:3000/drinks/${id}`);
     setCopied(true);
+  };
+
+  const enableFinishBtn = () => {
+    const checkboxes = Array.from(document.querySelectorAll('input'));
+    const disableBtn = checkboxes.length > scribbled.length;
+    return disableBtn;
   };
 
   return (
@@ -35,13 +42,16 @@ export default function DrinksInProgress() {
       >
         Add to Favorites
       </button>
-      <button
-        data-testid="finish-recipe-btn"
-        type="button"
-        onClick={ () => { } }
-      >
-        Finish Recipe
-      </button>
+      <Link to="/done-recipes">
+        <button
+          data-testid="finish-recipe-btn"
+          type="button"
+          onClick={ () => { } }
+          disabled={ enableFinishBtn() }
+        >
+          Finish Recipe
+        </button>
+      </Link>
     </div>
   );
 }

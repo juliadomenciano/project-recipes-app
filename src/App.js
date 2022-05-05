@@ -17,6 +17,7 @@ import FoodInProgress from './pages/FoodInProgress';
 import DrinksInProgress from './pages/DrinksInProgress';
 import FoodDetails from './pages/FoodDetails';
 import DrinksDetails from './pages/DrinksDetails';
+import InProgressProvider from './context/InProgressContext/InProgressProvider';
 
 function App() {
   return (
@@ -48,12 +49,16 @@ function App() {
       <Route
         exact
         path="/foods/:id/in-progress"
-        component={ FoodInProgress }
+        render={
+          () => <InProgressProvider><FoodInProgress /></InProgressProvider>
+        }
       />
       <Route
         exact
         path="/drinks/:id/in-progress"
-        component={ DrinksInProgress }
+        render={
+          () => <InProgressProvider><DrinksInProgress /></InProgressProvider>
+        }
       />
       <Route
         exact

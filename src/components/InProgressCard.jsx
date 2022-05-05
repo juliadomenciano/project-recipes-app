@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { foodDetails, drinkDetails } from '../services/detailsRequestApi';
 import inProgressHelper from '../helpers/inProgressHelper';
+import InProgressContext from '../context/InProgressContext/InProgressContext';
 
 const IN_PROGRESS_KEY = 'inProgressRecipes';
 
 export default function InProgressCard({ type }) {
-  const [recipeData, setRecipeData] = useState({});
-  const [scribbled, setScribbled] = useState([]);
+  const { scribbled, setScribbled,
+    recipeData, setRecipeData } = useContext(InProgressContext);
   const progressStorage = JSON.parse(localStorage.getItem(IN_PROGRESS_KEY));
   const path = useLocation().pathname;
   const pathId = path.replace(`/${type}/`, '').replace('/in-progress', '');
