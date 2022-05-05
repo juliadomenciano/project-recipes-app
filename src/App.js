@@ -13,6 +13,7 @@ import ExploreFoodsIngredients from './pages/ExploreFoodsIngredients';
 import ExploreFoodsNationalities from './pages/ExploreFoodsNationalities';
 import FavoriteRecipes from './pages/FavoriteRecipes';
 import FoodDetails from './pages/FoodDetails';
+import InProgressProvider from './context/InProgressContext/InProgressProvider';
 import FoodInProgress from './pages/FoodInProgress';
 import Foods from './pages/Foods';
 import Login from './pages/Login';
@@ -49,12 +50,16 @@ function App() {
       <Route
         exact
         path="/foods/:id/in-progress"
-        component={ FoodInProgress }
+        render={
+          () => <InProgressProvider><FoodInProgress /></InProgressProvider>
+        }
       />
       <Route
         exact
         path="/drinks/:id/in-progress"
-        component={ DrinksInProgress }
+        render={
+          () => <InProgressProvider><DrinksInProgress /></InProgressProvider>
+        }
       />
       <Route
         exact
