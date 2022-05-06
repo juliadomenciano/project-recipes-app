@@ -1,6 +1,6 @@
 import copy from 'clipboard-copy';
 import React, { useContext, useEffect, useState } from 'react';
-import { Link, useParams, useLocation } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import InProgressCard from '../components/InProgressCard';
 import InProgressContext from '../context/InProgressContext/InProgressContext';
 import favorited from '../images/blackHeartIcon.svg';
@@ -13,11 +13,8 @@ const FAVORITE_KEY = 'favoriteRecipes';
 export default function FoodInProgress() {
   const [copied, setCopied] = useState(false);
   const { scribbled, handleFavorite,
-    isFavorite, setIsFavorite } = useContext(InProgressContext);
+    isFavorite, setIsFavorite, recipeData } = useContext(InProgressContext);
   const { id } = useParams();
-  const path = useLocation().pathname;
-  const removeInProgress = path.replace('/in-progress', '');
-  const foodId = removeInProgress.replace('/foods/', '');
 
   useEffect(() => {
     const favoriteStorage = JSON.parse(localStorage.getItem(FAVORITE_KEY)) || [];
@@ -64,7 +61,7 @@ export default function FoodInProgress() {
           data-testid="finish-recipe-btn"
           type="button"
           disabled={ enableFinishBtn() }
-          onClick={ () => handleRecipeDone('food', foodId) }
+          onClick={ () => handleRecipeDone('food', recipeData) }
         >
           Finish Recipe
         </button>

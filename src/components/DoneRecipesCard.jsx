@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import copy from 'clipboard-copy';
 import shareIcon from '../images/shareIcon.svg';
@@ -15,11 +16,14 @@ export default function DoneRecipesCard(props) {
 
   return (
     <section key={ index }>
-      <img
-        data-testid={ `${index}-horizontal-image` }
-        src={ image }
-        alt="Imagem da receita"
-      />
+      <Link to={ `/${foodOrDrink}s/${id}` }>
+        <img
+          data-testid={ `${index}-horizontal-image` }
+          src={ image }
+          alt="Imagem da receita"
+        />
+      </Link>
+
       <div>
         {
           foodOrDrink === 'food'
@@ -34,9 +38,11 @@ export default function DoneRecipesCard(props) {
               </p>
             )
         }
-        <h2 data-testid={ `${index}-horizontal-name` }>
-          {recipeName}
-        </h2>
+        <Link to={ `/${foodOrDrink}s/${id}` }>
+          <h2 data-testid={ `${index}-horizontal-name` }>
+            {recipeName}
+          </h2>
+        </Link>
         <p data-testid={ `${index}-horizontal-done-date` }>
           { doneDate }
         </p>
