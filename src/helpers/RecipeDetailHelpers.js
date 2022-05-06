@@ -1,30 +1,39 @@
-export async function handleRecipeDone(foodOrDrink, recipeDate) {
+import { foodDetails, drinkDetails } from '../services/detailsRequestApi';
+
+export async function handleRecipeDone(foodOrDrink, id) {
   let today = new Date();
   const dd = String(today.getDate()).padStart(2, '0');
-  const mm = String(today.getMonth() + 1).padStart(2, '0');
+  const mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
   const yyyy = today.getFullYear();
 
   today = `${mm}/${dd}/${yyyy}`;
+
+  let data = {};
+  if (foodOrDrink === 'food') {
+    data = await foodDetails(id);
+  } else {
+    data = await drinkDetails(id);
+  }
   const currentRecipe = foodOrDrink === 'food' ? {
-    id: recipeDate.idMeal,
+    id: data.meals[0].idMeal,
     type: 'comida',
-    nationality: recipeDate.strArea ? recipeDate.strArea : '',
-    category: recipeDate.strCategory,
+    nationality: data.meals[0].strArea ? data.meals[0].strArea : '',
+    category: data.meals[0].strCategory,
     alcoholicOrNot: '',
-    name: recipeDate.strMeal,
-    image: recipeDate.strMealThumb,
+    name: data.meals[0].strMeal,
+    image: data.meals[0].strMealThumb,
     doneDate: today,
-    tags: [recipeDate.strTags],
+    tags: [data.meals[0].strTags],
   } : {
-    id: recipeDate.idDrink,
+    id: data.drinks[0].idDrink,
     type: 'bebida',
-    nationality: recipeDate.strArea ? recipeDate.strArea : '',
-    category: recipeDate.strCategory,
-    alcoholicOrNot: recipeDate.strAlcoholic,
-    name: recipeDate.strDrink,
-    image: recipeDate.strDrinkThumb,
+    nationality: data.drinks[0].strArea ? data.drinks[0].strArea : '',
+    category: data.drinks[0].strCategory,
+    alcoholicOrNot: data.drinks[0].strAlcoholic,
+    name: data.drinks[0].strDrink,
+    image: data.drinks[0].strDrinkThumb,
     doneDate: today,
-    tags: recipeDate.strTags ? recipeDate.strTags : [],
+    tags: data.drinks[0].strTags ? data.drinks[0].strTags : [],
   };
   const previousRecipes = JSON.parse(localStorage
     .getItem('doneRecipes')) ? JSON.parse(

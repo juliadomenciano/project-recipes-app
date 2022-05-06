@@ -11,39 +11,43 @@ export default function DoneRecipes() {
     setDoneRecipes(getDoneRecipes);
   }, []);
 
-  const filterRecipes = () => {
-    if (filter !== '') {
+  const fliterRecipes = (type) => {
+    if (type !== '') {
       const filteredRecipes = doneRecipes.filter((item) => item.type === type);
-      return filteredRecipes;
+      setFilter(filteredRecipes);
+      console.log(filter);
+    } else {
+      setFilter(doneRecipes);
+      console.log(filter);
     }
-    return doneRecipes;
   };
+
   return (
     <section>
       <Header title="Done Recipes" />
       <button
         data-testid="filter-by-all-btn"
         type="button"
-        onClick={ () => setFilter('') }
+        onClick={ fliterRecipes('') }
       >
         All
       </button>
       <button
         data-testid="filter-by-food-btn"
         type="button"
-        onClick={ () => setFilter('food') }
+        onClick={ fliterRecipes('drink') }
       >
         by Food
       </button>
       <button
         data-testid="filter-by-drink-btn"
         type="button"
-        onClick={ () => setFilter('drink') }
+        onClick={ fliterRecipes('food') }
       >
         Drinks
       </button>
       { doneRecipes && (
-        filterRecipes().map((recipe, index) => (
+        filter.map((recipe, index) => (
           recipe.type === 'food' ? (
             <DoneRecipesCard
               key={ index }
