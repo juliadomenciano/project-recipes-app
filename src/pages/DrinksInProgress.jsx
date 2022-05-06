@@ -1,11 +1,11 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
 import copy from 'clipboard-copy';
+import React, { useContext, useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import InProgressCard from '../components/InProgressCard';
+import InProgressContext from '../context/InProgressContext/InProgressContext';
+import favorited from '../images/blackHeartIcon.svg';
 import shareIcon from '../images/shareIcon.svg';
 import notFavorited from '../images/whiteHeartIcon.svg';
-import favorited from '../images/blackHeartIcon.svg';
-import InProgressContext from '../context/InProgressContext/InProgressContext';
 
 const FAVORITE_KEY = 'favoriteRecipes';
 
@@ -23,10 +23,9 @@ export default function DrinksInProgress() {
   useEffect(() => {
     const favoriteStorage = JSON.parse(localStorage.getItem(FAVORITE_KEY)) || [];
     if (favoriteStorage.some((fav) => fav.id === id)) {
-      // console.log(recipeData.idMeal);
       return setIsFavorite(true);
     } setIsFavorite(false);
-  }, []);
+  }, [id, setIsFavorite]);
 
   const enableFinishBtn = () => {
     const checkboxes = Array.from(document.querySelectorAll('input'));

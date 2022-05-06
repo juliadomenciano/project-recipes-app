@@ -1,9 +1,9 @@
-import React, { useEffect, useContext } from 'react';
-import { useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { foodDetails, drinkDetails } from '../services/detailsRequestApi';
-import inProgressHelper from '../helpers/inProgressHelper';
+import React, { useContext, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import InProgressContext from '../context/InProgressContext/InProgressContext';
+import inProgressHelper from '../helpers/inProgressHelper';
+import { drinkDetails, foodDetails } from '../services/detailsRequestApi';
 
 const IN_PROGRESS_KEY = 'inProgressRecipes';
 
@@ -40,7 +40,7 @@ export default function InProgressCard({ type }) {
         : { [pathId]: [] },
     };
     localStorage.setItem(IN_PROGRESS_KEY, JSON.stringify(saveObject));
-  }, []);
+  }, [pathId, progressStorage, scribbled, section, setRecipeData, type]);
 
   const handleChange = ({ target: { id } }) => {
     const saveObject = (updatedList) => ({

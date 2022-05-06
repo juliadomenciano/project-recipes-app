@@ -1,7 +1,5 @@
 .cards {
   align-items: center;
-
-  /*   background-color: rgb(88, 88, 95); */
   display: flex;
   margin: 15px;
   width: 300px;
@@ -13,8 +11,6 @@
 
 .mainContainer {
   align-items: center;
-
-  /*   background-color: red; */
   display: flex;
   flex-flow: wrap;
   flex-direction: column;
@@ -22,4 +18,46 @@
   position: absolute;
   top: 200px;
   width: 100vw;
+}
+
+.carousel {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+.start_recipe {
+  background: gray;
+  border-radius: 3px;
+  bottom: 0;
+  box-shadow: 4px 4px 4px rgb(51, 51, 51);
+  cursor: pointer;
+  height: 45px;
+  line-height: 45px;
+  position: fixed;
+  right: 30%;
+  text-align: center;
+  width: 180px;
+}
+
+.start_recipe p {
+  color: white;
+
+  /* font-family: Arial; */
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.container_img {
+  height: 200px;
+  width: 100%;
+}
+
+.container_img img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
 }

@@ -8,7 +8,6 @@ function DrinksProvider({ children }) {
   const [drinksResults, setDrinksResults] = useState();
   const [drinksResultsRecover, setDrinksResultsRecover] = useState();
   const [recipeCategories, setRecipeCategories] = useState();
-  const [ingredients, setIngredients] = useState();
 
   async function filterByCategory(category) {
     const response = await
@@ -16,14 +15,6 @@ function DrinksProvider({ children }) {
     const data = await response.json();
     setDrinksResults(data);
   }
-
-  const DrinksIngredients = async () => {
-    const twelve = 12;
-    const request = await fetch('https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list');
-    const data = await request.json();
-    const arrWithTwelve = data.drinks.slice(0, twelve);
-    setIngredients(arrWithTwelve);
-  };
 
   const fetchByDrinkIngredient = async (ingredient) => {
     /*     const twelve = 12; */
@@ -54,8 +45,6 @@ function DrinksProvider({ children }) {
     recipeCategories,
     filterByCategory,
     drinksResultsRecover,
-    DrinksIngredients,
-    ingredients,
     fetchByDrinkIngredient,
   };
   return (

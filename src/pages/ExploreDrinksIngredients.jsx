@@ -1,13 +1,20 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Ingredients from '../components/Ingredients';
-import DrinksContext from '../context/DrinksContext/DrinksContext';
 
 export default function ExploreDrinksIngredients() {
-  const { ingredients, DrinksIngredients } = useContext(DrinksContext);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => { DrinksIngredients(); }, []);
+  const [ingredients, setIngredients] = useState();
+  useEffect(() => {
+    const DrinksIngredients = async () => {
+      const twelve = 12;
+      const request = await fetch('https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list');
+      const data = await request.json();
+      const arrWithTwelve = data.drinks.slice(0, twelve);
+      setIngredients(arrWithTwelve);
+    };
+    DrinksIngredients();
+  }, []);
   return (
     <section>
       <Header title="Explore Ingredients" />

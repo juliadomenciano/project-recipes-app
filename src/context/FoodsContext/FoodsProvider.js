@@ -8,9 +8,7 @@ function FoodsProvider({ children }) {
   const [foodsResults, setFoodsResults] = useState();
   const [foodsResultsRecover, setFoodsResultsRecover] = useState();
   const [recipeCategories, setFoodsCategories] = useState();
-  const [ingredients, setIngredients] = useState();
   const [nationalities, setNationalities] = useState();
-  const [nationalitiesCards, setNationalitiesCards] = useState();
   const [filter, setFilter] = useState({ option: 'all' });
 
   async function filterByCategory(category) {
@@ -19,27 +17,11 @@ function FoodsProvider({ children }) {
     setFoodsResults(data);
   }
 
-  const foodIngredients = async () => {
-    const twelve = 12;
-    const request = await fetch('https://www.themealdb.com/api/json/v1/1/list.php?i=list');
-    const data = await request.json();
-    const arrWithTwelve = data.meals.slice(0, twelve);
-    setIngredients(arrWithTwelve);
-  };
-
   const fetchNationalities = async () => {
     const request = await fetch('https://www.themealdb.com/api/json/v1/1/list.php?a=list');
     const data = await request.json();
     const arr = data.meals;
     setNationalities(arr);
-  };
-
-  const FoodsApiWithTwelve = async (url) => {
-    const twelve = 12;
-    const request = await fetch(url);
-    const data = await request.json();
-    const arrWithTwelve = data.meals.slice(0, twelve);
-    setNationalitiesCards(arrWithTwelve);
   };
 
   const handleChange = (e) => {
@@ -88,15 +70,11 @@ function FoodsProvider({ children }) {
     filterByCategory,
     foodsResultsRecover,
     setFoodsResults,
-    foodIngredients,
-    ingredients,
     fetchNationalities,
     nationalities,
     handleChange,
-    nationalitiesCards,
     ...filter,
     filterByNationality,
-    FoodsApiWithTwelve,
     fetchByIngredient,
   };
   return (

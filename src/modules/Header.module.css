@@ -1,6 +1,5 @@
 .nav_conteiner {
-
-  /*   background-color: #cccccc; */
+  background-color: #cdcdcd;
   display: grid;
   grid-template-columns: 50px 1fr 50px;
   grid-template-rows: 50px;
