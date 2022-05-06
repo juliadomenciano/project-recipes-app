@@ -78,14 +78,16 @@ export default function InProgressCard({ type }) {
                   && ingredients
                     .map((ingredient, index) => (
                       <li key={ index } data-testid={ `${index}-ingredient-step` }>
-                        <input
-                          type="checkbox"
-                          id={ ingredient[1] }
-                          onChange={ handleChange }
-                          checked={ progressStorage[section][pathId]
-                            .includes(ingredient[1]) }
-                        />
-                        { ingredient[1] }
+                        <label htmlFor={ ingredient[1] }>
+                          <input
+                            type="checkbox"
+                            id={ ingredient[1] }
+                            onChange={ handleChange }
+                            checked={ progressStorage[section][pathId]
+                              .includes(ingredient[1]) }
+                          />
+                          { ingredient[1] }
+                        </label>
                       </li>))
               }
             </ol>
