@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Header from '../components/Header';
 import DoneRecipesCard from '../components/DoneRecipesCard';
+import Header from '../components/Header';
 
 export default function DoneRecipes() {
   const [doneRecipes, setDoneRecipes] = useState();
@@ -11,43 +11,39 @@ export default function DoneRecipes() {
     setDoneRecipes(getDoneRecipes);
   }, []);
 
-  const fliterRecipes = (type) => {
-    if (type !== '') {
+  const filterRecipes = () => {
+    if (filter !== '') {
       const filteredRecipes = doneRecipes.filter((item) => item.type === type);
-      setFilter(filteredRecipes);
-      console.log(filter);
-    } else {
-      setFilter(doneRecipes);
-      console.log(filter);
+      return filteredRecipes;
     }
+    return doneRecipes;
   };
-
   return (
     <section>
       <Header title="Done Recipes" />
       <button
         data-testid="filter-by-all-btn"
         type="button"
-        onClick={ fliterRecipes('') }
+        onClick={ () => setFilter('') }
       >
         All
       </button>
       <button
         data-testid="filter-by-food-btn"
         type="button"
-        onClick={ fliterRecipes('drink') }
+        onClick={ () => setFilter('food') }
       >
         by Food
       </button>
       <button
         data-testid="filter-by-drink-btn"
         type="button"
-        onClick={ fliterRecipes('food') }
+        onClick={ () => setFilter('drink') }
       >
         Drinks
       </button>
       { doneRecipes && (
-        filter.map((recipe, index) => (
+        filterRecipes().map((recipe, index) => (
           recipe.type === 'food' ? (
             <DoneRecipesCard
               key={ index }
