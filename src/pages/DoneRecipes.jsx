@@ -38,6 +38,7 @@ export default function DoneRecipes() {
         doneRecipes.map((recipe, index) => (
           recipe.type === 'food' ? (
             <DoneRecipesCard
+              id={ recipe.id }
               image={ recipe.image }
               category={ recipe.category }
               nationality={ recipe.nationality }
@@ -49,6 +50,7 @@ export default function DoneRecipes() {
             />
           ) : (
             <DoneRecipesCard
+              id={ recipe.id }
               image={ recipe.image }
               alcoholic={ recipe.alcoholicOrNot }
               recipeName={ recipe.name }
