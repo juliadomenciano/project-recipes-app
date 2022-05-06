@@ -10,21 +10,9 @@ export default function DoneRecipes() {
     const getDoneRecipes = JSON.parse(localStorage.getItem('doneRecipes'));
     setDoneRecipes(getDoneRecipes);
   }, []);
-
-  const fliterRecipes = (type) => {
-    if (type !== '') {
-      const filteredRecipes = doneRecipes.filter((item) => item.type === type);
-      setFilter(filteredRecipes);
-      console.log(filter);
-    } else {
-      setFilter(doneRecipes);
-      console.log(filter);
-    }
-  };
-
   return (
     <section>
-      <Header title="Done Recipes" />
+      <Header />
       <button
         data-testid="filter-by-all-btn"
         type="button"
@@ -47,14 +35,13 @@ export default function DoneRecipes() {
         Drinks
       </button>
       { doneRecipes && (
-        filter.map((recipe, index) => (
-          recipe.type === 'food' ? (
+        doneRecipes.map((recipe, index) => (
+          recipe.type === food ? (
             <DoneRecipesCard
               key={ index }
               id={ recipe.id }
               image={ recipe.image }
               category={ recipe.category }
-              nationality={ recipe.nationality }
               recipeName={ recipe.name }
               doneDate={ recipe.doneDate }
               tagName={ recipe.tags }

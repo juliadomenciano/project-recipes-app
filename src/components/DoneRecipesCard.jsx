@@ -3,11 +3,10 @@ import PropTypes from 'prop-types';
 import shareIcon from '../images/shareIcon.svg';
 
 export default function DoneRecipesCard(props) {
-  const { image, category, recipeName, nationality,
+  const { image, category, recipeName,
     doneDate, tagName, index, alcoholic, foodOrDrink } = props;
-
   return (
-    <section key={ index }>
+    <section>
       <img
         data-testid={ `${index}-horizontal-image` }
         src={ image }
@@ -18,7 +17,7 @@ export default function DoneRecipesCard(props) {
           foodOrDrink === 'food'
             ? (
               <p data-testid={ `${index}-horizontal-top-text` }>
-                {`${nationality} - ${category}`}
+                {category}
               </p>
             )
             : (
@@ -42,10 +41,10 @@ export default function DoneRecipesCard(props) {
         </button>
         {
           foodOrDrink === 'food'
-            && tagName.map((tag, idx) => (
+            && tagName.map((tag) => (
               <p
                 data-testid={ `${index}-${tag}-horizontal-tag` }
-                key={ `tag${idx}` }
+                key={ index }
               >
                 { tag }
               </p>
@@ -63,5 +62,4 @@ DoneRecipesCard.propTypes = {
   finishedData: PropTypes.string,
   tagName: PropTypes.string,
   index: PropTypes.number,
-  nationality: PropTypes.string,
 }.isRequired;
