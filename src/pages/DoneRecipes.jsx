@@ -12,9 +12,10 @@ export default function DoneRecipes() {
     setDoneRecipes(getDoneRecipes);
     console.log(doneRecipes);
   }, []);
+
   return (
     <section>
-      <Header />
+      <Header title="Done Recipes" />
       <button
         data-testid="filter-by-all-btn"
         type="button"
@@ -35,10 +36,11 @@ export default function DoneRecipes() {
       </button>
       { doneRecipes && (
         doneRecipes.map((recipe, index) => (
-          recipe.type === food ? (
+          recipe.type === 'food' ? (
             <DoneRecipesCard
               image={ recipe.image }
               category={ recipe.category }
+              nationality={ recipe.nationality }
               recipeName={ recipe.name }
               doneDate={ recipe.doneDate }
               tagName={ recipe.tags }
