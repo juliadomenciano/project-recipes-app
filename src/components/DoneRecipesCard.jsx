@@ -1,17 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import copy from 'clipboard-copy';
 import shareIcon from '../images/shareIcon.svg';
 
 export default function DoneRecipesCard(props) {
-  const { image, category, recipeName, nationality, id,
+  const { image, category, recipeName, nationality,
     doneDate, tagName, index, alcoholic, foodOrDrink } = props;
-  const [copied, setCopied] = useState(false);
-
-  const shareRecipe = () => {
-    copy(`http://localhost:3000/foods/${id}`);
-    setCopied(true);
-  };
 
   return (
     <section key={ index }>
@@ -44,13 +37,8 @@ export default function DoneRecipesCard(props) {
           data-testid={ `${index}-horizontal-share-btn` }
           type="button"
           src={ shareIcon }
-          onClick={ shareRecipe }
         >
-          {
-            copied
-              ? <span>Link copied!</span>
-              : <img src={ shareIcon } alt="ícone para compartilhar" />
-          }
+          <img src={ shareIcon } alt="Share" />
         </button>
         {
           foodOrDrink === 'food'
