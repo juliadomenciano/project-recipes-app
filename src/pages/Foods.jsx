@@ -1,12 +1,11 @@
-import React, { useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import React, { useContext, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import ProfileContext from '../context/ProfileContext/ProfileContext';
-import FoodsContext from '../context/FoodsContext/FoodsContext';
 import RecipeCard from '../components/RecipeCard';
-
+import FoodsContext from '../context/FoodsContext/FoodsContext';
+import ProfileContext from '../context/ProfileContext/ProfileContext';
 import CSS from '../modules/FoodsDrinks.module.css';
 
 function Foods(props) {

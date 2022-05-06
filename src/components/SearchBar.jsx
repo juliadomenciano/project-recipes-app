@@ -44,6 +44,7 @@ function SearchBar(props) {
         <input
           name="searchInput"
           type="text"
+          id="searchInput"
           data-testid="search-input"
           onChange={ ({ target }) => setInputSearch(target.value) }
         />
