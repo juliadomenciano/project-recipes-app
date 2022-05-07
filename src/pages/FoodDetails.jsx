@@ -20,7 +20,7 @@ export default function FoodDetails() {
   return (
     foodDetailsData === undefined ? '' : (
       <>
-        <div>FoodDetails</div>
+        {/* <div>FoodDetails</div> */}
         <RecipeDetailCard
           foodOrDrink="food"
           data={ foodDetailsData.meals[0] }

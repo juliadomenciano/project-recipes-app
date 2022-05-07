@@ -39,7 +39,7 @@ function RecipeDetailsCardDrink(props) {
 
   return (
     <div>
-      <div className={ CSS.container_img }>
+      <div className="conteiner_img_detail">
         <img
           data-testid="recipe-photo"
           src={ image }
@@ -47,7 +47,7 @@ function RecipeDetailsCardDrink(props) {
           className={ CSS.img_detail_page }
         />
       </div>
-      <p data-testid="recipe-category">{category}</p>
+      <h3 className="recipe_category" data-testid="recipe-category">{category}</h3>
       <h1 data-testid="recipe-title">{title}</h1>
       <FavoriteAndShareButton
         data={ data }
@@ -56,6 +56,7 @@ function RecipeDetailsCardDrink(props) {
       />
       {linkCopied ? <p>Link copied!</p> : ''}
       <IngredientsList foodOrDrink={ foodOrDrink } data={ data } />
+      <h2>Instructions</h2>
       <p data-testid="instructions">{instructions}</p>
       <section className={ CSS.carousel }>
         {
