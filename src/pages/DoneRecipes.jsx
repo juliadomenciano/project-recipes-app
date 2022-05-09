@@ -4,44 +4,57 @@ import Header from '../components/Header';
 
 export default function DoneRecipes() {
   const [doneRecipes, setDoneRecipes] = useState();
-  const [filter, setFilter] = useState(doneRecipes);
+  const [filter, setFilter] = useState('');
 
   useEffect(() => {
-    const getDoneRecipes = JSON.parse(localStorage.getItem('doneRecipes'));
-    setDoneRecipes(getDoneRecipes);
+    async function getLocalStorage() {
+      const getDoneRecipes = await JSON.parse(localStorage.getItem('doneRecipes'));
+
+      setDoneRecipes(getDoneRecipes);
+    }
+    getLocalStorage();
   }, []);
+
+  const fliterRecipes = (item) => {
+    if (filter !== '') {
+      return filter === item.type;
+    }
+    return true;
+  };
+
   return (
     <section>
-      <Header />
+      <Header title="Done Recipes" />
       <button
         data-testid="filter-by-all-btn"
         type="button"
-        onClick={ fliterRecipes('') }
+        onClick={ () => setFilter('') }
       >
         All
       </button>
       <button
         data-testid="filter-by-food-btn"
         type="button"
-        onClick={ fliterRecipes('drink') }
+        onClick={ () => setFilter('food') }
       >
         by Food
       </button>
       <button
         data-testid="filter-by-drink-btn"
         type="button"
-        onClick={ fliterRecipes('food') }
+        onClick={ () => setFilter('drink') }
       >
         Drinks
       </button>
       { doneRecipes && (
-        doneRecipes.map((recipe, index) => (
-          recipe.type === food ? (
+        doneRecipes.filter((item) => fliterRecipes(item)).map((recipe, index) => (
+          recipe.type === 'food' ? (
             <DoneRecipesCard
               key={ index }
               id={ recipe.id }
               image={ recipe.image }
               category={ recipe.category }
+              nationality={ recipe.nationality }
               recipeName={ recipe.name }
               doneDate={ recipe.doneDate }
               tagName={ recipe.tags }

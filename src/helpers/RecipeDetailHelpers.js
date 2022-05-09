@@ -1,4 +1,4 @@
-import { foodDetails, drinkDetails } from '../services/detailsRequestApi';
+import { drinkDetails, foodDetails } from '../services/detailsRequestApi';
 
 export async function handleRecipeDone(foodOrDrink, id) {
   let today = new Date();
@@ -16,7 +16,7 @@ export async function handleRecipeDone(foodOrDrink, id) {
   }
   const currentRecipe = foodOrDrink === 'food' ? {
     id: data.meals[0].idMeal,
-    type: 'comida',
+    type: 'food',
     nationality: data.meals[0].strArea ? data.meals[0].strArea : '',
     category: data.meals[0].strCategory,
     alcoholicOrNot: '',
@@ -26,7 +26,7 @@ export async function handleRecipeDone(foodOrDrink, id) {
     tags: [data.meals[0].strTags],
   } : {
     id: data.drinks[0].idDrink,
-    type: 'bebida',
+    type: 'drink',
     nationality: data.drinks[0].strArea ? data.drinks[0].strArea : '',
     category: data.drinks[0].strCategory,
     alcoholicOrNot: data.drinks[0].strAlcoholic,
@@ -39,8 +39,9 @@ export async function handleRecipeDone(foodOrDrink, id) {
     .getItem('doneRecipes')) ? JSON.parse(
       localStorage.getItem('doneRecipes'),
     ) : '';
-  const newStorage = [...previousRecipes, currentRecipe];
-  localStorage.setItem('doneRecipes', JSON.stringify(newStorage));
+  /*   const newStorage = [...previousRecipes, currentRecipe]; */
+  localStorage.setItem('doneRecipes', JSON
+    .stringify([...previousRecipes, currentRecipe]));
 }
 
 export function handleStartRecipe(foodOrDrink, id, ingredientList, history) {

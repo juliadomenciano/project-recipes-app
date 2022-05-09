@@ -23,4 +23,4 @@ const doneRecipesStore = [
   },
 ];
 
-export default doneRecipesStore;
+module.exports = doneRecipesStore;
