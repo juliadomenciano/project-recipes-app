@@ -1,13 +1,14 @@
 import copy from 'clipboard-copy';
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import shareIcon from '../images/shareIcon.svg';
 import '../index.css';
+import FavoriteButtonPage from './FavoriteButtonPage';
 
-export default function DoneRecipesCard(props) {
+export default function FavoriteRecipeCard(props) {
   const { image, category, recipeName, nationality, id,
-    doneDate, tagName, index, alcoholic, foodOrDrink } = props;
+    index, alcoholic, foodOrDrink, setFavorite, favorite } = props;
   const [copied, setCopied] = useState(false);
   const threeSeconds = 3000;
 
@@ -19,9 +20,13 @@ export default function DoneRecipesCard(props) {
     }, threeSeconds);
   };
 
+  useEffect(() => {
+    setFavorite(true);
+  }, [favorite, setFavorite]);
+
   return (
     <section key={ index }>
-      <Link to={ `/${foodOrDrink}s/${id}` }>
+      <Link to={ `/${foodOrDrink}/${id}` }>
         <img
           className="doneImg"
           data-testid={ `${index}-horizontal-image` }
@@ -32,7 +37,7 @@ export default function DoneRecipesCard(props) {
 
       <div>
         {
-          foodOrDrink === 'food'
+          foodOrDrink === 'foods'
             ? (
               <p data-testid={ `${index}-horizontal-top-text` }>
                 {`${nationality} - ${category}`}
@@ -44,14 +49,11 @@ export default function DoneRecipesCard(props) {
               </p>
             )
         }
-        <Link to={ `/${foodOrDrink}s/${id}` }>
+        <Link to={ `/${foodOrDrink}/${id}` }>
           <h2 data-testid={ `${index}-horizontal-name` }>
             {recipeName}
           </h2>
         </Link>
-        <p data-testid={ `${index}-horizontal-done-date` }>
-          { doneDate }
-        </p>
         <button
           data-testid={ `${index}-horizontal-share-btn` }
           type="button"
@@ -64,28 +66,22 @@ export default function DoneRecipesCard(props) {
               : <img src={ shareIcon } alt="ícone para compartilhar" />
           }
         </button>
-        {
-          foodOrDrink === 'food'
-            && tagName.map((tag, idx) => (
-              <p
-                data-testid={ `${index}-${tag}-horizontal-tag` }
-                key={ `tag${idx}` }
-              >
-                { tag }
-              </p>
-            ))
-        }
+        <FavoriteButtonPage
+          data={ id }
+          foodOrDrink={ foodOrDrink }
+          setFavorite={ setFavorite }
+          index={ index }
+        />
       </div>
     </section>
   );
 }
 
-DoneRecipesCard.propTypes = {
+FavoriteRecipeCard.propTypes = {
   image: PropTypes.string,
   category: PropTypes.string,
   recipeName: PropTypes.string,
   finishedData: PropTypes.string,
-  tagName: PropTypes.string,
   index: PropTypes.number,
   nationality: PropTypes.string,
 }.isRequired;

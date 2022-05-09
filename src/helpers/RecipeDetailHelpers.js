@@ -96,11 +96,10 @@ export function handleFavoriteRecipe(data, foodOrDrink) {
   localStorage.setItem('favoriteRecipes', JSON.stringify(newStorage));
 }
 
-export function handleRemoveFavorite(data, foodOrDrink) {
+export function handleRemoveFavorite(id, foodOrDrink) {
   const isFavorite = JSON.parse(localStorage.getItem('favoriteRecipes'));
   const isFoodOrDrink = foodOrDrink === 'food' ? (
-    isFavorite && isFavorite.filter((key) => key.id !== data.idMeal)
-  ) : isFavorite && isFavorite.filter((key) => key.id !== data.idDrink);
-  console.log(isFoodOrDrink);
+    isFavorite && isFavorite.filter((key) => key.id !== id)
+  ) : isFavorite && isFavorite.filter((key) => key.id !== id);
   localStorage.setItem('favoriteRecipes', JSON.stringify(isFoodOrDrink));
 }
