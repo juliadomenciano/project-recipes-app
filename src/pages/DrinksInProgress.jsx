@@ -14,7 +14,7 @@ export default function DrinksInProgress() {
   const [copied, setCopied] = useState(false);
   const { id } = useParams();
   const { scribbled, handleFavorite,
-    isFavorite, setIsFavorite } = useContext(InProgressContext);
+    isFavorite, setIsFavorite, recipeData } = useContext(InProgressContext);
 
   const shareRecipe = async () => {
     copy(`http://localhost:3000/drinks/${id}`);
@@ -60,7 +60,7 @@ export default function DrinksInProgress() {
         <button
           data-testid="finish-recipe-btn"
           type="button"
-          onClick={ () => handleRecipeDone('drink', id) }
+          onClick={ () => handleRecipeDone('drink', recipeData) }
           disabled={ enableFinishBtn() }
         >
           Finish Recipe
