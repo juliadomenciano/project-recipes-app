@@ -12,7 +12,7 @@ export default function DoneRecipesCard(props) {
   const threeSeconds = 3000;
 
   const shareRecipe = () => {
-    copy(`http://localhost:3000/${foodOrDrink}/${id}`);
+    copy(`http://localhost:3000/${foodOrDrink}s/${id}`);
     setCopied(true);
     setTimeout(() => {
       setCopied(false);
