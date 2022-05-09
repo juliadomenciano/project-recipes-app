@@ -9,6 +9,8 @@ import doneRecipes from './data.test';
 const filterAll = 'filter-by-all-btn';
 const filterByFood = 'filter-by-food-btn';
 const filterByDrink = 'filter-by-drink-btn';
+const doneRecipesPath = '/done-recipes';
+const foodText = 'Spicy Arrabiata Penne';
 const four = 4;
 
 beforeAll(() => {
@@ -18,7 +20,7 @@ beforeAll(() => {
 describe('Testa a tela de receitas feitas', () => {
   test('Na tela, verifica se todos os filtros são renderizados', () => {
     const { history } = renderWithRouter(<App />);
-    history.push('/done-recipes');
+    history.push(doneRecipesPath);
     const buttonAll = screen.getByTestId(filterAll);
     const buttonFood = screen.getByTestId(filterByFood);
     const buttonDrink = screen.getByTestId(filterByDrink);
@@ -29,9 +31,10 @@ describe('Testa a tela de receitas feitas', () => {
     expect(buttonFood).toBeInTheDocument();
     expect(buttonDrink).toBeInTheDocument();
   });
+
   test('Testa se as receitas prontas são mostradas como devido', async () => {
     const { history } = renderWithRouter(<App />);
-    history.push('/done-recipes');
+    history.push(doneRecipesPath);
 
     const foodImg = await screen.findByTestId('0-horizontal-image');
     const foodCatAndNat = await screen.findByTestId('0-horizontal-top-text');
@@ -60,27 +63,42 @@ describe('Testa a tela de receitas feitas', () => {
     expect(shareBtn).toBeInTheDocument();
   });
 
-  test.only('Testa se os filtros da tela funcionam como esperado', async () => {
+  test('Testa se o filtro por comida funciona como esperado', async () => {
     const { history } = renderWithRouter(<App />);
-    history.push('/done-recipes');
+    history.push(doneRecipesPath);
     const buttonFood = screen.getByTestId(filterByFood);
-    const buttonDrink = screen.getByTestId(filterByDrink);
     userEvent.click(buttonFood);
 
-    const foodName = await screen.findByRole('heading',
-      { name: /Spicy Arrabiata Penne/i, level: 2 });
+    const foodName = await screen.findByText(foodText);
     expect(foodName).toBeInTheDocument();
 
     const drinkName = await screen.queryByTestId('1-horizontal-name');
     expect(drinkName).not.toBeInTheDocument();
+  });
 
+  test('Testa se o filtro por bebida funciona como esperado', async () => {
+    const { history } = renderWithRouter(<App />);
+    history.push(doneRecipesPath);
+    const buttonDrink = screen.getByTestId(filterByDrink);
     userEvent.click(buttonDrink);
-    expect(foodName).not.toBeInTheDocument();
-    // // expect(drinkName).toBeInTheDocument();
 
-    // const buttonAll = screen.getByTestId(filterAll);
-    // userEvent.click(buttonAll);
-    // expect(foodName).toBeInTheDocument();
-    // expect(drinkName).toBeInTheDocument();
+    const foodName = await screen.queryByText(foodText);
+    expect(foodName).not.toBeInTheDocument();
+
+    const drinkName = await screen.findByText('Aquamarine');
+    expect(drinkName).toBeInTheDocument();
+  });
+
+  test.only('Testa se o filtro "all" funciona como esperado', async () => {
+    const { history } = renderWithRouter(<App />);
+    history.push(doneRecipesPath);
+    const buttonAll = screen.getByTestId(filterAll);
+    userEvent.click(buttonAll);
+
+    const foodName = await screen.findByText(foodText);
+    expect(foodName).toBeInTheDocument();
+
+    const drinkName = await screen.findByText('Aquamarine');
+    expect(drinkName).toBeInTheDocument();
   });
 });
