@@ -1,31 +1,47 @@
-export function handleRecipeDone(foodOrDrink, data) {
+import { drinkDetails, foodDetails } from '../services/detailsRequestApi';
+
+export async function handleRecipeDone(foodOrDrink, id) {
+  let today = new Date();
+  const dd = String(today.getDate()).padStart(2, '0');
+  const mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+  const yyyy = today.getFullYear();
+
+  today = `${mm}/${dd}/${yyyy}`;
+
+  let data = {};
+  if (foodOrDrink === 'food') {
+    data = await foodDetails(id);
+  } else {
+    data = await drinkDetails(id);
+  }
   const currentRecipe = foodOrDrink === 'food' ? {
-    id: data.idMeal,
-    type: 'comida',
-    nationality: data.strArea ? data.strArea : '',
-    category: data.strCategory,
+    id: data.meals[0].idMeal,
+    type: 'food',
+    nationality: data.meals[0].strArea ? data.meals[0].strArea : '',
+    category: data.meals[0].strCategory,
     alcoholicOrNot: '',
-    name: data.strMeal,
-    image: data.strMealThumb,
-    doneDate: '',
-    tags: [data.strTags],
+    name: data.meals[0].strMeal,
+    image: data.meals[0].strMealThumb,
+    doneDate: today,
+    tags: [data.meals[0].strTags],
   } : {
-    id: data.idDrink,
-    type: 'bebida',
-    nationality: data.strArea ? data.strArea : '',
-    category: data.strCategory,
-    alcoholicOrNot: data.strAlcoholic,
-    name: data.strDrink,
-    image: data.strDrinkThumb,
-    doneDate: '',
-    tags: [data.strTags],
+    id: data.drinks[0].idDrink,
+    type: 'drink',
+    nationality: data.drinks[0].strArea ? data.drinks[0].strArea : '',
+    category: data.drinks[0].strCategory,
+    alcoholicOrNot: data.drinks[0].strAlcoholic,
+    name: data.drinks[0].strDrink,
+    image: data.drinks[0].strDrinkThumb,
+    doneDate: today,
+    tags: data.drinks[0].strTags ? data.drinks[0].strTags : [],
   };
   const previousRecipes = JSON.parse(localStorage
     .getItem('doneRecipes')) ? JSON.parse(
       localStorage.getItem('doneRecipes'),
     ) : '';
-  const newStorage = [...previousRecipes, currentRecipe];
-  localStorage.setItem('doneRecipes', JSON.stringify(newStorage));
+  /*   const newStorage = [...previousRecipes, currentRecipe]; */
+  localStorage.setItem('doneRecipes', JSON
+    .stringify([...previousRecipes, currentRecipe]));
 }
 
 export function handleStartRecipe(foodOrDrink, id, ingredientList, history) {
