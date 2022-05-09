@@ -3,10 +3,10 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import InProgressCard from '../components/InProgressCard';
 import InProgressContext from '../context/InProgressContext/InProgressContext';
+import { handleRecipeDone } from '../helpers/RecipeDetailHelpers';
 import favorited from '../images/blackHeartIcon.svg';
 import shareIcon from '../images/shareIcon.svg';
 import notFavorited from '../images/whiteHeartIcon.svg';
-import { handleRecipeDone } from '../helpers/RecipeDetailHelpers';
 
 const FAVORITE_KEY = 'favoriteRecipes';
 
