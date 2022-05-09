@@ -57,7 +57,7 @@ function RecipeDetailCard(props) {
         setLinkCopied={ setLinkCopied }
         foodOrDrink={ foodOrDrink }
       />
-      {linkCopied && <p>Link copied!</p>}
+      {linkCopied && <p className="alert_link_copied">Link copied!</p>}
       <div className="container_recipe_title">
         <p className="recipe_category" data-testid="recipe-category">{category}</p>
         <h1 className="title_detail" data-testid="recipe-title">{title}</h1>

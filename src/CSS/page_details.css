@@ -37,6 +37,34 @@
 }
 
 /* menu social (curtir ou compartilhar) */
+.alert_link_copied {
+  align-items: center;
+  background-color: var(--dark_color);
+  border-radius: 5px;
+  color: var(--height_color_03);
+  display: flex;
+  font-size: 14px;
+  font-weight: 900;
+  height: 50px;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  transform: translate(-65px, -125px);
+  width: 100px;
+}
+
+.alert_link_copied:after {
+  background-color: var(--dark_color);
+  border-radius: 2px;
+  bottom: -8px;
+  content: '';
+  height: 20px;
+  position: absolute;
+  transform: rotate(45deg);
+  width: 20px;
+  z-index: -2;
+}
+
 .social_menu.detail_page {
 
   /* background-color: yellow; */
