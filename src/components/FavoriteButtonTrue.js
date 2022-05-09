@@ -10,7 +10,7 @@ export default function FavoriteButtonTrue(props) {
       type="button"
       data-testid="favorite-btn"
       onClick={ () => [handleRemoveFavorite(data, foodOrDrink), setFavorite(false)] }
-      className={ CSS.profile_button }
+      className="button_like true"
       src={ blackHeartIcon }
     >
       <img src={ blackHeartIcon } alt="Ícone do perfil" />

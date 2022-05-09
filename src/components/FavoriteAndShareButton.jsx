@@ -7,6 +7,7 @@ import FavoriteButtonTrue from './FavoriteButtonTrue';
 function FavoriteAndShareButton(props) {
   const { setLinkCopied, data, foodOrDrink } = props;
   const threeSeconds = 3000;
+  // const threeSeconds = 80000000;
   const [favorite, setFavorite] = useState();
   const notFavorite = !favorite;
   function handleShareButtonFood(id) {
@@ -37,11 +38,12 @@ function FavoriteAndShareButton(props) {
   console.log(favorite);
   return (
     foodOrDrink === 'food' ? (
-      <>
+      <div className="social_menu detail_page">
         <button
           type="button"
           data-testid="share-btn"
           onClick={ () => handleShareButtonFood(data.idMeal) }
+          className="button_share"
         >
           compartilhar
         </button>
@@ -56,13 +58,14 @@ function FavoriteAndShareButton(props) {
             data={ data }
             foodOrDrink={ foodOrDrink }
           /> }
-      </>
+      </div>
     ) : (
-      <>
+      <div className="social_menu detail_page">
         <button
           type="button"
           data-testid="share-btn"
           onClick={ () => handleShareButtonDrink(data.idDrink) }
+          className="button_share"
         >
           compartilhar
         </button>
@@ -77,7 +80,7 @@ function FavoriteAndShareButton(props) {
             data={ data }
             foodOrDrink={ foodOrDrink }
           /> }
-      </>
+      </div>
     )
   );
 }

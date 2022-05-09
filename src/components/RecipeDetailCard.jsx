@@ -10,6 +10,10 @@ import IngredientsList from './IngredientsList';
 import RecipeCard from './RecipeCard';
 import StartRecipeButton from './StartRecipeButton';
 
+import '../CSS/page_details.css';
+import '../CSS/status_recipe.css';
+import '../CSS/recommended.recipe.css';
+
 function RecipeDetailCard(props) {
   const { foodOrDrink, data } = props;
   const { foodsResults } = useContext(FoodsContext);
@@ -42,50 +46,64 @@ function RecipeDetailCard(props) {
   }, [data.idMeal, inProgress]);
 
   return (
-    <div>
-      <div className={ CSS.container_img }>
+    <div className="contanier_food_detail">
+      <div className="container_img_detail">
         <img
           data-testid="recipe-photo"
           src={ image }
           alt={ `imagem da receita ${title}` }
-          className={ CSS.img_detail_page }
+          className="img_detail"
         />
       </div>
-      <p data-testid="recipe-category">{category}</p>
-      <h1 data-testid="recipe-title">{title}</h1>
       <FavoriteAndShareButton
         data={ data }
         setLinkCopied={ setLinkCopied }
         foodOrDrink={ foodOrDrink }
       />
-      {linkCopied && <p>Link copied!</p>}
+      {linkCopied && <p className="alert_link_copied">Link copied!</p>}
+      <div className="container_recipe_title">
+        <p className="recipe_category" data-testid="recipe-category">{category}</p>
+        <h1 className="title_detail" data-testid="recipe-title">{title}</h1>
+      </div>
+
       <IngredientsList foodOrDrink={ foodOrDrink } data={ data } />
-      <p data-testid="instructions">{instructions}</p>
-      <iframe
-        title={ title }
-        data-testid="video"
-        width="420"
-        height="315"
-        src={ `https://www.youtube.com/embed/${youtubeVideoId}` }
-      />
-      <section className={ CSS.carousel }>
-        {
-          results && resultsDrinks && (
-            resultsDrinks.map((drink, index) => (index < magicNumber && (
-              <RecipeCard
-                key={ index }
-                testid={ [
-                  `${index}-recomendation-card`, `${index}-recomendation-title`] }
-                name={ drink.strDrink }
-                image={ drink.strDrinkThumb }
-                index={ index }
-                foodOrDrink={ foodOrDrink }
-                id={ drink.idDrink }
-              />
-            )))
-          )
-        }
-      </section>
+      <div className="container_instructions">
+        <h2>Instructions</h2>
+        <p className="instructions" data-testid="instructions">{instructions}</p>
+      </div>
+      <div className="container_section_video">
+        <h2>Video</h2>
+        <iframe
+          title={ title }
+          data-testid="video"
+          width="100%"
+          height="315"
+          frameBorder="0"
+          src={ `https://www.youtube.com/embed/${youtubeVideoId}` }
+        />
+      </div>
+      <div className="recommended_recipe_container">
+        <h2>Recommended</h2>
+        <section className={ CSS.carousel }>
+          {
+            results && resultsDrinks && (
+              resultsDrinks.map((drink, index) => (index < magicNumber && (
+                <RecipeCard
+                  key={ index }
+                  testid={ [
+                    `${index}-recomendation-card`, `${index}-recomendation-title`] }
+                  name={ drink.strDrink }
+                  image={ drink.strDrinkThumb }
+                  index={ index }
+                  foodOrDrink={ foodOrDrink }
+                  id={ drink.idDrink }
+                />
+              )))
+            )
+          }
+        </section>
+      </div>
+
       {inProgress ? (
         <ContinueRecipeButton
           foodOrDrink={ foodOrDrink }

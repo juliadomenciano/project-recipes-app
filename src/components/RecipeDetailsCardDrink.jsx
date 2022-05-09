@@ -9,6 +9,10 @@ import IngredientsList from './IngredientsList';
 import RecipeCard from './RecipeCard';
 import StartRecipeButton from './StartRecipeButton';
 
+import '../CSS/page_details.css';
+import '../CSS/status_recipe.css';
+import '../CSS/recommended.recipe.css';
+
 function RecipeDetailsCardDrink(props) {
   const { foodOrDrink, data } = props;
   const instructions = data.strInstructions;
@@ -38,45 +42,57 @@ function RecipeDetailsCardDrink(props) {
   }, [data.idDrink, inProgress]);
 
   return (
-    <div>
-      <div className={ CSS.container_img }>
+    <div className="contanier_drink_detail">
+      <div className="container_img_detail">
         <img
           data-testid="recipe-photo"
           src={ image }
           alt={ `imagem da receita ${title}` }
-          className={ CSS.img_detail_page }
+          className="img_detail"
         />
       </div>
-      <p data-testid="recipe-category">{category}</p>
-      <h1 data-testid="recipe-title">{title}</h1>
       <FavoriteAndShareButton
         data={ data }
         setLinkCopied={ setLinkCopied }
         foodOrDrink={ foodOrDrink }
       />
-      {linkCopied ? <p>Link copied!</p> : ''}
+      {/* {linkCopied && <p className="alert_link_copied">Link copied!</p>} */}
+      {/* a linha acima e como esta em comidas */}
+      {linkCopied ? <p className="alert_link_copied">Link copied!</p> : ''}
+      <div className="container_recipe_title">
+        <h3 className="recipe_category" data-testid="recipe-category">{category}</h3>
+        <h1 data-testid="recipe-title">{title}</h1>
+      </div>
+
       <IngredientsList foodOrDrink={ foodOrDrink } data={ data } />
-      <p data-testid="instructions">{instructions}</p>
-      <section className={ CSS.carousel }>
-        {
-          results && (
-            results.map((meal, index) => (index < magicNumber && (
-              <RecipeCard
-                key={ index }
-                testid={ [
-                  `${index}-recomendation-card`, `${index}-recomendation-title`] }
-                name={ meal.strMeal }
-                image={ meal.strMealThumb }
-                index={ index }
-                foodOrDrink={ foodOrDrink }
-                id={ meal.idMeal }
-              />
-            ))))
-        }
-      </section>
+      <div className="container_instructions">
+        <h2>Instructions</h2>
+        <p className="instructions" data-testid="instructions">{instructions}</p>
+      </div>
+      <div className="recommended_recipe_container">
+        <h2>Recommended</h2>
+        <section className={ CSS.carousel }>
+          {
+            results && (
+              results.map((meal, index) => (index < magicNumber && (
+                <RecipeCard
+                  key={ index }
+                  testid={ [
+                    `${index}-recomendation-card`, `${index}-recomendation-title`] }
+                  name={ meal.strMeal }
+                  image={ meal.strMealThumb }
+                  index={ index }
+                  foodOrDrink={ foodOrDrink }
+                  id={ meal.idMeal }
+                />
+              ))))
+          }
+        </section>
+      </div>
+
       {inProgress ? (
         <button
-          className={ CSS.start_recipe }
+          className="status_recipe"
           type="button"
           data-testid="start-recipe-btn"
           onClick={ () => handleContinueRecipe(foodOrDrink,

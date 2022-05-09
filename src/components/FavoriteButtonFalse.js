@@ -11,7 +11,7 @@ export default function FavoriteButtonFalse(props) {
       data-testid="favorite-btn"
       onClick={ () => [handleFavoriteRecipe(data, foodOrDrink),
         setFavorite(true)] }
-      className={ CSS.profile_button }
+      className="button_like false"
       src={ whiteHeartIcon }
     >
       <img src={ whiteHeartIcon } alt="Ícone do perfil" />
