@@ -8,8 +8,10 @@ import FavoriteAndShareButton from './FavoriteAndShareButton';
 import IngredientsList from './IngredientsList';
 import RecipeCard from './RecipeCard';
 import StartRecipeButton from './StartRecipeButton';
+
 import '../CSS/page_details.css';
 import '../CSS/status_recipe.css';
+import '../CSS/recommended.recipe.css';
 
 function RecipeDetailsCardDrink(props) {
   const { foodOrDrink, data } = props;
@@ -67,23 +69,26 @@ function RecipeDetailsCardDrink(props) {
         <h2>Instructions</h2>
         <p className="instructions" data-testid="instructions">{instructions}</p>
       </div>
-      <section className={ CSS.carousel }>
-        {
-          results && (
-            results.map((meal, index) => (index < magicNumber && (
-              <RecipeCard
-                key={ index }
-                testid={ [
-                  `${index}-recomendation-card`, `${index}-recomendation-title`] }
-                name={ meal.strMeal }
-                image={ meal.strMealThumb }
-                index={ index }
-                foodOrDrink={ foodOrDrink }
-                id={ meal.idMeal }
-              />
-            ))))
-        }
-      </section>
+      <div className="recommended_recipe_container">
+        <h2>Recommended</h2>
+        <section className={ CSS.carousel }>
+          {
+            results && (
+              results.map((meal, index) => (index < magicNumber && (
+                <RecipeCard
+                  key={ index }
+                  testid={ [
+                    `${index}-recomendation-card`, `${index}-recomendation-title`] }
+                  name={ meal.strMeal }
+                  image={ meal.strMealThumb }
+                  index={ index }
+                  foodOrDrink={ foodOrDrink }
+                  id={ meal.idMeal }
+                />
+              ))))
+          }
+        </section>
+      </div>
 
       {inProgress ? (
         <button

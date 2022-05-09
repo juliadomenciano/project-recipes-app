@@ -5,7 +5,8 @@
   /* background: tomato; */
   max-width: 100%;
   overflow: hidden;
-  padding-bottom: 130px;
+
+  /* padding-bottom: 130px; */
   width: 100vw;
 }
 
@@ -251,7 +252,9 @@
   /* transform: translateX(-40px); */
 }
 
-.contener_video iframe {
+/* .contener_video iframe {
+  border: none;
+  border-radius: 50px;
   height: 315px;
   width: 100vw;
-}
+} */

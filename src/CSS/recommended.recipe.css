@@ -1,0 +1,15 @@
+.recommended_recipe_container {
+  background: url('../images/noisebg.png') #f3f1f1;
+  padding: 30px 60px 130px;
+}
+
+.recommended_recipe_container h2 {
+  color: var(--dark_color);
+  font-family: Volkhov , serif;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 900;
+  line-height: 23px;
+  margin-bottom: 24px;
+  transform: translateX(-40px);
+}

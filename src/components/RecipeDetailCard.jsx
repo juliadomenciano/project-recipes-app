@@ -9,8 +9,10 @@ import FavoriteAndShareButton from './FavoriteAndShareButton';
 import IngredientsList from './IngredientsList';
 import RecipeCard from './RecipeCard';
 import StartRecipeButton from './StartRecipeButton';
+
 import '../CSS/page_details.css';
 import '../CSS/status_recipe.css';
+import '../CSS/recommended.recipe.css';
 
 function RecipeDetailCard(props) {
   const { foodOrDrink, data } = props;
@@ -76,28 +78,31 @@ function RecipeDetailCard(props) {
           data-testid="video"
           width="100%"
           height="315"
+          frameBorder="0"
           src={ `https://www.youtube.com/embed/${youtubeVideoId}` }
         />
       </div>
-      {/* <section className={ CSS.carousel }> */}
-      <section className={ CSS.carousel }>
-        {
-          results && resultsDrinks && (
-            resultsDrinks.map((drink, index) => (index < magicNumber && (
-              <RecipeCard
-                key={ index }
-                testid={ [
-                  `${index}-recomendation-card`, `${index}-recomendation-title`] }
-                name={ drink.strDrink }
-                image={ drink.strDrinkThumb }
-                index={ index }
-                foodOrDrink={ foodOrDrink }
-                id={ drink.idDrink }
-              />
-            )))
-          )
-        }
-      </section>
+      <div className="recommended_recipe_container">
+        <h2>Recommended</h2>
+        <section className={ CSS.carousel }>
+          {
+            results && resultsDrinks && (
+              resultsDrinks.map((drink, index) => (index < magicNumber && (
+                <RecipeCard
+                  key={ index }
+                  testid={ [
+                    `${index}-recomendation-card`, `${index}-recomendation-title`] }
+                  name={ drink.strDrink }
+                  image={ drink.strDrinkThumb }
+                  index={ index }
+                  foodOrDrink={ foodOrDrink }
+                  id={ drink.idDrink }
+                />
+              )))
+            )
+          }
+        </section>
+      </div>
 
       {inProgress ? (
         <ContinueRecipeButton
