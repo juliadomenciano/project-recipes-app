@@ -1,0 +1,15 @@
+.status_recipe {
+  background: var(--height_color_03);
+  border: none;
+  bottom: 30px;
+  color: var(--dark_color);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  height: 70px;
+  left: 20px;
+  margin: auto;
+  position: fixed;
+  text-transform: uppercase;
+  width: calc(100% - 40px);
+}

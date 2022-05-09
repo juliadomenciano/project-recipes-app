@@ -1,0 +1,260 @@
+.contanier_food_detail, .contanier_drink_detail {
+
+  --height_main_image : 65vh;
+
+  /* background: tomato; */
+  max-width: 100%;
+  overflow: hidden;
+
+  /* padding-bottom: 130px; */
+  width: 100vw;
+}
+
+.container_img_detail {
+  height: var(--height_main_image);
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.container_img_detail:after {
+  background-color: white;
+  border-radius: 20px 20px 0 0;
+  bottom: 0;
+  content: '';
+  height: 28px;
+  position: absolute;
+  width: 100%;
+
+  /* Barra branca onde ficam os incones de compartilhar */
+}
+
+.img_detail {
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+/* menu social (curtir ou compartilhar) */
+.alert_link_copied {
+  align-items: center;
+  background-color: var(--dark_color);
+  border-radius: 5px;
+  color: var(--height_color_03);
+  display: flex;
+  font-size: 14px;
+  font-weight: 900;
+  height: 50px;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  transform: translate(-65px, -125px);
+  width: 100px;
+}
+
+.alert_link_copied:after {
+  background-color: var(--dark_color);
+  border-radius: 2px;
+  bottom: -8px;
+  content: '';
+  height: 20px;
+  position: absolute;
+  transform: rotate(45deg);
+  width: 20px;
+  z-index: -2;
+}
+
+.social_menu.detail_page {
+
+  /* background-color: yellow; */
+  display: flex;
+  gap: 20px;
+  height: 28px;
+  justify-content: flex-end;
+  left: 0;
+  padding: 0 20px;
+  position: absolute;
+  top: calc(var(--height_main_image) - 28px);
+  width: 100%;
+}
+
+.button_share {
+
+  /* background: var(--height_color_03); */
+  background: url('../images/compartilhar.png') var(--height_color_03);
+  background-position: 45% center;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 50px;
+  overflow: hidden;
+  text-indent: -1000%;
+  transform: translateY(-25px);
+  width: 50px;
+}
+
+.button_like {
+  align-items: center;
+  background: var(--height_color_03);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  overflow: hidden;
+  transform: translateY(-25px);
+  width: 50px;
+}
+
+.button_like.true > img {
+  height: 50%;
+  width: 50%;
+}
+
+/* titulo e categoria */
+.container_recipe_title {
+
+  /* background-color: blue; */
+  padding: 10px 20px;
+  position: relative;
+  width: 100%;
+}
+
+.container_recipe_title:before {
+  background-color: var(--height_color_02);
+  content: '';
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px;
+}
+
+.recipe_category {
+  color: var(--height_color_02);
+  font-family: Volkhov , serif;
+  font-size: 27px;
+  font-style: italic;
+  font-weight: 900;
+  line-height: 29px;
+}
+
+.title_detail {
+  font-family: Lato , sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 27px;
+}
+
+/* ingredientes receita */
+.conteiner_ingredientes {
+  background: url('../images/noisebg.png') #fff7e5;
+  margin-top: 20px;
+  padding: 30px 60px;
+}
+
+.conteiner_ingredientes h2 {
+  color: var(--dark_color);
+  font-family: Volkhov , serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 23px;
+  margin-bottom: 24px;
+  transform: translateX(-40px);
+}
+
+.ingredient_name_and_measure {
+  align-items: center;
+
+  /* background-color: aqua; */
+  display: flex;
+  grid-gap: 10px;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+.ingredient {
+  font-family: Volkhov , serif;
+  font-size: 17px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 29px;
+}
+
+.divider {
+  align-self: flex-start;
+
+  /* background-color: blue; */
+  border-bottom: 1px dotted var(--dark_color);
+  flex-grow: 1;
+  height: 17px;
+  position: relative;
+}
+
+.amount {
+  font-size: 14px;
+  font-weight: 900;
+}
+
+/* conteiner instrucoes */
+.container_instructions {
+  margin-top: 20px;
+  padding: 30px 60px;
+}
+
+.container_instructions h2 {
+  color: var(--height_color_02);
+  font-family: Volkhov , serif;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 900;
+  line-height: 23px;
+  margin-bottom: 24px;
+  transform: translateX(-40px);
+}
+
+.instructions {
+  color: var(--dark_color);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+}
+
+/* secao de video */
+.container_section_video {
+
+  /* background-color: tomato; */
+  margin-top: 20px;
+
+  /* padding: 30px 0 0; */
+  width: 100%;
+}
+
+.container_section_video h2 {
+  color: var(--height_color_02);
+  font-family: Volkhov , serif;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 900;
+  line-height: 23px;
+  margin-bottom: 24px;
+  margin-left: 20px;
+
+  /* transform: translateX(-40px); */
+}
+
+/* .contener_video iframe {
+  border: none;
+  border-radius: 50px;
+  height: 315px;
+  width: 100vw;
+} */

@@ -15,17 +15,25 @@ class IngredientsList extends React.Component {
       key.match('strMeasure') && data[key] !== null
     ));
     return (
-      <section className="ingredientes">
+      <section className="conteiner_ingredientes">
         <h2>Ingredients</h2>
-        <ul>
+        <ul className="list">
           { foodOrDrink === 'food' ? (keysIngredientFood.map((key, index) => (
-            <li key={ index } data-testid={ `${index}-ingredient-name-and-measure` }>
+            <li
+              className="ingredient_name_and_measure"
+              key={ index }
+              data-testid={ `${index}-ingredient-name-and-measure` }
+            >
               <span className="ingredient">{data[key]}</span>
               <span className="divider"> </span>
               <span className="amount">{data[quant[index]]}</span>
             </li>
           ))) : (keysIngredientDrink.map((key, index1) => (
-            <li key={ index1 } data-testid={ `${index1}-ingredient-name-and-measure` }>
+            <li
+              className="ingredient_name_and_measure"
+              key={ index1 }
+              data-testid={ `${index1}-ingredient-name-and-measure` }
+            >
               <span className="ingredient">{data[key]}</span>
               <span className="divider"> </span>
               <span className="amount">{data[quant[index1]]}</span>
