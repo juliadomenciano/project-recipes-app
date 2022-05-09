@@ -65,6 +65,7 @@ function FavoriteAndShareButton(props) {
           type="button"
           data-testid="share-btn"
           onClick={ () => handleShareButtonDrink(data.idDrink) }
+          className="button_share"
         >
           compartilhar
         </button>

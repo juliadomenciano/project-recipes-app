@@ -1,10 +1,11 @@
-.contanier_food_detail {
+.contanier_food_detail, .contanier_drink_detail {
 
   --height_main_image : 65vh;
 
   /* background: tomato; */
   max-width: 100%;
   overflow: hidden;
+  padding-bottom: 130px;
   width: 100vw;
 }
 

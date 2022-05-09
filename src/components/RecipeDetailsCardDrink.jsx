@@ -8,6 +8,8 @@ import FavoriteAndShareButton from './FavoriteAndShareButton';
 import IngredientsList from './IngredientsList';
 import RecipeCard from './RecipeCard';
 import StartRecipeButton from './StartRecipeButton';
+import '../CSS/page_details.css';
+import '../CSS/status_recipe.css';
 
 function RecipeDetailsCardDrink(props) {
   const { foodOrDrink, data } = props;
@@ -38,26 +40,33 @@ function RecipeDetailsCardDrink(props) {
   }, [data.idDrink, inProgress]);
 
   return (
-    <div>
-      <div className="conteiner_img_detail">
+    <div className="contanier_drink_detail">
+      <div className="container_img_detail">
         <img
           data-testid="recipe-photo"
           src={ image }
           alt={ `imagem da receita ${title}` }
-          className={ CSS.img_detail_page }
+          className="img_detail"
         />
       </div>
-      <h3 className="recipe_category" data-testid="recipe-category">{category}</h3>
-      <h1 data-testid="recipe-title">{title}</h1>
       <FavoriteAndShareButton
         data={ data }
         setLinkCopied={ setLinkCopied }
         foodOrDrink={ foodOrDrink }
       />
-      {linkCopied ? <p>Link copied!</p> : ''}
+      {/* {linkCopied && <p className="alert_link_copied">Link copied!</p>} */}
+      {/* a linha acima e como esta em comidas */}
+      {linkCopied ? <p className="alert_link_copied">Link copied!</p> : ''}
+      <div className="container_recipe_title">
+        <h3 className="recipe_category" data-testid="recipe-category">{category}</h3>
+        <h1 data-testid="recipe-title">{title}</h1>
+      </div>
+
       <IngredientsList foodOrDrink={ foodOrDrink } data={ data } />
-      <h2>Instructions</h2>
-      <p data-testid="instructions">{instructions}</p>
+      <div className="container_instructions">
+        <h2>Instructions</h2>
+        <p className="instructions" data-testid="instructions">{instructions}</p>
+      </div>
       <section className={ CSS.carousel }>
         {
           results && (
@@ -75,9 +84,10 @@ function RecipeDetailsCardDrink(props) {
             ))))
         }
       </section>
+
       {inProgress ? (
         <button
-          className={ CSS.start_recipe }
+          className="status_recipe"
           type="button"
           data-testid="start-recipe-btn"
           onClick={ () => handleContinueRecipe(foodOrDrink,

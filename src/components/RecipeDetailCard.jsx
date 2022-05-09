@@ -3,13 +3,14 @@ import React, { useContext, useEffect, useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import DrinksContext from '../context/DrinksContext/DrinksContext';
 import FoodsContext from '../context/FoodsContext/FoodsContext';
-// import CSS from '../modules/RecipeCard.module.css';
+import CSS from '../modules/RecipeCard.module.css';
 import ContinueRecipeButton from './ContinueRecipeButton';
 import FavoriteAndShareButton from './FavoriteAndShareButton';
 import IngredientsList from './IngredientsList';
 import RecipeCard from './RecipeCard';
 import StartRecipeButton from './StartRecipeButton';
 import '../CSS/page_details.css';
+import '../CSS/status_recipe.css';
 
 function RecipeDetailCard(props) {
   const { foodOrDrink, data } = props;
@@ -79,7 +80,7 @@ function RecipeDetailCard(props) {
         />
       </div>
       {/* <section className={ CSS.carousel }> */}
-      <section>
+      <section className={ CSS.carousel }>
         {
           results && resultsDrinks && (
             resultsDrinks.map((drink, index) => (index < magicNumber && (
@@ -97,6 +98,7 @@ function RecipeDetailCard(props) {
           )
         }
       </section>
+
       {inProgress ? (
         <ContinueRecipeButton
           foodOrDrink={ foodOrDrink }
