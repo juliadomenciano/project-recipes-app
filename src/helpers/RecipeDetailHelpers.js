@@ -61,6 +61,7 @@ export function handleStartRecipe(foodOrDrink, id, ingredientList, history) {
       ...meals,
     },
     cocktails: {
+      ...cocktails,
       [id]: ingredientList,
     },
   };

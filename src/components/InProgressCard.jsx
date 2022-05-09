@@ -13,7 +13,7 @@ export default function InProgressCard({ type }) {
   const progressStorage = JSON.parse(localStorage.getItem(IN_PROGRESS_KEY));
   const path = useLocation().pathname;
   const pathId = path.replace(`/${type}/`, '').replace('/in-progress', '');
-  const section = type === 'foods' ? 'meals' : 'drinks';
+  const section = type === 'foods' ? 'foods' : 'drinks';
   const keys = [...inProgressHelper(type)];
   const { strInstructions } = recipeData;
   const ingredients = Object.entries(recipeData)
@@ -24,7 +24,7 @@ export default function InProgressCard({ type }) {
     const apiRequest = async () => {
       const handleRequest = type === 'foods' ? foodDetails(pathId) : drinkDetails(pathId);
       const data = await handleRequest;
-      setRecipeData(await data[section][0]);
+      setRecipeData(section === 'foods' ? data.meals[0] : data.drinks[0]);
     };
     apiRequest();
     const checkStorage = progressStorage
