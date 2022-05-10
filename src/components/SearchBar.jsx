@@ -49,39 +49,30 @@ function SearchBar(props) {
         onChange={ ({ target }) => setInputSearch(target.value) }
       />
       <fieldset className={ CSS.radio_search }>
-        <label htmlFor="ingredient">
-          <input
-            id="ingredient"
-            type="radio"
-            data-testid="ingredient-search-radio"
-            name="filterSelect"
-            value="Ingredient"
-            onChange={ ({ target }) => setSelectedFilter(target.value) }
-          />
-          Ingredient
-        </label>
-        <label htmlFor="name-search">
-          <input
-            id="name-search"
-            type="radio"
-            data-testid="name-search-radio"
-            name="filterSelect"
-            value="Name"
-            onChange={ ({ target }) => setSelectedFilter(target.value) }
-          />
-          Name
-        </label>
-        <label htmlFor="first-letter">
-          <input
-            id="first-letter"
-            type="radio"
-            data-testid="first-letter-search-radio"
-            name="filterSelect"
-            value="First letter"
-            onChange={ ({ target }) => setSelectedFilter(target.value) }
-          />
-          First letter
-        </label>
+        <input
+          id="ingredient"
+          type="radio"
+          data-testid="ingredient-search-radio"
+          name="filterSelect"
+          value="Ingredient"
+          onChange={ ({ target }) => setSelectedFilter(target.value) }
+        />
+        <input
+          id="name-search"
+          type="radio"
+          data-testid="name-search-radio"
+          name="filterSelect"
+          value="Name"
+          onChange={ ({ target }) => setSelectedFilter(target.value) }
+        />
+        <input
+          id="first-letter"
+          type="radio"
+          data-testid="first-letter-search-radio"
+          name="filterSelect"
+          value="First letter"
+          onChange={ ({ target }) => setSelectedFilter(target.value) }
+        />
       </fieldset>
       <button
         className={ CSS.button_search }
