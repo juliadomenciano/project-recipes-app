@@ -11,8 +11,6 @@ export default function DoneRecipesCard(props) {
   const [copied, setCopied] = useState(false);
   const threeSeconds = 3000;
   console.log(tagName);
-  const result = JSON.stringify.split(',');
-  console.log(result);
 
   const shareRecipe = () => {
     copy(`http://localhost:3000/${foodOrDrink}s/${id}`);
@@ -67,8 +65,7 @@ export default function DoneRecipesCard(props) {
               : <img src={ shareIcon } alt="ícone para compartilhar" />
           }
         </button>
-        {
-          foodOrDrink === 'food'
+        { tagName
             && tagName.map((tag, idx) => (
               <p
                 data-testid={ `${index}-${tag}-horizontal-tag` }
@@ -76,8 +73,7 @@ export default function DoneRecipesCard(props) {
               >
                 { tag }
               </p>
-            ))
-        }
+            ))}
       </div>
     </section>
   );

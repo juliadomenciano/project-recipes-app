@@ -70,6 +70,7 @@ export default function DoneRecipes() {
               recipeName={ recipe.name }
               doneDate={ recipe.doneDate }
               index={ index }
+              tagName={ recipe.tags }
               foodOrDrink="drink"
             />
           )

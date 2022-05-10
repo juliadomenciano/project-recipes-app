@@ -14,7 +14,7 @@ export async function handleRecipeDone(foodOrDrink, recipeData) {
     name: recipeData.strMeal,
     image: recipeData.strMealThumb,
     doneDate: today,
-    tags: [recipeData.strTags],
+    tags: recipeData.strTags.split(','),
   } : {
     id: recipeData.idDrink,
     type: 'drink',
@@ -24,7 +24,7 @@ export async function handleRecipeDone(foodOrDrink, recipeData) {
     name: recipeData.strDrink,
     image: recipeData.strDrinkThumb,
     doneDate: today,
-    tags: recipeData.strTags ? recipeData.strTags : [],
+    tags: recipeData.strTags ? recipeData.strTags.split(',') : [],
   };
   const previousRecipes = JSON.parse(localStorage
     .getItem('doneRecipes')) ? JSON.parse(
