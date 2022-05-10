@@ -1,0 +1,287 @@
+.contanier_in_progress {
+
+  --height_main_image : 25vh;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0 0 130px;
+
+  /* padding-bottom: 130px; */
+  width: 100vw;
+}
+
+.container_img_progress {
+  height: var(--height_main_image);
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.container_img_progress:after {
+  background-color: white;
+  border-radius: 20px 20px 0 0;
+  bottom: 0;
+  content: '';
+  height: 28px;
+  position: absolute;
+  width: 100%;
+
+  /* Barra branca onde ficam os incones de compartilhar */
+}
+
+.img_progress_detail {
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+/* titulo e categoria */
+.container_recipe_title_progress {
+
+  /* background-color: blue; */
+  padding: 10px 20px;
+  position: relative;
+  width: 100%;
+}
+
+.container_recipe_title_progress:before {
+  background-color: var(--height_color_02);
+  content: '';
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px;
+}
+
+.recipe_category {
+  color: var(--height_color_02);
+  font-family: Volkhov , serif;
+  font-size: 27px;
+  font-style: italic;
+  font-weight: 900;
+  line-height: 29px;
+}
+
+.title_detail {
+  font-family: Lato , sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 27px;
+}
+
+/* conteiner ingredientes */
+.container_instructions_progress {
+  margin-top: 20px;
+  padding: 30px 60px;
+}
+
+.container_instructions_progress h2 {
+  color: var(--height_color_02);
+  font-family: Volkhov , serif;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 900;
+  line-height: 23px;
+  margin-bottom: 24px;
+  transform: translateX(-40px);
+}
+
+
+.instructions_in_progress {
+  color: var(--dark_color);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 27px;
+}
+
+/* lista de ingredientes */
+.conteiner_ingredientes_progress {
+  background: url('../images/noisebg.png') #fff7e5;
+  margin-top: 20px;
+  padding: 30px 60px;
+}
+
+.conteiner_ingredientes_progress h2 {
+  color: var(--dark_color);
+  font-family: Volkhov , serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 23px;
+  margin-bottom: 24px;
+  transform: translateX(-40px);
+}
+
+.ingredient_name_progress {
+  align-items: center;
+  display: flex;
+}
+
+.ingredient_progress {
+  font-family: Volkhov , serif;
+  font-size: 17px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 29px;
+  position: relative;
+}
+
+.ingrediente {
+  display: none;
+}
+
+.ingredient_progress:before {
+  background: white;
+  border-radius: 100%;
+  content: '';
+  height: 24px;
+  left: -36px;
+  position: absolute;
+  width: 24px;
+}
+
+.ingrediente:checked ~ .ingredient_progress {
+  color: var(--height_color_02);
+}
+
+.ingrediente:checked ~ .ingredient_progress:after {
+
+  /* background: var(--height_color_02); */
+  background: url('../images/check.png') var(--height_color_03);
+  background-position: 45% center;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  border-radius: 100%;
+  content: '';
+  height: 20px;
+  left: -34px;
+  position: absolute;
+  top: 2px;
+  width: 20px;
+}
+
+/* menu social */
+.social_menu.inProgress {
+  display: flex;
+  gap: 20px;
+  height: 28px;
+  justify-content: flex-end;
+  left: 0;
+  padding: 0 20px;
+  position: absolute;
+  top: calc(25vh - 28px);
+  width: 100%;
+}
+
+.button_share_inProgress {
+
+  /* background: var(--height_color_03); */
+  background: url('../images/compartilhar.png') var(--height_color_03);
+  background-position: 45% center;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 50px;
+  position: relative;
+
+  /* overflow: hidden; */
+
+  /* text-indent: -1000%; */
+  transform: translateY(-25px);
+  width: 50px;
+}
+
+.button_share_inProgress img {
+  display: none;
+}
+
+.social_menu.inProgress .button_like {
+  align-items: center;
+  background: var(--height_color_03);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  overflow: hidden;
+  transform: translateY(-25px);
+  width: 50px;
+}
+
+.like[ src *= 'whiteHeartIcon' ] {
+  height: 50%;
+  width: 50%;
+}
+
+.like[ src *= 'lackHeartIcon' ] {
+  height: 50%;
+  width: 50%;
+}
+
+.alert_link_copied_progress {
+  align-items: center;
+  background-color: var(--dark_color);
+  border-radius: 5px;
+  color: var(--height_color_03);
+  display: flex;
+  font-size: 14px;
+  font-weight: 900;
+  height: 50px;
+  justify-content: center;
+  position: absolute;
+  transform: translate(-25px, -100px);
+  width: 100px;
+}
+
+.alert_link_copied_progress:after {
+  background-color: var(--dark_color);
+  border-radius: 2px;
+  bottom: -8px;
+  content: '';
+  height: 20px;
+  position: absolute;
+  transform: rotate(45deg);
+  width: 20px;
+  z-index: -2;
+}
+
+.status_recipe_inprogress {
+  background: var(--height_color_03);
+  border: none;
+  bottom: 30px;
+  color: var(--dark_color);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  height: 70px;
+  left: 20px;
+  margin: auto;
+  position: fixed;
+  text-transform: uppercase;
+  width: calc(100% - 40px);
+}
+
+.status_recipe_inprogress:disabled {
+  background-color: white;
+  border: var(--height_color_02) 2px solid;
+  bottom: 30px;
+  color: var(--height_color_02);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  height: 70px;
+  left: 20px;
+  margin: auto;
+  position: fixed;
+  text-transform: uppercase;
+  width: calc(100% - 40px);
+}
+

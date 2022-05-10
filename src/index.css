@@ -18,9 +18,11 @@
   vertical-align:baseline;
   position: relative
 }
+
 .doneImg {
   width: 100px;
 }
+/* verificar o que essa classe faz */
 
 body {
   font-family: 'Lato', sans-serif;

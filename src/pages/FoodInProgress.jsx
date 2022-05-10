@@ -38,29 +38,39 @@ export default function FoodInProgress() {
   };
 
   return (
-    <div>
+    <div className="contanier_in_progress">
       <InProgressCard type="foods" />
-      <button
-        data-testid="share-btn"
-        type="button"
-        onClick={ shareRecipe }
-      >
-        {
-          copied
-            ? <span>Link copied!</span>
-            : <img src={ shareIcon } alt="ícone para compartilhar" />
-        }
-      </button>
-      <button
-        data-testid="favorite-btn"
-        type="button"
-        onClick={ handleFavorite }
-        src={ isFavorite ? favorited : notFavorited }
-      >
-        <img src={ isFavorite ? favorited : notFavorited } alt="Ícone de favoritar" />
-      </button>
+      <div className="social_menu inProgress">
+        <button
+          className="button_share_inProgress"
+          data-testid="share-btn"
+          type="button"
+          onClick={ shareRecipe }
+        >
+          {
+            copied
+              ? <span className="alert_link_copied_progress">Link copied!</span>
+              : <img src={ shareIcon } alt="ícone para compartilhar" />
+          }
+        </button>
+        <button
+          className="button_like"
+          data-testid="favorite-btn"
+          type="button"
+          onClick={ handleFavorite }
+          src={ isFavorite ? favorited : notFavorited }
+        >
+          <img
+            className="like"
+            src={ isFavorite ? favorited : notFavorited }
+            alt="Ícone de favoritar"
+          />
+        </button>
+      </div>
+
       <Link to="/done-recipes">
         <button
+          className="status_recipe_inprogress"
           data-testid="finish-recipe-btn"
           type="button"
           disabled={ enableFinishBtn() }

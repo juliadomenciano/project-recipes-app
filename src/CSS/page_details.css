@@ -81,7 +81,7 @@
   width: 100%;
 }
 
-.button_share {
+.social_menu.detail_page .button_share {
 
   /* background: var(--height_color_03); */
   background: url('../images/compartilhar.png') var(--height_color_03);
@@ -98,7 +98,7 @@
   width: 50px;
 }
 
-.button_like {
+.social_menu.detail_page .button_like {
   align-items: center;
   background: var(--height_color_03);
   border: none;
@@ -112,7 +112,7 @@
   width: 50px;
 }
 
-.button_like.true > img {
+.social_menu.detail_page .button_like.true > img {
   height: 50%;
   width: 50%;
 }

@@ -5,6 +5,8 @@ import InProgressContext from '../context/InProgressContext/InProgressContext';
 import inProgressHelper from '../helpers/inProgressHelper';
 import { drinkDetails, foodDetails } from '../services/detailsRequestApi';
 
+import '../CSS/in_progress.css';
+
 const IN_PROGRESS_KEY = 'inProgressRecipes';
 
 export default function InProgressCard({ type }) {
@@ -63,34 +65,69 @@ export default function InProgressCard({ type }) {
       {
         recipeData && (
           <>
-            <img
-              data-testid="recipe-photo"
-              src={ recipeData[keys[0]] }
-              alt={ `imagem do ${recipeData[keys[1]]}` }
-              width="300px"
-            />
-            <h2 data-testid="recipe-title">{ recipeData[keys[1]] }</h2>
-            <h3 data-testid="recipe-category">{ recipeData[keys[2]] }</h3>
-            <p data-testid="instructions">{ strInstructions }</p>
-            <ol>
-              {
-                ingredients
-                  && ingredients
-                    .map((ingredient, index) => (
-                      <li key={ index } data-testid={ `${index}-ingredient-step` }>
-                        <label htmlFor={ ingredient[1] }>
+            <div className="container_img_progress">
+              <img
+                data-testid="recipe-photo"
+                src={ recipeData[keys[0]] }
+                alt={ `imagem do ${recipeData[keys[1]]}` }
+                width="300px"
+                className="img_progress_detail"
+              />
+            </div>
+            <div className="container_recipe_title_progress">
+              <h3
+                data-testid="recipe-category"
+                className="recipe_category"
+              >
+                { recipeData[keys[2]] }
+              </h3>
+              <h2
+                data-testid="recipe-title"
+                className="title_detail"
+              >
+                { recipeData[keys[1]] }
+              </h2>
+            </div>
+            <section className="conteiner_ingredientes_progress">
+              <h2>Ingredients</h2>
+              <ol className="list_progress">
+                {
+                  ingredients
+                    && ingredients
+                      .map((ingredient, index) => (
+                        <li
+                          className="ingredient_name_progress"
+                          key={ index }
+                          data-testid={ `${index}-ingredient-step` }
+                        >
                           <input
+                            className="ingrediente"
                             type="checkbox"
                             id={ ingredient[1] }
                             onChange={ handleChange }
                             checked={ progressStorage[section][pathId]
                               .includes(ingredient[1]) }
                           />
-                          { ingredient[1] }
-                        </label>
-                      </li>))
-              }
-            </ol>
+                          <label
+                            htmlFor={ ingredient[1] }
+                            className="ingredient_progress"
+                          >
+                            { ingredient[1] }
+                          </label>
+                        </li>))
+                }
+              </ol>
+            </section>
+
+            <div className="container_instructions_progress">
+              <h2>Instructions</h2>
+              <p
+                className="instructions_in_progress"
+                data-testid="instructions"
+              >
+                { strInstructions }
+              </p>
+            </div>
           </>)
       }
     </div>
