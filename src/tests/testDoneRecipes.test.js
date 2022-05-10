@@ -89,7 +89,7 @@ describe('Testa a tela de receitas feitas', () => {
     expect(drinkName).toBeInTheDocument();
   });
 
-  test.only('Testa se o filtro "all" funciona como esperado', async () => {
+  test('Testa se o filtro "all" funciona como esperado', async () => {
     const { history } = renderWithRouter(<App />);
     history.push(doneRecipesPath);
     const buttonAll = screen.getByTestId(filterAll);
@@ -101,4 +101,37 @@ describe('Testa a tela de receitas feitas', () => {
     const drinkName = await screen.findByText('Aquamarine');
     expect(drinkName).toBeInTheDocument();
   });
+
+  /*   test('Verifica se o botão de compartilhar salva o link da receita', async () => {
+    const { history } = renderWithRouter(<App />);
+    history.push(doneRecipesPath);
+    const shareBtn = await screen.findByTestId('0-horizontal-share-btn');
+    userEvent.click(shareBtn);
+    const copied = await screen.findByText('Link copied!');
+    expect(copied).toBeInTheDocument();
+  }); */
+
+  test('Clicando na imagem, página é redirecionada para o detalhe da receita',
+    async () => {
+      const { history } = renderWithRouter(<App />);
+      history.push(doneRecipesPath);
+      const foodImage = await screen.findByTestId('0-horizontal-image');
+
+      expect(foodImage).toBeInTheDocument();
+      userEvent.click(foodImage);
+
+      const { pathname } = history.location;
+      expect(pathname).toBe('/foods/52771');
+    });
+
+  test('Verifica se a página é redirecionada quando clicar no nome da receita',
+    async () => {
+      const { history } = renderWithRouter(<App />);
+      history.push(doneRecipesPath);
+      const foodName = await screen.findByTestId('0-horizontal-name');
+
+      expect(foodName).toBeInTheDocument();
+      userEvent.click(foodName);
+      expect(history.location.pathname).toBe('/foods/52771');
+    });
 });

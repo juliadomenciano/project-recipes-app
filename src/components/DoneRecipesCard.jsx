@@ -1,6 +1,6 @@
 import copy from 'clipboard-copy';
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import shareIcon from '../images/shareIcon.svg';
 import '../index.css';
@@ -8,12 +8,18 @@ import '../index.css';
 export default function DoneRecipesCard(props) {
   const { image, category, recipeName, nationality, id,
     doneDate, tagName, index, alcoholic, foodOrDrink } = props;
-  const [copied, setCopied] = useState(false);
+  const [linkCopied, setLinkCopied] = useState(false);
 
   const shareRecipe = () => {
+    const threeSeconds = 3000;
     copy(`http://localhost:3000/foods/${id}`);
-    setCopied(true);
+    setLinkCopied(true);
+    setTimeout(() => {
+      setLinkCopied(false);
+    }, threeSeconds);
   };
+
+  useEffect(() => () => clearTimeout(), []);
 
   return (
     <section key={ index }>
@@ -54,12 +60,9 @@ export default function DoneRecipesCard(props) {
           src={ shareIcon }
           onClick={ shareRecipe }
         >
-          {
-            copied
-              ? <span>Link copied!</span>
-              : <img src={ shareIcon } alt="ícone para compartilhar" />
-          }
+          <img src={ shareIcon } alt="ícone para compartilhar" />
         </button>
+        { linkCopied && <p className="alert_link_copied">Link copied!</p> }
         {
           foodOrDrink === 'food'
             && tagName.map((tag, idx) => (
