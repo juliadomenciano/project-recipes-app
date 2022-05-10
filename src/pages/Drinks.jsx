@@ -1,12 +1,11 @@
-import React, { useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import React, { useContext, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import ProfileContext from '../context/ProfileContext/ProfileContext';
-import DrinksContext from '../context/DrinksContext/DrinksContext';
 import RecipeCard from '../components/RecipeCard';
-
+import DrinksContext from '../context/DrinksContext/DrinksContext';
+import ProfileContext from '../context/ProfileContext/ProfileContext';
 import CSS from '../modules/FoodsDrinks.module.css';
 
 function Drinks(props) {
@@ -29,19 +28,28 @@ function Drinks(props) {
     setFoodOrDrink('drinks');
   });
 
+  function select() {
+    Array.from(document.querySelectorAll('.selected'))
+      .forEach((button) => button.classList.add('notSelected'));
+    Array.from(document.querySelectorAll('.selected'))
+      .forEach((button) => button.classList.remove('selected'));
+  }
+
   function selectFilter(category, target) {
     if (target.className === 'notSelected') {
       filterByCategory(category);
+      select();
       target.classList.remove('notSelected');
       target.classList.add('selected');
     } else {
-      target.classList.remove('selected');
-      target.classList.add('notSelected');
+      select();
+      // target.classList.add('notSelected');
       return setDrinksResults(drinksResultsRecover);
     }
   }
 
   function showAllRecipes() {
+    select();
     return setDrinksResults(drinksResultsRecover);
   }
 

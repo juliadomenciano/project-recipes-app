@@ -8,7 +8,7 @@ const foodsIngredients = '/explore/foods/ingredients';
 const twelve = 12;
 
 describe('Testa a página Explore Ingredients', () => {
-  test.only('Verifica se existem os elementos esperados', async () => {
+  test('Verifica se existem os elementos esperados', async () => {
     const { history } = renderWithRouter(<App />);
     history.push(foodsIngredients);
 

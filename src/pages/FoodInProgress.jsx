@@ -1,23 +1,20 @@
 import copy from 'clipboard-copy';
 import React, { useContext, useEffect, useState } from 'react';
-import { Link, useParams, useLocation } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import InProgressCard from '../components/InProgressCard';
 import InProgressContext from '../context/InProgressContext/InProgressContext';
+import { handleRecipeDone } from '../helpers/RecipeDetailHelpers';
 import favorited from '../images/blackHeartIcon.svg';
 import shareIcon from '../images/shareIcon.svg';
 import notFavorited from '../images/whiteHeartIcon.svg';
-import { handleRecipeDone } from '../helpers/RecipeDetailHelpers';
 
 const FAVORITE_KEY = 'favoriteRecipes';
 
 export default function FoodInProgress() {
-  const [copied, setCopied] = useState(false);
+  const [linkCopied, setLinkCopied] = useState(false);
   const { scribbled, handleFavorite,
-    isFavorite, setIsFavorite } = useContext(InProgressContext);
+    isFavorite, setIsFavorite, recipeData } = useContext(InProgressContext);
   const { id } = useParams();
-  const path = useLocation().pathname;
-  const removeInProgress = path.replace('/in-progress', '');
-  const foodId = removeInProgress.replace('/foods/', '');
 
   useEffect(() => {
     const favoriteStorage = JSON.parse(localStorage.getItem(FAVORITE_KEY)) || [];
@@ -27,9 +24,15 @@ export default function FoodInProgress() {
   }, [id, setIsFavorite]);
 
   const shareRecipe = () => {
+    const threeSeconds = 3000;
     copy(`http://localhost:3000/foods/${id}`);
-    setCopied(true);
+    setLinkCopied(true);
+    setTimeout(() => {
+      setLinkCopied(false);
+    }, threeSeconds);
   };
+
+  useEffect(() => () => clearTimeout(), []);
 
   const enableFinishBtn = () => {
     const checkboxes = Array.from(document.querySelectorAll('input'));
@@ -47,12 +50,9 @@ export default function FoodInProgress() {
           type="button"
           onClick={ shareRecipe }
         >
-          {
-            copied
-              ? <span className="alert_link_copied_progress">Link copied!</span>
-              : <img src={ shareIcon } alt="ícone para compartilhar" />
-          }
+          <img src={ shareIcon } alt="ícone para compartilhar" />
         </button>
+        { linkCopied && <p className="alert_link_copied">Link copied!</p> }
         <button
           className="button_like"
           data-testid="favorite-btn"
@@ -67,14 +67,13 @@ export default function FoodInProgress() {
           />
         </button>
       </div>
-
       <Link to="/done-recipes">
         <button
           className="status_recipe_inprogress"
           data-testid="finish-recipe-btn"
           type="button"
           disabled={ enableFinishBtn() }
-          onClick={ () => handleRecipeDone('food', foodId) }
+          onClick={ () => handleRecipeDone('food', recipeData) }
         >
           Finish Recipe
         </button>

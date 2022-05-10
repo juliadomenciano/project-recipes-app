@@ -11,15 +11,10 @@ import notFavorited from '../images/whiteHeartIcon.svg';
 const FAVORITE_KEY = 'favoriteRecipes';
 
 export default function DrinksInProgress() {
-  const [copied, setCopied] = useState(false);
+  const [linkCopied, setLinkCopied] = useState(false);
   const { id } = useParams();
   const { scribbled, handleFavorite,
-    isFavorite, setIsFavorite } = useContext(InProgressContext);
-
-  const shareRecipe = async () => {
-    copy(`http://localhost:3000/drinks/${id}`);
-    setCopied(true);
-  };
+    isFavorite, setIsFavorite, recipeData } = useContext(InProgressContext);
 
   useEffect(() => {
     const favoriteStorage = JSON.parse(localStorage.getItem(FAVORITE_KEY)) || [];
@@ -27,6 +22,17 @@ export default function DrinksInProgress() {
       return setIsFavorite(true);
     } setIsFavorite(false);
   }, [id, setIsFavorite]);
+
+  const shareRecipe = async () => {
+    const threeSeconds = 3000;
+    copy(`http://localhost:3000/drinks/${id}`);
+    setLinkCopied(true);
+    setTimeout(() => {
+      setLinkCopied(false);
+    }, threeSeconds);
+  };
+
+  useEffect(() => () => clearTimeout(), []);
 
   const enableFinishBtn = () => {
     const checkboxes = Array.from(document.querySelectorAll('input'));
@@ -44,12 +50,9 @@ export default function DrinksInProgress() {
           type="button"
           onClick={ shareRecipe }
         >
-          {
-            copied
-              ? <span>Link copied!</span>
-              : <img src={ shareIcon } alt="ícone para compartilhar" />
-          }
+          <img src={ shareIcon } alt="ícone para compartilhar" />
         </button>
+        { linkCopied && <p className="alert_link_copied">Link copied!</p> }
         <button
           className="button_like"
           data-testid="favorite-btn"
@@ -69,7 +72,7 @@ export default function DrinksInProgress() {
           className="status_recipe_inprogress"
           data-testid="finish-recipe-btn"
           type="button"
-          onClick={ () => handleRecipeDone('drink', id) }
+          onClick={ () => handleRecipeDone('drink', recipeData) }
           disabled={ enableFinishBtn() }
         >
           Finish Recipe

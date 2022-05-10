@@ -15,7 +15,6 @@ export default function InProgressCard({ type }) {
   const progressStorage = JSON.parse(localStorage.getItem(IN_PROGRESS_KEY));
   const path = useLocation().pathname;
   const pathId = path.replace(`/${type}/`, '').replace('/in-progress', '');
-  const section = type === 'foods' ? 'meals' : 'drinks';
   const keys = [...inProgressHelper(type)];
   const { strInstructions } = recipeData;
   const ingredients = Object.entries(recipeData)
@@ -26,28 +25,27 @@ export default function InProgressCard({ type }) {
     const apiRequest = async () => {
       const handleRequest = type === 'foods' ? foodDetails(pathId) : drinkDetails(pathId);
       const data = await handleRequest;
-      setRecipeData(await data[section][0]);
+      setRecipeData(type === 'foods' ? data.meals[0] : data.drinks[0]);
     };
     apiRequest();
     const checkStorage = progressStorage
-      ? Object.keys(progressStorage).includes(section)
-      : false;
+      && Object.keys(progressStorage).includes(type);
     const saveObject = {
       ...progressStorage,
-      [section]: checkStorage
+      [type]: checkStorage
         ? {
-          ...progressStorage[section],
-          [pathId]: progressStorage[section][pathId] || scribbled,
+          ...progressStorage[type],
+          [pathId]: progressStorage[type][pathId] || scribbled,
         }
         : { [pathId]: [] },
     };
     localStorage.setItem(IN_PROGRESS_KEY, JSON.stringify(saveObject));
-  }, [pathId, progressStorage, scribbled, section, setRecipeData, type]);
+  }, [pathId, progressStorage, scribbled, setRecipeData, type]);
 
   const handleChange = ({ target: { id } }) => {
     const saveObject = (updatedList) => ({
       ...progressStorage,
-      [section]: { ...progressStorage[section], [pathId]: updatedList },
+      [type]: { ...progressStorage[type], [pathId]: updatedList },
     });
     if (scribbled.includes(id)) {
       const removeIngredient = scribbled.filter((ingredient) => ingredient !== id);
@@ -105,7 +103,7 @@ export default function InProgressCard({ type }) {
                             type="checkbox"
                             id={ ingredient[1] }
                             onChange={ handleChange }
-                            checked={ progressStorage[section][pathId]
+                            checked={ progressStorage[type][pathId]
                               .includes(ingredient[1]) }
                           />
                           <label

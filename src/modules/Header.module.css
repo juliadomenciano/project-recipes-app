@@ -12,6 +12,7 @@
 
 .nav_title {
   align-items: center;
+  background-color: white;
   display: flex;
   justify-content: center;
 }
