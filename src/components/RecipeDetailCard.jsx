@@ -102,7 +102,6 @@ function RecipeDetailCard(props) {
           }
         </section>
       </div>
-
       {inProgress ? (
         <ContinueRecipeButton
           foodOrDrink={ foodOrDrink }
