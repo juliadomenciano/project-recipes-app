@@ -1,39 +1,30 @@
-import { drinkDetails, foodDetails } from '../services/detailsRequestApi';
-
-export async function handleRecipeDone(foodOrDrink, id) {
+export async function handleRecipeDone(foodOrDrink, recipeData) {
   let today = new Date();
   const dd = String(today.getDate()).padStart(2, '0');
   const mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
   const yyyy = today.getFullYear();
-
   today = `${mm}/${dd}/${yyyy}`;
 
-  let data = {};
-  if (foodOrDrink === 'food') {
-    data = await foodDetails(id);
-  } else {
-    data = await drinkDetails(id);
-  }
   const currentRecipe = foodOrDrink === 'food' ? {
-    id: data.meals[0].idMeal,
+    id: recipeData.idMeal,
     type: 'food',
-    nationality: data.meals[0].strArea ? data.meals[0].strArea : '',
-    category: data.meals[0].strCategory,
+    nationality: recipeData.strArea ? recipeData.strArea : '',
+    category: recipeData.strCategory,
     alcoholicOrNot: '',
-    name: data.meals[0].strMeal,
-    image: data.meals[0].strMealThumb,
+    name: recipeData.strMeal,
+    image: recipeData.strMealThumb,
     doneDate: today,
-    tags: [data.meals[0].strTags],
+    tags: [recipeData.strTags],
   } : {
-    id: data.drinks[0].idDrink,
+    id: recipeData.idDrink,
     type: 'drink',
-    nationality: data.drinks[0].strArea ? data.drinks[0].strArea : '',
-    category: data.drinks[0].strCategory,
-    alcoholicOrNot: data.drinks[0].strAlcoholic,
-    name: data.drinks[0].strDrink,
-    image: data.drinks[0].strDrinkThumb,
+    nationality: recipeData.strArea ? recipeData.strArea : '',
+    category: recipeData.strCategory,
+    alcoholicOrNot: recipeData.strAlcoholic,
+    name: recipeData.strDrink,
+    image: recipeData.strDrinkThumb,
     doneDate: today,
-    tags: data.drinks[0].strTags ? data.drinks[0].strTags : [],
+    tags: recipeData.strTags ? recipeData.strTags : [],
   };
   const previousRecipes = JSON.parse(localStorage
     .getItem('doneRecipes')) ? JSON.parse(
