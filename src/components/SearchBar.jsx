@@ -40,15 +40,14 @@ function SearchBar(props) {
 
   return (
     <form className={ CSS.conteiner_form }>
-      <label className={ CSS.input_search } htmlFor="searchInput">
-        <input
-          name="searchInput"
-          type="text"
-          id="searchInput"
-          data-testid="search-input"
-          onChange={ ({ target }) => setInputSearch(target.value) }
-        />
-      </label>
+      <input
+        className={ CSS.input_search }
+        name="searchInput"
+        type="text"
+        id="searchInput"
+        data-testid="search-input"
+        onChange={ ({ target }) => setInputSearch(target.value) }
+      />
       <fieldset className={ CSS.radio_search }>
         <label htmlFor="ingredient">
           <input
