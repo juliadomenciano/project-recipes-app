@@ -44,7 +44,7 @@ function Drinks(props) {
     } else {
       select();
       // target.classList.add('notSelected');
-      return setFoodsResults(foodsResultsRecover);
+      return setDrinksResults(drinksResultsRecover);
     }
   }
 
