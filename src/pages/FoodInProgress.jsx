@@ -11,7 +11,7 @@ import { handleRecipeDone } from '../helpers/RecipeDetailHelpers';
 const FAVORITE_KEY = 'favoriteRecipes';
 
 export default function FoodInProgress() {
-  const [copied, setCopied] = useState(false);
+  const [linkCopied, setLinkCopied] = useState(false);
   const { scribbled, handleFavorite,
     isFavorite, setIsFavorite, recipeData } = useContext(InProgressContext);
   const { id } = useParams();
@@ -24,9 +24,15 @@ export default function FoodInProgress() {
   }, [id, setIsFavorite]);
 
   const shareRecipe = () => {
+    const threeSeconds = 3000;
     copy(`http://localhost:3000/foods/${id}`);
-    setCopied(true);
+    setLinkCopied(true);
+    setTimeout(() => {
+      setLinkCopied(false);
+    }, threeSeconds);
   };
+
+  useEffect(() => () => clearTimeout(), []);
 
   const enableFinishBtn = () => {
     const checkboxes = Array.from(document.querySelectorAll('input'));
@@ -42,12 +48,9 @@ export default function FoodInProgress() {
         type="button"
         onClick={ shareRecipe }
       >
-        {
-          copied
-            ? <span>Link copied!</span>
-            : <img src={ shareIcon } alt="ícone para compartilhar" />
-        }
+        <img src={ shareIcon } alt="ícone para compartilhar" />
       </button>
+      { linkCopied && <p className="alert_link_copied">Link copied!</p> }
       <button
         data-testid="favorite-btn"
         type="button"

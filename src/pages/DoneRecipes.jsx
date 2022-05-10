@@ -15,7 +15,7 @@ export default function DoneRecipes() {
     getLocalStorage();
   }, []);
 
-  const fliterRecipes = (item) => {
+  const filterRecipes = (item) => {
     if (filter !== '') {
       return filter === item.type;
     }
@@ -46,8 +46,8 @@ export default function DoneRecipes() {
       >
         Drinks
       </button>
-      { doneRecipes && (
-        doneRecipes.filter((item) => fliterRecipes(item)).map((recipe, index) => (
+      {doneRecipes && (
+        doneRecipes.filter((item) => filterRecipes(item)).map((recipe, index) => (
           recipe.type === 'food' ? (
             <DoneRecipesCard
               key={ index }
