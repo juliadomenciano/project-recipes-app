@@ -28,21 +28,28 @@ function Drinks(props) {
     setFoodOrDrink('drinks');
   });
 
+  function select() {
+    Array.from(document.querySelectorAll('.selected'))
+      .forEach((button) => button.classList.add('notSelected'));
+    Array.from(document.querySelectorAll('.selected'))
+      .forEach((button) => button.classList.remove('selected'));
+  }
+
   function selectFilter(category, target) {
     if (target.className === 'notSelected') {
       filterByCategory(category);
+      select();
       target.classList.remove('notSelected');
       target.classList.add('selected');
     } else {
-      Array.from(document.querySelectorAll('.selected'))
-        .forEach((button) => button.classList.add('notSelected'));
-      Array.from(document.querySelectorAll('.selected'))
-        .forEach((button) => button.classList.remove('selected'));
-      return setDrinksResults(drinksResultsRecover);
+      select();
+      // target.classList.add('notSelected');
+      return setFoodsResults(foodsResultsRecover);
     }
   }
 
   function showAllRecipes() {
+    select();
     return setDrinksResults(drinksResultsRecover);
   }
 

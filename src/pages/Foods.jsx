@@ -103,6 +103,7 @@ function Foods(props) {
           ) : resultsFoods.meals.map((food, i) => (
             i > maxRecipesOnScreen ? '' : (
               <div
+                key={ i }
                 onClick={ () => redirectToDetails(food.idMeal) }
                 aria-hidden="true"
               >

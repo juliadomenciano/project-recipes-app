@@ -18,7 +18,6 @@ export default function FoodInProgress() {
 
   useEffect(() => {
     const favoriteStorage = JSON.parse(localStorage.getItem(FAVORITE_KEY)) || [];
-    console.log('carreguei');
     if (favoriteStorage.some((fav) => fav.id === id)) {
       return setIsFavorite(true);
     } setIsFavorite(false);
