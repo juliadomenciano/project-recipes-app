@@ -14,7 +14,7 @@ export async function handleRecipeDone(foodOrDrink, recipeData) {
     name: recipeData.strMeal,
     image: recipeData.strMealThumb,
     doneDate: today,
-    tags: [recipeData.strTags],
+    tags: recipeData.strTags.split(','),
   } : {
     id: recipeData.idDrink,
     type: 'drink',
@@ -24,7 +24,7 @@ export async function handleRecipeDone(foodOrDrink, recipeData) {
     name: recipeData.strDrink,
     image: recipeData.strDrinkThumb,
     doneDate: today,
-    tags: recipeData.strTags ? recipeData.strTags : [],
+    tags: recipeData.strTags ? recipeData.strTags.split(',') : [],
   };
   const previousRecipes = JSON.parse(localStorage
     .getItem('doneRecipes')) ? JSON.parse(
@@ -52,6 +52,7 @@ export function handleStartRecipe(foodOrDrink, id, ingredientList, history) {
       ...meals,
     },
     cocktails: {
+      ...cocktails,
       [id]: ingredientList,
     },
   };
@@ -95,11 +96,10 @@ export function handleFavoriteRecipe(data, foodOrDrink) {
   localStorage.setItem('favoriteRecipes', JSON.stringify(newStorage));
 }
 
-export function handleRemoveFavorite(data, foodOrDrink) {
+export function handleRemoveFavorite(id, foodOrDrink) {
   const isFavorite = JSON.parse(localStorage.getItem('favoriteRecipes'));
   const isFoodOrDrink = foodOrDrink === 'food' ? (
-    isFavorite && isFavorite.filter((key) => key.id !== data.idMeal)
-  ) : isFavorite && isFavorite.filter((key) => key.id !== data.idDrink);
-  console.log(isFoodOrDrink);
+    isFavorite && isFavorite.filter((key) => key.id !== id)
+  ) : isFavorite && isFavorite.filter((key) => key.id !== id);
   localStorage.setItem('favoriteRecipes', JSON.stringify(isFoodOrDrink));
 }

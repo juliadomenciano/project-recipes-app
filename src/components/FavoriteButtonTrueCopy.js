@@ -3,14 +3,14 @@ import React from 'react';
 import { handleRemoveFavorite } from '../helpers/RecipeDetailHelpers';
 import blackHeartIcon from '../images/blackHeartIcon.svg';
 
-export default function FavoriteButtonTrue(props) {
+export default function FavoriteButtonPage(props) {
   const { data, foodOrDrink, setFavorite } = props;
   return (
     foodOrDrink === 'food' ? (
       <button
         type="button"
         data-testid="favorite-btn"
-        onClick={ () => [handleRemoveFavorite(data.idMeal,
+        onClick={ () => [handleRemoveFavorite(data,
           foodOrDrink), setFavorite(false)] }
         className="button_like true"
         src={ blackHeartIcon }
@@ -21,7 +21,7 @@ export default function FavoriteButtonTrue(props) {
       <button
         type="button"
         data-testid="favorite-btn"
-        onClick={ () => [handleRemoveFavorite(data.idDrink,
+        onClick={ () => [handleRemoveFavorite(data,
           foodOrDrink), setFavorite(false)] }
         className="button_like true"
         src={ blackHeartIcon }
@@ -31,7 +31,7 @@ export default function FavoriteButtonTrue(props) {
     ));
 }
 
-FavoriteButtonTrue.propTypes = {
+FavoriteButtonPage.propTypes = {
   data: PropTypes.shape(object),
   foodOrDrink: PropTypes.string,
 }.isRequired;

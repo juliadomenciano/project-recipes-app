@@ -3,16 +3,15 @@ import React, { useContext, useEffect, useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import DrinksContext from '../context/DrinksContext/DrinksContext';
 import FoodsContext from '../context/FoodsContext/FoodsContext';
+import '../CSS/page_details.css';
+import '../CSS/recommended.recipe.css';
+import '../CSS/status_recipe.css';
 import CSS from '../modules/RecipeCard.module.css';
 import ContinueRecipeButton from './ContinueRecipeButton';
 import FavoriteAndShareButton from './FavoriteAndShareButton';
 import IngredientsList from './IngredientsList';
 import RecipeCard from './RecipeCard';
 import StartRecipeButton from './StartRecipeButton';
-
-import '../CSS/page_details.css';
-import '../CSS/status_recipe.css';
-import '../CSS/recommended.recipe.css';
 
 function RecipeDetailCard(props) {
   const { foodOrDrink, data } = props;
@@ -103,7 +102,6 @@ function RecipeDetailCard(props) {
           }
         </section>
       </div>
-
       {inProgress ? (
         <ContinueRecipeButton
           foodOrDrink={ foodOrDrink }
