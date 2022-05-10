@@ -1,12 +1,11 @@
-import React, { useContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import React, { useContext, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import ProfileContext from '../context/ProfileContext/ProfileContext';
-import DrinksContext from '../context/DrinksContext/DrinksContext';
 import RecipeCard from '../components/RecipeCard';
-
+import DrinksContext from '../context/DrinksContext/DrinksContext';
+import ProfileContext from '../context/ProfileContext/ProfileContext';
 import CSS from '../modules/FoodsDrinks.module.css';
 
 function Drinks(props) {
@@ -35,8 +34,10 @@ function Drinks(props) {
       target.classList.remove('notSelected');
       target.classList.add('selected');
     } else {
-      target.classList.remove('selected');
-      target.classList.add('notSelected');
+      Array.from(document.querySelectorAll('.selected'))
+        .forEach((button) => button.classList.add('notSelected'));
+      Array.from(document.querySelectorAll('.selected'))
+        .forEach((button) => button.classList.remove('selected'));
       return setDrinksResults(drinksResultsRecover);
     }
   }

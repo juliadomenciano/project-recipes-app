@@ -10,6 +10,9 @@ export default function DoneRecipesCard(props) {
     doneDate, tagName, index, alcoholic, foodOrDrink } = props;
   const [copied, setCopied] = useState(false);
   const threeSeconds = 3000;
+  console.log(tagName);
+  const result = JSON.stringify.split(',');
+  console.log(result);
 
   const shareRecipe = () => {
     copy(`http://localhost:3000/${foodOrDrink}s/${id}`);

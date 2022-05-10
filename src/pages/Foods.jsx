@@ -34,8 +34,11 @@ function Foods(props) {
       target.classList.remove('notSelected');
       target.classList.add('selected');
     } else {
-      target.classList.remove('selected');
-      target.classList.add('notSelected');
+      Array.from(document.querySelectorAll('.selected'))
+        .forEach((button) => button.classList.add('notSelected'));
+      Array.from(document.querySelectorAll('.selected'))
+        .forEach((button) => button.classList.remove('selected'));
+      // target.classList.add('notSelected');
       return setFoodsResults(foodsResultsRecover);
     }
   }
