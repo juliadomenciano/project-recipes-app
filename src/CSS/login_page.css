@@ -1,0 +1,192 @@
+.container_login {
+
+  --height_image : 35vh;
+  display: grid;
+  grid-auto-rows: var(--height_image) 130px 1fr;
+  grid-template-columns: 1fr;
+  max-width: 100%;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+.container_login_image {
+  background: url('../images/vetores/login_bg_curved.svg');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.container_login_image:before {
+  background: url('../images/vetores/cozinhando.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  bottom: 0;
+  content: '';
+  height: 300px;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, 60px);
+  width: 300px;
+}
+
+.container_login_image p {
+  text-indent: -1000%;
+}
+
+/* para os textos */
+.container_app_title {
+  align-items: center;
+
+  /* border: solid 1px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.app_title {
+  color: var(--dark_color);
+  font-family: Abril Fatface , cursive;
+  font-size: 50px;
+  font-weight: 400;
+}
+
+.app_title strong {
+  color: var(--height_color_02);
+  font-weight: 400;
+}
+
+.subtitle {
+  color: var(--dark_color);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 900;
+  transform: translate(32px, -2px);
+}
+
+/* Para os campos de login */
+.container_login_form {
+  align-items: center;
+
+  /* background: tomato; */
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  height: 100%;
+  justify-content: center;
+  margin: auto;
+  width: calc(100% - 40px);
+}
+
+.container_email, .container_password {
+  background-color: white;
+  border: 1px solid var(--dark_color);
+  height: 60px;
+  position: relative;
+  width: 100%;
+}
+
+.container_email:after, .container_password:after {
+  background-color: var(--dark_color);
+  bottom: -3px;
+  content: '';
+  height: 5px;
+  left: 30px;
+  position: absolute;
+  width: 40px;
+}
+
+/* .input_email {
+  font-size: 24px;
+
+  height: 100%;
+  width: 100%;
+} */
+
+/*  Faz com que o label/span mude de posição quando texto e preenchido
+    Foi necessário:
+    - colocar o span depois do input na página de login
+    - input como required para fazer a "validação\o" e mover o label para fora do input
+    https://stackoverflow.com/questions/16952526/detect-if-an-input-has-text-in-it-using-css-on-a-page-i-am-visiting-and-do-no
+*/
+
+.input_login {
+
+  /* border: 1px solid; */
+  font-family: Volkhov , serif;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 900;
+  left: 10px;
+  line-height: 20px;
+  padding: 0 20px;
+  position: absolute;
+  top: 20px;
+  transition: var(--transition-time);
+  z-index: 1;
+}
+
+.input_login:before {
+  background-color: white;
+  content: '';
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.input_email, .input_password {
+
+  /* background: olive; */
+  border: none;
+  color: var(--dark_color);
+  font-family: Lato , sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  height: 100%;
+  padding-left: 50px;
+  width: 100%;
+}
+
+.input_email:-internal-autofill-selected {
+  background: olive;
+}
+
+input:focus ~ .input_login { top: -10px; }
+
+input:valid ~ .input_login { top: -10px; }
+
+.login_app_button {
+  align-self: flex-end;
+  background-color: var(--height_color_02);
+  border: var(--height_color_02) 1px solid;
+  color: var(--dark_color);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  height: 70px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.login_app_button:disabled {
+  align-self: flex-end;
+  background-color: white;
+  border: var(--height_color_02) 1px solid;
+  color: var(--height_color_02);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  height: 70px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  width: 100%;
+}

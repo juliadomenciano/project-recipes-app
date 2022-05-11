@@ -1,0 +1,477 @@
+<svg class="prefix__animated" id="prefix__freepik_stories-refreshing" xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 500 500" version="1.1">
+  <style>
+    @keyframes lightSpeedRight {
+      60% {
+        transform: skewX(10deg);
+        opacity: 1
+      }
+
+      80% {
+        transform: skewX(-2deg)
+      }
+    }
+
+    @keyframes zoomIn {
+      0% {
+        opacity: 0;
+        transform: scale(.5)
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1)
+      }
+    }
+
+    @keyframes slideDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-30px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    svg#prefix__freepik_stories-refreshing:not(.prefix__animated) .prefix__animable {
+      opacity: 0
+    }
+  </style>
+  <g id="prefix__freepik--Landscape--inject-59" class="prefix__animable"
+    style="transform-origin:252.335px 286.535px;animation:1s 1 forwards cubic-bezier(.36,-.01,.5,1.38) zoomIn;animation-delay:0s">
+    <path
+      d="M459.17 278.71H45.73c.94 18.63 5.16 36.44 12.84 51.54a168.47 168.47 0 0015.9 25.46h356.79c15.58-21.98 24.39-48.66 27.91-77z"
+      style="transform-origin:252.45px 317.21px" id="prefix__el066w4dhql2nd" class="prefix__animable" fill="#ffc100" />
+    <path
+      d="M459.17 278.71H45.73c.94 18.63 5.16 36.44 12.84 51.54a168.47 168.47 0 0015.9 25.46h356.79c15.58-21.98 24.39-48.66 27.91-77z"
+      style="transform-origin:252.45px 317.21px" class="prefix__animable" fill="#fff" opacity=".5"
+      id="prefix__elnqbeu058fo" />
+    <path style="transform-origin:252.335px 268.71px" id="prefix__elhoufgkx4kua" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-miterlimit="10" d="M45 268.71h414.67" />
+    <path style="transform-origin:95.69px 295.75px" id="prefix__el9w2edyoswza" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M65.83 295.75h59.72" />
+    <path style="transform-origin:398.555px 295.75px" id="prefix__elr9ysriccwyh" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M384.16 295.75h28.79" />
+    <path style="transform-origin:434.815px 316.55px" id="prefix__elqlki5hfdp2" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M420.42 316.55h28.79" />
+    <path style="transform-origin:417.215px 336.81px" id="prefix__el4xdw5xre8lo" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M402.82 336.81h28.79" />
+    <path style="transform-origin:92.22px 303.22px" id="prefix__elfne3barouuh" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M86.62 303.22h11.2" />
+    <path style="transform-origin:126.345px 303.22px" id="prefix__elwrlvsmv6b6" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M101.55 303.22h49.59" />
+    <path style="transform-origin:381.76px 303.22px" id="prefix__el453hgkjqbpo" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M376.16 303.22h11.2" />
+    <path style="transform-origin:415.885px 303.22px" id="prefix__elv9envf6750b" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M391.09 303.22h49.59" />
+    <path style="transform-origin:101.815px 343.21px" id="prefix__elg63wtnfeuj9" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M77.02 343.21h49.59" />
+    <path style="transform-origin:118.35px 338.94px" id="prefix__elixtu2xgqq5" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M114.35 338.94h8" />
+    <path style="transform-origin:400.95px 333.08px" id="prefix__elndbqgcxgf1g" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M396.95 333.08h8" />
+    <path style="transform-origin:141.675px 320.81px" id="prefix__elltmxc18qlz" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M134.05 320.81h15.25" />
+    <path style="transform-origin:73.425px 320.81px" id="prefix__el12xkjysw203h" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M65.8 320.81h15.25" />
+    <path style="transform-origin:445.61px 286.69px" id="prefix__elzxuujm11a8" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M437.99 286.69h15.24" />
+    <path style="transform-origin:340.7px 324.55px" id="prefix__elcq1y2sewm3b" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M315.91 324.55h49.58" />
+    <path style="transform-origin:448.14px 278.62px" id="prefix__elhk70gssey8j" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M442.56 278.62h11.16" />
+    <path style="transform-origin:259.265px 278.62px" id="prefix__elujfbnt9oyvf" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M85.03 278.62H433.5" />
+    <path style="transform-origin:64.625px 278.62px" id="prefix__el5bgo60l5dnd" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M51.27 278.62h26.71" />
+    <path style="transform-origin:102.06px 246.76px" id="prefix__el1oy62usi2iw" class="prefix__animable" fill="#263238"
+      d="M101.58 224.45h.96v44.62h-.96z" />
+    <path style="transform-origin:102.275px 226.32px" id="prefix__elp21qj12ujs8" class="prefix__animable" fill="#263238"
+      d="M102.28 217.36l-35.45 17.92h70.89l-35.44-17.92z" />
+    <path style="transform-origin:121.265px 266.11px" id="prefix__elk5756ztoeh" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M108.94 268.31l1.76-4.58h21.83l1.06 4.76" />
+    <path style="transform-origin:140.1px 257.835px" id="prefix__elhf91iy333r" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M132.53 263.73l15.14-11.79" />
+    <path style="transform-origin:143.975px 262.415px" id="prefix__el3lyoctz1r5w" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M142.04 256.34l3.87 12.15" />
+    <path style="transform-origin:94.325px 266.11px" id="prefix__elqk1e8qt4scs" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M82 268.31l1.76-4.58h21.83l1.06 4.76" />
+    <path style="transform-origin:113.16px 257.835px" id="prefix__elpvoshyftoo9" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M105.59 263.73l15.14-11.79" />
+    <path style="transform-origin:117.035px 262.415px" id="prefix__elwu67eeu8swp" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M115.1 256.34l3.87 12.15" />
+    <path style="transform-origin:393.82px 246.76px" id="prefix__els5980wxb7h" class="prefix__animable" fill="#263238"
+      d="M393.34 224.45h.96v44.62h-.96z" />
+    <path style="transform-origin:394.025px 226.32px" id="prefix__elszch9ym1gj" class="prefix__animable" fill="#263238"
+      d="M394.03 217.36l-35.45 17.92h70.89l-35.44-17.92z" />
+    <path style="transform-origin:413.015px 266.11px" id="prefix__elf7hcybbhx8p" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M400.69 268.31l1.76-4.58h21.83l1.06 4.76" />
+    <path style="transform-origin:431.85px 257.835px" id="prefix__elj9ur25zwiyc" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M424.28 263.73l15.14-11.79" />
+    <path style="transform-origin:435.725px 262.415px" id="prefix__elwb08lly2txr" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M433.79 256.34l3.87 12.15" />
+    <path style="transform-origin:386.075px 266.11px" id="prefix__el5ebvbd6zy1t" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M373.75 268.31l1.76-4.58h21.83l1.06 4.76" />
+    <path style="transform-origin:404.91px 257.835px" id="prefix__elm3j6brn4qri" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M397.34 263.73l15.14-11.79" />
+    <path style="transform-origin:408.785px 262.415px" id="prefix__elzmriphkbze" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M406.85 256.34l3.87 12.15" />
+  </g>
+  <g id="prefix__freepik--Clouds--inject-59" class="prefix__animable"
+    style="transform-origin:273.74px 166.231px;animation:1s 1 forwards cubic-bezier(.36,-.01,.5,1.38) slideDown;animation-delay:0s">
+    <path d="M351.7 165.94a9.39 9.39 0 00-18.24 0z" style="transform-origin:342.58px 162.363px"
+      id="prefix__elzetid0tcw2" class="prefix__animable" fill="#ffc100" />
+    <path d="M443.82 165.94a11.64 11.64 0 00-10-8.87 27.29 27.29 0 10-53.69-9.8 17.42 17.42 0 00-27.45 18.67z"
+      style="transform-origin:397.889px 145.271px" id="prefix__elovmvx2khe4" class="prefix__animable" fill="#ffc100" />
+    <path d="M112.21 194.33a4.4 4.4 0 00-8.55 0z" style="transform-origin:107.935px 192.651px"
+      id="prefix__el0dotgu2zv1nn" class="prefix__animable" fill="#ffc100" />
+    <path
+      d="M155.43 194.33a5.47 5.47 0 00-4.69-4.16 12.8 12.8 0 10-25.18-4.6 8.19 8.19 0 00-13.22 6.43 8 8 0 00.34 2.31z"
+      style="transform-origin:133.885px 184.599px" id="prefix__elca6zjodron" class="prefix__animable" fill="#ffc100" />
+    <path d="M151.08 207.86a2.78 2.78 0 00-5.4 0z" style="transform-origin:148.38px 206.801px"
+      id="prefix__eltfelgstyui9" class="prefix__animable" fill="#ffc100" />
+    <path d="M178.35 207.86a3.44 3.44 0 00-3-2.62 8.08 8.08 0 10-15.89-2.9 5.16 5.16 0 00-8.34 4.07 5 5 0 00.21 1.45z"
+      style="transform-origin:164.735px 201.664px" id="prefix__eleqq0yjdg8ek" class="prefix__animable" fill="#ffc100" />
+  </g>
+  <g id="prefix__freepik--Character--inject-59" class="prefix__animable"
+    style="transform-origin:256.24px 246.653px;animation:1s 1 forwards cubic-bezier(.36,-.01,.5,1.38) fadeIn;animation-delay:0s">
+    <path style="transform-origin:256.24px 355.48px" id="prefix__ely0qo3f6lnsm" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M64.81 355.48h382.86" />
+    <path style="transform-origin:126.33px 370.71px" id="prefix__elnqrvabfq17o" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M126.33 356.04v29.34" />
+    <path style="transform-origin:137px 361.71px" id="prefix__elqacpaec5zzp" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M137 356.04v11.34" />
+    <path style="transform-origin:366.33px 376.04px" id="prefix__elae7qvf1na1g" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M366.33 356.04v40" />
+    <path style="transform-origin:375px 370.71px" id="prefix__el7h8xblj5vll" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M375 356.04v29.34" />
+    <path style="transform-origin:353px 370.71px" id="prefix__el8k1wjfi4t8f" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M353 356.04v29.34" />
+    <path style="transform-origin:210.33px 366.04px" id="prefix__els0gtgsru5bs" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M210.33 356.04v20" />
+    <path style="transform-origin:247px 382.71px" id="prefix__el0vlx02b06c8" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M247 356.04v53.34" />
+    <path style="transform-origin:262.33px 382.71px" id="prefix__elh1bsnuf16kk" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M262.33 356.04v53.34" />
+    <path style="transform-origin:270.33px 374.375px" id="prefix__eliqip5qunin9" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M270.33 356.04v36.67" />
+    <path style="transform-origin:317.67px 383.375px" id="prefix__elhxmyg6v519" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M317.67 356.04v54.67" />
+    <path
+      d="M242.14 107.82s3.46-10.62 17.05-10.13 40.28 20.27 47.45 28.67 4.44 22.24 4.44 22.24-32.86-36.82-68.94-40.78z"
+      style="transform-origin:276.865px 123.137px" id="prefix__elzpy9ps4lzxt" class="prefix__animable" fill="#ffc100"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" />
+    <ellipse cx="260.82" cy="159.34" rx="46.09" ry="73.9" style="transform-origin:260.82px 159.34px"
+      class="prefix__animable" fill="#ffc100" stroke="#263238" stroke-linecap="round" stroke-linejoin="round"
+      transform="rotate(-60.17)" id="prefix__elpze1qbo3068" />
+    <ellipse cx="258.7" cy="160.85" rx="46.09" ry="73.9" style="transform-origin:258.7px 160.85px"
+      class="prefix__animable" fill="#ffc100" transform="rotate(-60.17)" id="prefix__eljcb4z6ewp1" />
+    <g style="transform-origin:261.09px 172.28px" id="prefix__el9irnbnb7rgq" class="prefix__animable"
+      clip-path="url(#prefix__freepik--clip-path--inject-59)">
+      <path
+        d="M250 129.39l-53.82 31.87c7.22 14.52 21.07 29 39.56 39.57 35.41 20.31 74.37 18.87 87-3.21a29.92 29.92 0 003.26-8.57c-36.47-58.77-76-59.66-76-59.66z"
+        style="transform-origin:261.09px 172.28px" class="prefix__animable" opacity=".15" id="prefix__el0nrzpu594ap" />
+    </g>
+    <ellipse cx="258.7" cy="160.85" rx="46.09" ry="73.9" style="transform-origin:258.7px 160.85px"
+      class="prefix__animable" fill="none" stroke="#263238" stroke-linecap="round" stroke-linejoin="round"
+      transform="rotate(-60.17)" id="prefix__eld7eb4fdskh8" />
+    <path
+      d="M261.35 129.84a77.64 77.64 0 00-34.64-2c-18.6 3.36-35.42 18.8-37.79 30.67S218 179.12 220 179.71s25.72 24.14 23.35 36.61-16.23 27.31-19 37.6 43.74 24 64.32 21.57 37-23.94 31.86-51.85-18-56.2-32.46-73.81-26.72-19.99-26.72-19.99z"
+      style="transform-origin:255.137px 201.262px" id="prefix__elb30io33nthp" class="prefix__animable" fill="#263238"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M302.92 239.07a28.58 28.58 0 01.52 3.94" style="transform-origin:303.18px 241.04px"
+      id="prefix__el9t1ix3wcz4" class="prefix__animable" fill="none" stroke="#fff" stroke-linecap="round"
+      stroke-linejoin="round" />
+    <path d="M281.27 204.47s14 13.63 19.73 28.29" style="transform-origin:291.135px 218.615px"
+      id="prefix__elvy7321p5gck" class="prefix__animable" fill="none" stroke="#fff" stroke-linecap="round"
+      stroke-linejoin="round" />
+    <path d="M229.24 147.14s-37.57 12.53-34.68 14.94 19.27 1.92 17.34 0-5.78-1.93-5.78-1.93"
+      style="transform-origin:211.821px 155.424px" id="prefix__elk44uiqqtso" class="prefix__animable" fill="none"
+      stroke="#fff" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M306.92 247.39a7.91 7.91 0 01-1.16 1.88" style="transform-origin:306.34px 248.33px"
+      id="prefix__els3qj7vwpt8" class="prefix__animable" fill="none" stroke="#fff" stroke-linecap="round"
+      stroke-linejoin="round" />
+    <path d="M286.09 181.21c3.61 7.94 9.46 19.8 16.25 29.77a40.62 40.62 0 016.46 30.27"
+      style="transform-origin:297.775px 211.23px" id="prefix__elmu8rha0h3yc" class="prefix__animable" fill="none"
+      stroke="#fff" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M282.25 172.31s.58 1.47 1.65 3.95" style="transform-origin:283.075px 174.285px" id="prefix__elxx9b9ivm8s"
+      class="prefix__animable" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M241.68 141.6s6.82-9.1 18.58-9.86" style="transform-origin:250.97px 136.67px" id="prefix__elocvjycf5j6"
+      class="prefix__animable" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M195.39 152.19a16.44 16.44 0 00-1.86 2.3" style="transform-origin:194.46px 153.34px"
+      id="prefix__elbp3ryavdrxc" class="prefix__animable" fill="none" stroke="#fff" stroke-linecap="round"
+      stroke-linejoin="round" />
+    <path d="M237.89 144.63a118.82 118.82 0 01-17.44-.76 33.65 33.65 0 00-21 5"
+      style="transform-origin:218.67px 146.298px" id="prefix__elk2pbomwc6s8" class="prefix__animable" fill="none"
+      stroke="#fff" stroke-linecap="round" stroke-linejoin="round" />
+    <path
+      d="M246.7 231.56s1.39 12.27 0 17-6.33 5.74-13.85 4.55-15.24-8.51-26.52-2-11.28 40.77-14.64 51.06-17.62 52.84-17.62 52.84H293.6s19.6-31.27 26.52-48.88 11.48-34.64 4-43.34-21.37-6.14-32.26-8.71-11.28-5-13.45-18.41-2-29.68-2-29.68-16.23 16.23-22 19.59-7.71 5.98-7.71 5.98z"
+      style="transform-origin:251.02px 280.5px" id="prefix__elabuk9aqusfo" class="prefix__animable" fill="#fff" />
+    <g style="transform-origin:285.06px 265.588px" id="prefix__elroc2dgv9qy" class="prefix__animable"
+      clip-path="url(#prefix__freepik--clip-path-2--inject-59)">
+      <path
+        d="M267.79 238.35c4.21-2 7.56-3.72 10.2-5.17a211.18 211.18 0 01-1.6-27.15s-16.23 16.23-22 19.59-7.72 5.94-7.72 5.94a103 103 0 01.6 11.82 54.25 54.25 0 0020.52-5.03z"
+        style="transform-origin:262.33px 224.705px" id="prefix__eln61drph1rh" class="prefix__animable" fill="#ffc100" />
+      <path
+        d="M267.79 238.35c4.21-2 7.56-3.72 10.2-5.17a211.18 211.18 0 01-1.6-27.15s-16.23 16.23-22 19.59-7.72 5.94-7.72 5.94a103 103 0 01.6 11.82 54.25 54.25 0 0020.52-5.03z"
+        style="transform-origin:262.33px 224.705px" class="prefix__animable" fill="#fff" opacity=".5"
+        id="prefix__el0qnafgtfxri" />
+      <path
+        d="M315.37 289.74s-8.81 1.73-13.13 8.2-6.83 15.81-5.75 20.48 11.5 8.63 13.66 5.75 13.3-25.88 13.3-25.88-3.93-8.84-8.08-8.55z"
+        style="transform-origin:309.845px 307.44px" id="prefix__eld7h60jeupb9" class="prefix__animable"
+        fill="#ffc100" />
+      <path
+        d="M315.37 289.74s-8.81 1.73-13.13 8.2-6.83 15.81-5.75 20.48 11.5 8.63 13.66 5.75 13.3-25.88 13.3-25.88-3.93-8.84-8.08-8.55z"
+        style="transform-origin:309.845px 307.44px" class="prefix__animable" fill="#fff" opacity=".5"
+        id="prefix__ellinnaeuijgh" />
+    </g>
+    <path
+      d="M246.7 231.56s1.39 12.27 0 17-6.33 5.74-13.85 4.55-15.24-8.51-26.52-2-11.28 40.77-14.64 51.06-17.62 52.84-17.62 52.84H293.6s19.6-31.27 26.52-48.88 11.48-34.64 4-43.34-21.37-6.14-32.26-8.71-11.28-5-13.45-18.41-2-29.68-2-29.68-16.23 16.23-22 19.59-7.71 5.98-7.71 5.98z"
+      style="transform-origin:251.02px 280.5px" id="prefix__elfiwnpc11vuk" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M288.52 260.66s-23.32 7.12-29.64 9.49" style="transform-origin:273.7px 265.405px"
+      id="prefix__el5hi3np4qtq6" class="prefix__animable" fill="none" stroke="#263238" stroke-linecap="round"
+      stroke-linejoin="round" />
+    <path d="M233.19 261.45s8.3 5.14 11.46 7.12" style="transform-origin:238.92px 265.01px" id="prefix__elqmbym1g9vt"
+      class="prefix__animable" fill="none" stroke="#263238" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M236.35 316.39s2-8.69 12.65-15.41" style="transform-origin:242.675px 308.685px" id="prefix__el3zpiyv4u7kc"
+      class="prefix__animable" fill="none" stroke="#263238" stroke-linecap="round" stroke-linejoin="round" />
+    <path
+      d="M240 143.89s-22.56 9.89-24.93 19.79-.79 33.84 2.77 43.93 14.64 31.27 22.36 30.68 20.39-11.28 27.71-17.22 11.28-18.21 11.28-18.21-5.94-8.51-11.68-23.74-6.92-24.94-16.23-30.09-11.28-5.14-11.28-5.14z"
+      style="transform-origin:246.567px 191.096px" id="prefix__elw7ej6prypxb" class="prefix__animable" fill="#fff" />
+    <g style="transform-origin:260.425px 190.035px" id="prefix__el7viu6nxwkp9" class="prefix__animable"
+      clip-path="url(#prefix__freepik--clip-path-3--inject-59)">
+      <path
+        d="M250.3 234.2c6.27-3.8 13-9.4 17.58-13.13 7.32-5.94 11.28-18.21 11.28-18.21s-5.94-8.51-11.68-23.74-6.92-24.94-16.23-30.09c-2.54-1.4-4.52-2.41-6.08-3.16a41.2 41.2 0 0113.79 18c4.61 11.9 4.32 22.52 1.54 26.1s-18.81 2.3-18.81 2.3 8.44 7.68 18.42 5.38 10.37 10.36 6.53 18c-2.9 5.85-11.48 13.61-16.34 18.55z"
+        style="transform-origin:260.425px 190.035px" id="prefix__el6voqfqgl064" class="prefix__animable"
+        fill="#ffc100" />
+      <path
+        d="M250.3 234.2c6.27-3.8 13-9.4 17.58-13.13 7.32-5.94 11.28-18.21 11.28-18.21s-5.94-8.51-11.68-23.74-6.92-24.94-16.23-30.09c-2.54-1.4-4.52-2.41-6.08-3.16a41.2 41.2 0 0113.79 18c4.61 11.9 4.32 22.52 1.54 26.1s-18.81 2.3-18.81 2.3 8.44 7.68 18.42 5.38 10.37 10.36 6.53 18c-2.9 5.85-11.48 13.61-16.34 18.55z"
+        style="transform-origin:260.425px 190.035px" class="prefix__animable" fill="#fff" opacity=".5"
+        id="prefix__el5ys3s0a3gsf" />
+    </g>
+    <path
+      d="M240 143.89s-22.56 9.89-24.93 19.79-.79 33.84 2.77 43.93 14.64 31.27 22.36 30.68 20.39-11.28 27.71-17.22 11.28-18.21 11.28-18.21-5.94-8.51-11.68-23.74-6.92-24.94-16.23-30.09-11.28-5.14-11.28-5.14z"
+      style="transform-origin:246.567px 191.096px" id="prefix__elr4jotetqbyq" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M233.84 185.05a8.28 8.28 0 01-2.18 6.53c-2.77 3-5.34 4-4.35 5.74s7.12 1.78 7.12 1.78"
+      style="transform-origin:230.762px 192.075px" id="prefix__ela4a7mam9xm" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" />
+    <path
+      d="M233.25 209.59s-2.38-6.33-4.56-2.37 1.19 6.33 1.19 7.32 1 6.33 6.33 5.34 5.55-7.72 5.55-7.72-1.79-6.72-5.15-6.72-3.36 4.15-3.36 4.15z"
+      style="transform-origin:234.858px 212.721px" id="prefix__el6c9vsqdedek" class="prefix__animable" fill="#263238"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" />
+    <path style="transform-origin:252.035px 178.42px" id="prefix__el20plrkjdwmn" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" d="M234.24 178.32l35.59.2" />
+    <circle cx="219.36" cy="180.62" r="14.75" style="transform-origin:219.36px 180.62px" id="prefix__ely8pxgr2sr1"
+      class="prefix__animable" fill="#ffc100" stroke="#263238" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M217.79 167.85a13.51 13.51 0 011.57-.09 13.1 13.1 0 013.51.48" style="transform-origin:220.33px 168px"
+      id="prefix__el2l5eqwzt98z" class="prefix__animable" fill="none" stroke="#fff" stroke-linecap="round"
+      stroke-linejoin="round" />
+    <path d="M206.49 180.62a12.86 12.86 0 016.87-11.38" style="transform-origin:209.925px 174.93px"
+      id="prefix__elvfop9lgzvia" class="prefix__animable" fill="none" stroke="#fff" stroke-linecap="round"
+      stroke-linejoin="round" />
+    <path
+      d="M218 185.6c6.59.47 10.4 2.45 14 2.59a15 15 0 001.1-2.24c-4.55.56-7.49-2.14-15-3.65a20.62 20.62 0 00-13 1.76 14.49 14.49 0 001.9 4.48 17.68 17.68 0 0111-2.94z"
+      style="transform-origin:219.1px 185.236px" id="prefix__elllv1hm0brug" class="prefix__animable" fill="#263238"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" />
+    <path
+      d="M220.69 189.41a20.45 20.45 0 00-12.05 1.32 14.69 14.69 0 004.31 3.16 17.25 17.25 0 017.67-1.18 39.83 39.83 0 015.8.86 14.19 14.19 0 002.48-1.71 53.16 53.16 0 00-8.21-2.45z"
+      style="transform-origin:218.77px 191.463px" id="prefix__eleap5dkzkjij" class="prefix__animable" fill="#263238"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" />
+    <circle cx="250.65" cy="180.62" r="14.75" style="transform-origin:250.65px 180.62px" id="prefix__el2p7tw4nybr4"
+      class="prefix__animable" fill="#ffc100" stroke="#263238" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M249.08 167.85a13.64 13.64 0 011.57-.09 13 13 0 013.51.48" style="transform-origin:251.62px 168px"
+      id="prefix__el9i6ntmnhc8" class="prefix__animable" fill="none" stroke="#fff" stroke-linecap="round"
+      stroke-linejoin="round" />
+    <path d="M237.79 180.62a12.87 12.87 0 016.86-11.38" style="transform-origin:241.22px 174.93px"
+      id="prefix__eljyr673kt8e" class="prefix__animable" fill="none" stroke="#fff" stroke-linecap="round"
+      stroke-linejoin="round" />
+    <path
+      d="M249.29 185.6c6.6.47 10.41 2.45 14 2.59a15.06 15.06 0 001.11-2.19c-4.56.56-7.5-2.14-15-3.65a20.63 20.63 0 00-13 1.76 15 15 0 001.9 4.48 17.69 17.69 0 0110.99-2.99z"
+      style="transform-origin:250.4px 185.286px" id="prefix__elyp2v9chbm" class="prefix__animable" fill="#263238"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" />
+    <path
+      d="M252 189.41a20.47 20.47 0 00-12 1.32 14.82 14.82 0 004.31 3.16 17.25 17.25 0 017.67-1.18 40.19 40.19 0 015.81.86 15 15 0 002.48-1.71 53.67 53.67 0 00-8.27-2.45z"
+      style="transform-origin:250.135px 191.466px" id="prefix__elpg18yf7lf8" class="prefix__animable" fill="#263238"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" />
+    <path
+      d="M308.14 293.38c1.78-1.65 5.3-3.94 7.23-3.64 2.58.4 6.76 5.16 11.31 18 4.21 11.89 13.27 22.62 13.81 23.58 4.3-1.12 32.86-5.54 46.65 3.39-5.11-23.87-26.9-38.43-33.42-60.91-5.18-17.83-20.54-25-32-24.25-8.19.56-22.63 3.85-30.23 5.68"
+      style="transform-origin:339.315px 292.104px" id="prefix__eldjvmklzmrb" class="prefix__animable" fill="#fff" />
+    <g style="transform-origin:358.049px 288.235px" id="prefix__eltna8hge7wcj" class="prefix__animable"
+      clip-path="url(#prefix__freepik--clip-path-4--inject-59)">
+      <path
+        d="M353.72 273.82a34.44 34.44 0 00-10.34-16.59l-.16.09s9 10.43 6.1 16.18-19.4 3.23-12.93 11.5 19 6.83 27.67 16.17c6.87 7.44 11.92 12.38 17.14 18.07-8.56-15.64-22.49-28.24-27.48-45.42z"
+        style="transform-origin:358.049px 288.235px" id="prefix__elp10r90xscz" class="prefix__animable"
+        fill="#ffc100" />
+      <path
+        d="M353.72 273.82a34.44 34.44 0 00-10.34-16.59l-.16.09s9 10.43 6.1 16.18-19.4 3.23-12.93 11.5 19 6.83 27.67 16.17c6.87 7.44 11.92 12.38 17.14 18.07-8.56-15.64-22.49-28.24-27.48-45.42z"
+        style="transform-origin:358.049px 288.235px" class="prefix__animable" fill="#fff" opacity=".5"
+        id="prefix__ela7421wwsiwv" />
+    </g>
+    <path
+      d="M308.14 293.38c1.78-1.65 5.3-3.94 7.23-3.64 2.58.4 6.76 5.16 11.31 18 4.21 11.89 13.27 22.62 13.81 23.58 4.3-1.12 32.86-5.54 46.65 3.39-5.11-23.87-26.9-38.43-33.42-60.91-5.18-17.83-20.54-25-32-24.25-8.19.56-22.63 3.85-30.23 5.68"
+      style="transform-origin:339.315px 292.104px" id="prefix__elkiqwq9wc1yp" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" />
+    <path
+      d="M295.52 253.62l-12.11 41.52L235 325l-27.21-26.4L233 253.87l-3.45-1s-24.22 42.51-27.68 46.21-14.87 15.83-18.55 28.43 6.18 26.69 6.18 26.69h104.1l19-31.88S301 306.26 297 302.31s-8.16-7.66-8.16-7.66l9.89-41.27z"
+      style="transform-origin:247.549px 303.535px" id="prefix__elg340fqpsrk" class="prefix__animable" fill="#263238"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" />
+    <path
+      d="M176 355.34c.32-4.34 1.16-15.67 2.24-28.2a155.9 155.9 0 016.33-31.07l-14.05 1.78s-7.91 19.2-15.83 31.47a55.3 55.3 0 00-8.91 25.13 5.27 5.27 0 000 .89z"
+      style="transform-origin:165.166px 325.705px" id="prefix__elpl6v74wsrh" class="prefix__animable" fill="#fff"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" />
+    <path
+      d="M182.19 296.47c.73.36 6.53-1.58 9.5-5.54s4.75-13.26 7.91-17.81 10.29-11.09 13.06-17 1.39-7.52-1.78-5-6.73 9.5-8.31 12.47-5.74 6.73-9.89 8.71-3.76-.2-7.72 4.94-4.75 18.24-2.77 19.23z"
+      style="transform-origin:197.648px 273.242px" id="prefix__el4zozn57vs77" class="prefix__animable" fill="#fff"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" />
+    <path
+      d="M200.2 297.36a1.24 1.24 0 01-.27 0 1.47 1.47 0 01-1.19-1.72l13.26-73a1.44 1.44 0 01.85-1.09l19.15-8.66a1.49 1.49 0 011.22 2.71l-18.49 8.28-13.11 72.26a1.49 1.49 0 01-1.42 1.22z"
+      style="transform-origin:216.357px 255.084px" id="prefix__el6zwec8nig92" class="prefix__animable" fill="#fff"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" />
+    <path
+      d="M186.94 256.1s5.14-6.73 6.92-8.31 14-12.47 15.84-14.45 3-.4 1.58 3.17-4.75 5.93-6.14 7.71-6.53 8.51-7.32 9.5-7.12 9.3-9.89 9.7-.99-7.32-.99-7.32z"
+      style="transform-origin:199.145px 247.956px" id="prefix__elvdbdwx1hy9" class="prefix__animable" fill="#fff"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" />
+    <path
+      d="M180.41 298.45s5.93-4.75 7.32-8.91a52.55 52.55 0 001.78-10.68s11.28 1.38 16.43.59 6.33-2 6.92-4-2.57-1.78-3.76-1.38-20.18-2-20.18-2 1.58-1.78 6.53-2.57 15-1.59 18.2-2.78 4.16-3.56 4-4.75-3.76 0-7.12 0-18.61.6-18.61.6 4.56-4 7.13-5.15 11.48-6.13 14.05-8.7 1.78-4 1.39-5.15-4.36 1.58-9.7 3.56-17.81 8.91-17.81 8.91-12.51 22.82-15.28 30.96-1 17.81-1.39 18.4"
+      style="transform-origin:193.887px 274.348px" id="prefix__elkmsfgcdfsj" class="prefix__animable" fill="#fff"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" />
+    <path
+      d="M185 368.53h12.72a28 28 0 0019.14-7.53 40.72 40.72 0 0012.68-29.74c0-12.17-5.21-23.06-13.41-36.13h-49.61c-8.2 13.07-13.4 24-13.4 36.13a40.67 40.67 0 0013.42 30.43 27.57 27.57 0 0018.46 6.84z"
+      style="transform-origin:191.33px 331.831px" id="prefix__elbu9z4d9acki" class="prefix__animable" fill="#ffc100"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M370.77 323.45c-7.52-1-25.14 2.77-25.14 2.77" style="transform-origin:358.2px 324.751px"
+      id="prefix__el29fter7v0aj" class="prefix__animable" fill="#fff" stroke="#263238" stroke-linecap="round"
+      stroke-linejoin="round" />
+    <path
+      d="M368.67 319.84c-14.95 3.45-19.82 5.39-23.11 6.25l.07.13s-25.55 7.9-39.66 8.58c-10.07.48-31.17 2.24-37.89 1.45s-13.66-5.94-16.43-9.3-14.05-11.68-17.41-13.66a22.09 22.09 0 01-7.33-6.53c-1.18-2-3.56-3.56-4.94-1s.59 6.14 2.57 8.51S235 325 235 325s-1.39 1-9.5 3-26.13 1.78-29.29 1.78-6.14 1.38-6.14 2.57 4.36 1.58 12.47 3 19 4.55 19 4.55-6.54 4.46-11.25 5.1-21 3.37-23.15 3.57-3.37 1.18-2.58 2.57 8.12 1.58 16.63 1 15.63-1.78 15.63-1.78l-7.12 4.75c-4.75 3.16-19 7.12-19.79 8.7s3.36 1.79 3.36 1.79-3.76 1.78 2.57 1.18 23.75-3 33.45-6.13 13.45-4.95 22.76-5.94 27.39 8.55 63.8 10.13 57.81-1.81 64.34-3 12.54-3.51 12.15-6.08c-.24-1.54-2.41-11.93-6-24.28"
+      style="transform-origin:288.338px 335.664px" id="prefix__el6lnua4cpgko" class="prefix__animable" fill="#fff" />
+    <g style="transform-origin:291.524px 347.667px" id="prefix__elvjf2g3xkq2" class="prefix__animable"
+      clip-path="url(#prefix__freepik--clip-path-5--inject-59)">
+      <path
+        d="M386.32 331.43l-4.59-3c-.82 4.06-2.62 8.92-6.53 12.29-7.9 6.83-41 8.27-69 8.27s-69-6.47-74.4-6.47-16.89 4.31-29.83 7.19c-4.94 1.1-8.62 2-11.28 2.66a103.68 103.68 0 0010.5-.27h.56l15.07-1.74s6-1 3.84.83-10.78 6.83-20.49 10.42c-2.94 1.09-5.95 2.41-8.72 3.73a11.86 11.86 0 001.82.26s-3.76 1.78 2.57 1.18 23.75-3 33.45-6.13 13.45-4.95 22.76-5.94 27.39 8.55 63.8 10.13 57.81-1.81 64.34-3 12.54-3.51 12.15-6.08c-.24-1.59-2.41-11.98-6.02-24.33z"
+        style="transform-origin:291.524px 347.667px" id="prefix__el9h2euw95co" class="prefix__animable"
+        fill="#ffc100" />
+      <path
+        d="M386.32 331.43l-4.59-3c-.82 4.06-2.62 8.92-6.53 12.29-7.9 6.83-41 8.27-69 8.27s-69-6.47-74.4-6.47-16.89 4.31-29.83 7.19c-4.94 1.1-8.62 2-11.28 2.66a103.68 103.68 0 0010.5-.27h.56l15.07-1.74s6-1 3.84.83-10.78 6.83-20.49 10.42c-2.94 1.09-5.95 2.41-8.72 3.73a11.86 11.86 0 001.82.26s-3.76 1.78 2.57 1.18 23.75-3 33.45-6.13 13.45-4.95 22.76-5.94 27.39 8.55 63.8 10.13 57.81-1.81 64.34-3 12.54-3.51 12.15-6.08c-.24-1.59-2.41-11.98-6.02-24.33z"
+        style="transform-origin:291.524px 347.667px" class="prefix__animable" fill="#fff" opacity=".5"
+        id="prefix__elmh7jw4jnezf" />
+    </g>
+    <path
+      d="M368.67 319.84c-14.95 3.45-19.82 5.39-23.11 6.25l.07.13s-25.55 7.9-39.66 8.58c-10.07.48-31.17 2.24-37.89 1.45s-13.66-5.94-16.43-9.3-14.05-11.68-17.41-13.66a22.09 22.09 0 01-7.33-6.53c-1.18-2-3.56-3.56-4.94-1s.59 6.14 2.57 8.51S235 325 235 325s-1.39 1-9.5 3-26.13 1.78-29.29 1.78-6.14 1.38-6.14 2.57 4.36 1.58 12.47 3 19 4.55 19 4.55-6.54 4.46-11.25 5.1-21 3.37-23.15 3.57-3.37 1.18-2.58 2.57 8.12 1.58 16.63 1 15.63-1.78 15.63-1.78l-7.12 4.75c-4.75 3.16-19 7.12-19.79 8.7s3.36 1.79 3.36 1.79-3.76 1.78 2.57 1.18 23.75-3 33.45-6.13 13.45-4.95 22.76-5.94 27.39 8.55 63.8 10.13 57.81-1.81 64.34-3 12.54-3.51 12.15-6.08c-.24-1.54-2.41-11.93-6-24.28"
+      style="transform-origin:288.338px 335.664px" id="prefix__el2r2j6br1nis" class="prefix__animable" fill="none"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M219.19 359c-6.92 3-25.92 6.53-25.92 6.53" style="transform-origin:206.23px 362.265px"
+      id="prefix__el1eswrjn9jny" class="prefix__animable" fill="none" stroke="#263238" stroke-linecap="round"
+      stroke-linejoin="round" />
+    <path
+      d="M169.33 287.15s-4.49-5.18-7.64-2.48 3.37 4.5 3.37 4.5-5.85.9-4.05 4.28 7-1.13 7-1.13-2.59 5.45 2.53 5.53 2.87-7.33 2.87-7.33 5.85.68 4.5-5.4-7.91-2.47-8.58 2.03z"
+      style="transform-origin:169.389px 289.877px" id="prefix__elj269bn0cxm" class="prefix__animable" fill="#fff"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M170.91 290a1.24 1.24 0 11-1.24-1.24 1.25 1.25 0 011.24 1.24z" style="transform-origin:169.67px 290px"
+      id="prefix__elurollm3qfr" class="prefix__animable" fill="#fff" stroke="#263238" stroke-linecap="round"
+      stroke-linejoin="round" />
+    <path
+      d="M204.65 288.05s-4.5-5.18-7.65-2.48 3.37 4.5 3.37 4.5-5.85.9-4.05 4.28 7-1.13 7-1.13-2.6 5.45 2.52 5.53 2.87-7.33 2.87-7.33 5.85.68 4.5-5.4-7.89-2.47-8.56 2.03z"
+      style="transform-origin:204.694px 290.777px" id="prefix__el6kdrf0ry0aj" class="prefix__animable" fill="#fff"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" />
+    <circle cx="204.98" cy="290.86" r="1.24" style="transform-origin:204.98px 290.86px" id="prefix__el6xze5t96vpt"
+      class="prefix__animable" fill="#fff" stroke="#263238" stroke-linecap="round" stroke-linejoin="round" />
+    <path
+      d="M187.1 286.25s-4.5-5.17-7.65-2.48 3.38 4.5 3.38 4.5-5.85.9-4.05 4.28 7-1.13 7-1.13-2.59 5.45 2.53 5.53 2.87-7.33 2.87-7.33 5.85.68 4.5-5.4-7.9-2.47-8.58 2.03z"
+      style="transform-origin:187.159px 288.977px" id="prefix__elm5t0h6nc99k" class="prefix__animable" fill="#fff"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M188.68 289.06a1.24 1.24 0 11-1.24-1.24 1.25 1.25 0 011.24 1.24z"
+      style="transform-origin:187.44px 289.06px" id="prefix__elbq8bzjnuav" class="prefix__animable" fill="#fff"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" />
+    <path
+      d="M216.12 289.4s-4.5-5.18-7.65-2.48 3.37 4.5 3.37 4.5-5.84.9-4.05 4.27 7-1.12 7-1.12-2.6 5.44 2.52 5.53 2.87-7.33 2.87-7.33 5.85.68 4.5-5.4-7.89-2.47-8.56 2.03z"
+      style="transform-origin:216.166px 292.127px" id="prefix__el0bxflgyihiyp" class="prefix__animable" fill="#fff"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M217.69 292.21a1.24 1.24 0 11-1.24-1.24 1.24 1.24 0 011.24 1.24z"
+      style="transform-origin:216.45px 292.21px" id="prefix__elzl1t2y9txm" class="prefix__animable" fill="#fff"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" />
+    <path
+      d="M180.35 293.45s-4.49-5.18-7.64-2.48 3.37 4.5 3.37 4.5-5.85.9-4.05 4.27 7-1.12 7-1.12-2.6 5.44 2.52 5.53 2.87-7.33 2.87-7.33 5.85.67 4.5-5.4-7.92-2.42-8.57 2.03z"
+      style="transform-origin:180.404px 296.186px" id="prefix__elfcsj5afvutl" class="prefix__animable" fill="#fff"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M181.93 296.26a1.24 1.24 0 11-1.24-1.24 1.23 1.23 0 011.24 1.24z"
+      style="transform-origin:180.69px 296.26px" id="prefix__ell43yvntoo0d" class="prefix__animable" fill="#fff"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" />
+    <path
+      d="M196 294.66s4-5.53.72-8-3.64 4.28-3.64 4.28-2.17-5.5-5.06-3 2.64 6.55 2.64 6.55-5.89-1.32-4.84 3.69 7.78 1.18 7.78 1.18.64 5.85 6.26 3.19.69-8.22-3.86-7.89z"
+      style="transform-origin:194.034px 294.68px" id="prefix__elq1c5s9cpjy" class="prefix__animable" fill="#fff"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M193.62 296.82a1.23 1.23 0 11-.54-2.41 1.23 1.23 0 11.54 2.41z" style="transform-origin:193.35px 295.615px"
+      id="prefix__el6amzvxywoa" class="prefix__animable" fill="#fff" stroke="#263238" stroke-linecap="round"
+      stroke-linejoin="round" />
+    <path
+      d="M207.47 295.52s-6.61-1.81-7.73 2.19 5.3 1.87 5.3 1.87-4.36 4-1 5.8 5.17-4.81 5.17-4.81.87 6 5.18 3.2-1.69-7.69-1.69-7.69 5.24-2.69.75-7-7.91 2.32-5.98 6.44z"
+      style="transform-origin:207.778px 296.685px" id="prefix__elhq0cs4q5bt4" class="prefix__animable" fill="#fff"
+      stroke="#263238" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M210.34 297a1.24 1.24 0 11-1.71-.34 1.24 1.24 0 011.71.34z" style="transform-origin:209.313px 297.695px"
+      id="prefix__elie4ceig9juj" class="prefix__animable" fill="#fff" stroke="#263238" stroke-linecap="round"
+      stroke-linejoin="round" />
+  </g>
+  <defs>
+    <filter id="prefix__active" height="200%">
+      <feMorphology in="SourceAlpha" result="DILATED" operator="dilate" radius="2" />
+      <feFlood flood-color="#32DFEC" flood-opacity="1" result="PINK" />
+      <feComposite in="PINK" in2="DILATED" operator="in" result="OUTLINE" />
+      <feMerge>
+        <feMergeNode in="OUTLINE" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="prefix__hover" height="200%">
+      <feMorphology in="SourceAlpha" result="DILATED" operator="dilate" radius="2" />
+      <feFlood flood-color="red" flood-opacity=".5" result="PINK" />
+      <feComposite in="PINK" in2="DILATED" operator="in" result="OUTLINE" />
+      <feMerge>
+        <feMergeNode in="OUTLINE" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+      <feColorMatrix values="0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0" />
+    </filter>
+  </defs>
+  <defs>
+    <clipPath id="prefix__freepik--clip-path--inject-59">
+      <ellipse cx="258.7" cy="160.85" rx="46.09" ry="73.9" transform="rotate(-60.17 258.677 160.845)" fill="#ffc100"
+        stroke="#263238" stroke-linecap="round" stroke-linejoin="round" />
+    </clipPath>
+    <clipPath id="prefix__freepik--clip-path-2--inject-59">
+      <path
+        d="M246.7 231.56s1.39 12.27 0 17-6.33 5.74-13.85 4.55-15.24-8.51-26.52-2-11.28 40.77-14.64 51.06-17.62 52.84-17.62 52.84H293.6s19.6-31.27 26.52-48.88 11.48-34.64 4-43.34-21.37-6.14-32.26-8.71-11.28-5-13.45-18.41-2-29.68-2-29.68-16.23 16.23-22 19.59-7.71 5.98-7.71 5.98z"
+        fill="#fff" stroke="#263238" stroke-linecap="round" stroke-linejoin="round" />
+    </clipPath>
+    <clipPath id="prefix__freepik--clip-path-3--inject-59">
+      <path
+        d="M240 143.89s-22.56 9.89-24.93 19.79-.79 33.84 2.77 43.93 14.64 31.27 22.36 30.68 20.39-11.28 27.71-17.22 11.28-18.21 11.28-18.21-5.94-8.51-11.68-23.74-6.92-24.94-16.23-30.09-11.28-5.14-11.28-5.14z"
+        fill="#fff" stroke="#263238" stroke-linecap="round" stroke-linejoin="round" />
+    </clipPath>
+    <clipPath id="prefix__freepik--clip-path-4--inject-59">
+      <path
+        d="M308.14 293.38c1.78-1.65 5.3-3.94 7.23-3.64 2.58.4 6.76 5.16 11.31 18 4.21 11.89 13.27 22.62 13.81 23.58 4.3-1.12 32.86-5.54 46.65 3.39-5.11-23.87-26.9-38.43-33.42-60.91-5.18-17.83-20.54-25-32-24.25-8.19.56-22.63 3.85-30.23 5.68"
+        fill="#fff" stroke="#263238" stroke-linecap="round" stroke-linejoin="round" />
+    </clipPath>
+    <clipPath id="prefix__freepik--clip-path-5--inject-59">
+      <path
+        d="M368.67 319.84c-14.95 3.45-19.82 5.39-23.11 6.25l.07.13s-25.55 7.9-39.66 8.58c-10.07.48-31.17 2.24-37.89 1.45s-13.66-5.94-16.43-9.3-14.05-11.68-17.41-13.66a22.09 22.09 0 01-7.33-6.53c-1.18-2-3.56-3.56-4.94-1s.59 6.14 2.57 8.51S235 325 235 325s-1.39 1-9.5 3-26.13 1.78-29.29 1.78-6.14 1.38-6.14 2.57 4.36 1.58 12.47 3 19 4.55 19 4.55-6.54 4.46-11.25 5.1-21 3.37-23.15 3.57-3.37 1.18-2.58 2.57 8.12 1.58 16.63 1 15.63-1.78 15.63-1.78l-7.12 4.75c-4.75 3.16-19 7.12-19.79 8.7s3.36 1.79 3.36 1.79-3.76 1.78 2.57 1.18 23.75-3 33.45-6.13 13.45-4.95 22.76-5.94 27.39 8.55 63.8 10.13 57.81-1.81 64.34-3 12.54-3.51 12.15-6.08c-.24-1.54-2.41-11.93-6-24.28"
+        fill="#fff" stroke="#263238" stroke-linecap="round" stroke-linejoin="round" />
+    </clipPath>
+  </defs>
+</svg>
