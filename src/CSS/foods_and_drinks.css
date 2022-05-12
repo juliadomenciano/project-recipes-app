@@ -1,0 +1,74 @@
+.container_page_foods:before, .container_page_drinks:before {
+  background: url('../images/noisebg.png') #f3f1f1;
+  content: '';
+  height: 100vh;
+  max-width: 100%;
+  position: fixed;
+  width: 100vw;
+}
+
+/* reaproveitametno */
+.main_container_foods {
+  align-items: center;
+
+  /* background-color: aquamarine; */
+
+  /* background: tomato; */
+  display: flex;
+  flex-flow: wrap;
+  flex-direction: row;
+  max-width: 100%;
+  padding: 10px 20px 80px;
+  position: absolute;
+  top: 170px;
+  width: 100vw;
+}
+
+.card_container_foods {
+
+  /* border: solid 1px; */
+  display: flex;
+  flex-direction: column;
+  grid-gap: 20px;
+  margin-top: 30px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.card_container_foods .card {
+
+  /* background-color: tomato; */
+  border: solid 1px var(--dark_color);
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+  width: 100%;
+}
+
+.card_container_foods .card:after {
+  background-color: var(--dark_color);
+  bottom: -3px;
+  content: '';
+  height: 5px;
+  left: 20px;
+  position: absolute;
+  width: 40px;
+}
+
+.card_container_foods .card_image {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.card_container_foods .card_title {
+  color: var(--dark_color);
+  font-family: Volkhov , serif;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 28px;
+  padding: 20px;
+  position: relative;
+  text-decoration: none;
+}

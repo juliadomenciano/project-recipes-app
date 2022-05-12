@@ -8,6 +8,8 @@ import FoodsContext from '../context/FoodsContext/FoodsContext';
 import ProfileContext from '../context/ProfileContext/ProfileContext';
 import CSS from '../modules/FoodsDrinks.module.css';
 
+import '../CSS/foods_and_drinks.css';
+
 function Foods(props) {
   const { setFoodOrDrink } = useContext(ProfileContext);
   const {
@@ -60,9 +62,9 @@ function Foods(props) {
 
   const maxRecipesOnScreen = 11;
   return (
-    <div>
+    <div className="container_page_foods">
       <Header title="Foods" />
-      <section className={ CSS.mainContainer }>
+      <section className="main_container_foods">
         <div className={ CSS.filters }>
           <button
             data-testid="All-category-filter"
@@ -83,7 +85,7 @@ function Foods(props) {
             </button>
           ))}
         </div>
-        <div className={ CSS.CardsContainer }>
+        <div className="card_container_foods">
           {results ? (
             results.map((food, index) => (
               index > maxRecipesOnScreen ? '' : (

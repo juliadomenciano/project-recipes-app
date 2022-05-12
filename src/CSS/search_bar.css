@@ -1,0 +1,106 @@
+.conteiner_form {
+  background: url('../images/noisebg.png') #f3f1f1;
+
+  /* border-bottom: 1px solid rgb(194, 193, 193); */
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 50px 1fr 50px;
+  grid-template-rows: 25px 44px;
+  padding: 10px 20px;
+  position: absolute;
+  top: 70px;
+  width: 100%;
+}
+
+.input_search {
+  background-color: white;
+  border-radius: 5px;
+  font-family: Lato , sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  grid-area: 2 / 1 / 2 / 3;
+  padding: 0 15px;
+  position: relative;
+}
+
+.input_search input {
+  border: rgb(47, 47, 47) 1px solid;
+  border-radius: 30px;
+  height: 100%;
+  padding: 10px 20px;
+  width: 100%;
+}
+
+.radio_search {
+  align-items: center;
+  border: none;
+  display: flex;
+  font-size: 1.4rem;
+  grid-area: 1 / 1 / 1 / 4;
+  justify-content: space-evenly;
+}
+
+.radio_search label {
+  align-items: center;
+
+  /* background-color: tomato; */
+  display: flex;
+  margin-left: 15px;
+  padding-left: 29px;
+}
+
+.radio_search label:first-of-type {
+  margin-left: 0;
+}
+
+.radio_search input {
+  display: none;
+  height: 24px;
+  margin-right: 10px;
+  width: 24px;
+}
+
+.selected_filter {
+  font-family: Volkhov , serif;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 29px;
+  position: relative;
+}
+
+.selected_filter:before {
+  background-color: white;
+  border-radius: 100%;
+  content: '';
+  height: 24px;
+  left: -29px;
+  position: absolute;
+  width: 24px;
+}
+
+.filter:checked ~ .selected_filter:after {
+  background: url('../images/check.png') var(--height_color_03);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  border-radius: 100%;
+  content: '';
+  height: 20px;
+  left: -27px;
+  position: absolute;
+  top: 2px;
+  width: 20px;
+}
+
+.button_search {
+  background-color: var(--height_color_03);
+  border-radius: 5px;
+  font-family: Volkhov , serif;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 700;
+  grid-area: 2 / 3 / 2 / 3;
+  line-height: 29px;
+}

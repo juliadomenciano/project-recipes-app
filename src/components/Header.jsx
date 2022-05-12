@@ -3,8 +3,9 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import profileIcon from '../images/profileIcon.svg';
 import searchIcon from '../images/searchIcon.svg';
-import CSS from '../modules/Header.module.css';
 import SearchBar from './SearchBar';
+
+import '../CSS/header.css';
 
 export default function Header({ title }) {
   const searchPaths = ['/foods', '/drinks', '/explore/foods/nationalities'];
@@ -12,18 +13,27 @@ export default function Header({ title }) {
   const path = useLocation().pathname;
 
   return (
-    <header className={ CSS.nav_conteiner }>
+    // <header className={ CSS.nav_conteiner }>
+    <header className="nav_conteiner">
       <Link to="/profile">
         <button
           type="button"
           data-testid="profile-top-btn"
-          className={ CSS.profile_button }
+          className="profile_button"
           src={ profileIcon }
         >
           {/* <img src={ profileIcon } alt="Ícone do perfil" /> */}
         </button>
       </Link>
-      <h1 className={ CSS.nav_title } data-testid="page-title">{title}</h1>
+
+      <dir className="container_header_title_app">
+        <h1 className="header_title_app">
+          easy
+          <strong>cooking</strong>
+        </h1>
+      </dir>
+
+      <h1 className="nav_title" data-testid="page-title">{title}</h1>
       {
         searchPaths.includes(path)
         && (
@@ -31,7 +41,7 @@ export default function Header({ title }) {
             type="button"
             data-testid="search-top-btn"
             src={ searchIcon }
-            className={ CSS.magnifying_button }
+            className="magnifying_button"
             onClick={ () => { setShowSearch(!showSearch); } }
 
           >

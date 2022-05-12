@@ -4,8 +4,10 @@ import { withRouter } from 'react-router-dom';
 import DrinksContext from '../context/DrinksContext/DrinksContext';
 import FoodsContext from '../context/FoodsContext/FoodsContext';
 import ProfileContext from '../context/ProfileContext/ProfileContext';
-import CSS from '../modules/SearchBar.module.css';
+// import CSS from '../modules/SearchBar.module.css';
 import searchFoodOrDrinkApi from '../services/searchFoodOrDrinkApi';
+
+import '../CSS/search_bar.css';
 
 function SearchBar(props) {
   const [selectedFilter, setSelectedFilter] = useState();
@@ -39,43 +41,55 @@ function SearchBar(props) {
   }
 
   return (
-    <form className={ CSS.conteiner_form }>
+    <form className="conteiner_form">
       <input
-        className={ CSS.input_search }
+        className="input_search"
         name="searchInput"
         type="text"
         id="searchInput"
         data-testid="search-input"
         onChange={ ({ target }) => setInputSearch(target.value) }
       />
-      <fieldset className={ CSS.radio_search }>
-        <input
-          id="ingredient"
-          type="radio"
-          data-testid="ingredient-search-radio"
-          name="filterSelect"
-          value="Ingredient"
-          onChange={ ({ target }) => setSelectedFilter(target.value) }
-        />
-        <input
-          id="name-search"
-          type="radio"
-          data-testid="name-search-radio"
-          name="filterSelect"
-          value="Name"
-          onChange={ ({ target }) => setSelectedFilter(target.value) }
-        />
-        <input
-          id="first-letter"
-          type="radio"
-          data-testid="first-letter-search-radio"
-          name="filterSelect"
-          value="First letter"
-          onChange={ ({ target }) => setSelectedFilter(target.value) }
-        />
+      <fieldset className="radio_search">
+        <label htmlFor="ingredient">
+          <input
+            id="ingredient"
+            type="radio"
+            data-testid="ingredient-search-radio"
+            name="filterSelect"
+            value="Ingredient"
+            onChange={ ({ target }) => setSelectedFilter(target.value) }
+            className="filter"
+          />
+          <span className="selected_filter">ingredient</span>
+        </label>
+        <label htmlFor="name-search">
+          <input
+            id="name-search"
+            type="radio"
+            data-testid="name-search-radio"
+            name="filterSelect"
+            value="Name"
+            onChange={ ({ target }) => setSelectedFilter(target.value) }
+            className="filter"
+          />
+          <span className="selected_filter">Name</span>
+        </label>
+        <label htmlFor="first-letter">
+          <input
+            id="first-letter"
+            type="radio"
+            data-testid="first-letter-search-radio"
+            name="filterSelect"
+            value="First letter"
+            onChange={ ({ target }) => setSelectedFilter(target.value) }
+            className="filter"
+          />
+          <span className="selected_filter">First letter</span>
+        </label>
       </fieldset>
       <button
-        className={ CSS.button_search }
+        className="button_search"
         data-testid="exec-search-btn"
         type="button"
         onClick={ () => onClick() }

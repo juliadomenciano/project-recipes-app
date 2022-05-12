@@ -8,6 +8,8 @@ import DrinksContext from '../context/DrinksContext/DrinksContext';
 import ProfileContext from '../context/ProfileContext/ProfileContext';
 import CSS from '../modules/FoodsDrinks.module.css';
 
+import '../CSS/foods_and_drinks.css';
+
 function Drinks(props) {
   const { setFoodOrDrink } = useContext(ProfileContext);
 
@@ -60,66 +62,64 @@ function Drinks(props) {
 
   const maxRecipesOnScreen = 11;
   return (
-    <div>
-      <div>
-        <Header title="Drinks" />
-        <section className={ CSS.mainContainer }>
-          <div className={ CSS.filters }>
+    <div className="container_page_drinks">
+      <Header title="Drinks" />
+      <section className={ CSS.mainContainer }>
+        <div className={ CSS.filters }>
+          <button
+            data-testid="All-category-filter"
+            type="button"
+            onClick={ () => showAllRecipes() }
+          >
+            All
+          </button>
+          {recipeCategoriesFake.map((category, index) => (
             <button
-              data-testid="All-category-filter"
               type="button"
-              onClick={ () => showAllRecipes() }
+              data-testid={ `${category.strCategory}-category-filter` }
+              key={ index }
+              className="notSelected"
+              onClick={ ({ target }) => selectFilter(category.strCategory, target) }
             >
-              All
+              {category.strCategory}
             </button>
-            {recipeCategoriesFake.map((category, index) => (
-              <button
-                type="button"
-                data-testid={ `${category.strCategory}-category-filter` }
-                key={ index }
-                className="notSelected"
-                onClick={ ({ target }) => selectFilter(category.strCategory, target) }
-              >
-                {category.strCategory}
-              </button>
-            ))}
-          </div>
-          <div className={ CSS.CardsContainer }>
-            {results ? (
-              results.map((drink, index) => (
-                index > maxRecipesOnScreen ? '' : (
-                  <div
-                    onClick={ () => redirectToDetails(food.idMeal) }
-                    aria-hidden="true"
-                  >
-                    <RecipeCard
-                      key={ index }
-                      name={ drink.strDrink }
-                      image={ drink.strDrinkThumb }
-                      index={ index }
-                    />
-                  </div>
-                )
-              ))
-            ) : resultsDrinks.drinks.map((drink, i) => (
-              i > maxRecipesOnScreen ? '' : (
+          ))}
+        </div>
+        <div className={ CSS.CardsContainer }>
+          {results ? (
+            results.map((drink, index) => (
+              index > maxRecipesOnScreen ? '' : (
                 <div
-                  onClick={ () => redirectToDetails(drink.idDrink) }
+                  onClick={ () => redirectToDetails(food.idMeal) }
                   aria-hidden="true"
                 >
                   <RecipeCard
-                    key={ i }
+                    key={ index }
                     name={ drink.strDrink }
                     image={ drink.strDrinkThumb }
-                    index={ i }
+                    index={ index }
                   />
                 </div>
               )
-            ))}
-          </div>
-        </section>
-        <Footer />
-      </div>
+            ))
+          ) : resultsDrinks.drinks.map((drink, i) => (
+            i > maxRecipesOnScreen ? '' : (
+              <div
+                onClick={ () => redirectToDetails(drink.idDrink) }
+                aria-hidden="true"
+              >
+                <RecipeCard
+                  key={ i }
+                  name={ drink.strDrink }
+                  image={ drink.strDrinkThumb }
+                  index={ i }
+                />
+              </div>
+            )
+          ))}
+        </div>
+      </section>
+      <Footer />
     </div>
   );
 }
