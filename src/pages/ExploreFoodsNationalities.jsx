@@ -4,6 +4,8 @@ import Header from '../components/Header';
 import RecipeCard from '../components/RecipeCard';
 import FoodsContext from '../context/FoodsContext/FoodsContext';
 
+import '../CSS/foods_by_nationality.css';
+
 export default function ExploreFoodsNationalities() {
   const { nationalities,
     handleChange, option } = useContext(FoodsContext);
@@ -31,7 +33,7 @@ export default function ExploreFoodsNationalities() {
   }, [option]);
 
   return (
-    <section>
+    <section className="container_page_foods_nationalities">
       <Header title="Explore Nationalities" />
       <form>
         <label htmlFor="filter">
@@ -60,7 +62,7 @@ export default function ExploreFoodsNationalities() {
           </select>
         </label>
       </form>
-      <div className="container_foods">
+      <div className="container_foods_by_nationalities">
         {nationalitiesCards
         && nationalitiesCards.map((item, index) => (
           <RecipeCard
