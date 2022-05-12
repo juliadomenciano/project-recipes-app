@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 
+import '../CSS/page_explore_food.css';
+
 export default function ExploreFoods() {
   const [randomFoodUrl, setRandomFoodUrl] = useState();
 
@@ -15,31 +17,34 @@ export default function ExploreFoods() {
   useEffect(() => { randomFood(); }, []);
 
   return (
-    <section>
+    <section className="container_page_explore_foods">
       <Header title="Explore Foods" />
-      <div>
+      <div className="container_explore_foods">
         <Link to="/explore/foods/ingredients">
           <button
             type="button"
             data-testid="explore-by-ingredient"
+            className="explore_food_by_ingredient"
           >
-            By Ingredient
+            <span className="title_button">By Ingredient</span>
           </button>
         </Link>
         <Link to="/explore/foods/nationalities">
           <button
             type="button"
             data-testid="explore-by-nationality"
+            className="explore_food_by_nationality"
           >
-            By Nationality
+            <span className="title_button">By Nationality</span>
           </button>
         </Link>
         <Link to={ `/foods/${randomFoodUrl}` }>
           <button
             type="button"
             data-testid="explore-surprise"
+            className="explore_food_by_surprise"
           >
-            Surprise me!
+            <span className="title_button">Surprise me!</span>
           </button>
         </Link>
       </div>
