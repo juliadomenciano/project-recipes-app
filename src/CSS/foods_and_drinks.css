@@ -105,3 +105,35 @@
   position: relative;
   text-decoration: none;
 }
+
+/* Filtros */
+.container_filters {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 30px 30px;
+  width: 100%;
+}
+
+.container_filters button {
+  background-color: white;
+  border-radius: 30px;
+  color: var(--dark_color);
+  font-size: 14px;
+  font-weight: 900;
+  height: 100%;
+  width: 100%;
+}
+
+.container_filters button.selected {
+  background-color: var(--height_color_02);
+  border-radius: 30px;
+  color: var(--dark_color);
+  font-size: 14px;
+  font-weight: 900;
+  height: 100%;
+  width: 100%;
+}
+
+
+/* background-color: var(--height_color_02); */

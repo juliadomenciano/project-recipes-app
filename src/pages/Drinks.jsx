@@ -6,7 +6,6 @@ import Header from '../components/Header';
 import RecipeCard from '../components/RecipeCard';
 import DrinksContext from '../context/DrinksContext/DrinksContext';
 import ProfileContext from '../context/ProfileContext/ProfileContext';
-import CSS from '../modules/FoodsDrinks.module.css';
 
 import '../CSS/foods_and_drinks.css';
 
@@ -65,7 +64,7 @@ function Drinks(props) {
     <div className="container_page_drinks">
       <Header title="Drinks" />
       <section className="main_container_drinks">
-        <div className={ CSS.filters }>
+        <div className="container_filters">
           <button
             data-testid="All-category-filter"
             type="button"
