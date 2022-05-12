@@ -14,16 +14,18 @@ export default function Explore() {
           <button
             type="button"
             data-testid="explore-foods"
+            className="explore_foods"
           >
-            <span>Explore Foods</span>
+            <span className="title_button">Explore Foods</span>
           </button>
         </Link>
         <Link to="explore/drinks">
           <button
             type="button"
             data-testid="explore-drinks"
+            className="explore_drinks"
           >
-            <span>Explore Drinks</span>
+            <span className="title_button">Explore Drinks</span>
           </button>
         </Link>
       </div>

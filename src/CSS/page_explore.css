@@ -9,17 +9,94 @@
 
 .container_explore {
   align-items: center;
-  background: tomato;
+
+  /* background: tomato; */
   display: flex;
-  flex-flow: wrap;
-  flex-direction: row;
+  flex-direction: column;
+  gap: 40px;
   max-width: 100%;
-  padding: 10px 20px 80px;
+  padding: 0 20px 80px;
   position: absolute;
-  top: 170px;
+  top: 150px;
   width: 100vw;
+}
+
+.container_explore a {
+  align-items: center;
+
+  /* background-color: aqua; */
+  display: flex;
+  flex-direction: column;
+  height: 30vh;
+  justify-content: flex-star;
+  width: 100%;
 }
 
 .container_explore button {
   cursor: pointer;
+}
+
+.explore_foods {
+  align-items: center;
+  background: url('../images/vetores/explore_foods.svg');
+
+  /* background-color: olive; */
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 95%;
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 50px);
+  justify-content: flex-end;
+  width: 60vw;
+}
+
+.explore_drinks {
+  align-items: center;
+  background: url('../images/vetores/explore_drinks.svg');
+
+  /* background-color: olive; */
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 95%;
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 50px);
+  justify-content: flex-end;
+  width: 60vw;
+}
+
+.title_button {
+  bottom: 0;
+  color: var(--dark_color);
+  font-family: Volkhov , serif;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 40px;
+  position: absolute;
+  text-decoration: none;
+  transform: translateY(50px);
+}
+
+.title_button:before {
+  background-color: var(--dark_color);
+  content: '';
+  height: 5px;
+  left: 50%;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  width: 32px;
+}
+
+.title_button:after {
+  background-color: var(--dark_color);
+  content: '';
+  height: 1px;
+  left: 50%;
+  position: absolute;
+  top: 2px;
+  transform: translateX(-50%);
+  width: 120px;
 }
