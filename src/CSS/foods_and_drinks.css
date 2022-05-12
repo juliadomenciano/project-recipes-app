@@ -7,8 +7,8 @@
   width: 100vw;
 }
 
-/* reaproveitametno */
-.main_container_foods {
+/* Comidas e bebidas */
+.main_container_foods, .main_container_drinks {
   align-items: center;
 
   /* background-color: aquamarine; */
@@ -24,14 +24,13 @@
   width: 100vw;
 }
 
-.card_container_foods {
+.card_container_foods, .card_container_drinks {
 
   /* border: solid 1px; */
   display: flex;
   flex-direction: column;
   grid-gap: 20px;
   margin-top: 30px;
-  overflow: hidden;
   width: 100%;
 }
 
@@ -45,9 +44,9 @@
   width: 100%;
 }
 
-.card_container_foods .card:after {
+.card_container_foods .card:after, .card_container_drinks .card:after {
   background-color: var(--dark_color);
-  bottom: -3px;
+  bottom: -0;
   content: '';
   height: 5px;
   left: 20px;
@@ -64,10 +63,44 @@
 .card_container_foods .card_title {
   color: var(--dark_color);
   font-family: Volkhov , serif;
-  font-size: 20px;
+  font-size: 16px;
   font-style: italic;
   font-weight: 700;
-  line-height: 28px;
+  line-height: 19px;
+  padding: 20px;
+  position: relative;
+  text-decoration: none;
+}
+
+/* para bebidas */
+.card_container_drinks .card {
+
+  /* background-color: tomato; */
+  border: solid 1px var(--dark_color);
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.card_container_drinks .card_image {
+  height: 200px;
+  object-fit: cover;
+  width: 50%;
+}
+
+.card_container_drinks .card_title {
+  color: var(--dark_color);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  font-family: Volkhov , serif;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 700;
+  justify-content: flex-end;
+  line-height: 19px;
   padding: 20px;
   position: relative;
   text-decoration: none;

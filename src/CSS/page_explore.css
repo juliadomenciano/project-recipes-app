@@ -1,0 +1,25 @@
+.container_page_explore:before {
+  background: url('../images/noisebg.png') #f3f1f1;
+  content: '';
+  height: 100vh;
+  max-width: 100%;
+  position: fixed;
+  width: 100vw;
+}
+
+.container_explore {
+  align-items: center;
+  background: tomato;
+  display: flex;
+  flex-flow: wrap;
+  flex-direction: row;
+  max-width: 100%;
+  padding: 10px 20px 80px;
+  position: absolute;
+  top: 170px;
+  width: 100vw;
+}
+
+.container_explore button {
+  cursor: pointer;
+}

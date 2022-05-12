@@ -64,7 +64,7 @@ function Drinks(props) {
   return (
     <div className="container_page_drinks">
       <Header title="Drinks" />
-      <section className={ CSS.mainContainer }>
+      <section className="main_container_drinks">
         <div className={ CSS.filters }>
           <button
             data-testid="All-category-filter"
@@ -85,7 +85,7 @@ function Drinks(props) {
             </button>
           ))}
         </div>
-        <div className={ CSS.CardsContainer }>
+        <div className="card_container_drinks">
           {results ? (
             results.map((drink, index) => (
               index > maxRecipesOnScreen ? '' : (

@@ -18,6 +18,7 @@
   font-family: Abril Fatface , cursive;
   font-size: 30px;
   font-weight: 400;
+  letter-spacing: 2px;
   line-height: 30;
   text-align: center;
 }
@@ -44,8 +45,8 @@
 }
 
 .profile_button {
-  background: url('../images/profileIcon.svg') no-repeat center;
-  background-size: 50%;
+  background: url('../images/avatar-user-svgrepo-com.svg') no-repeat center;
+  background-size: 60%;
   border: none;
   cursor: pointer;
   height: 50px;
