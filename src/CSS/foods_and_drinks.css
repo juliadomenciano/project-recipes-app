@@ -125,7 +125,7 @@
   width: 100%;
 }
 
-.container_filters button.selected {
+.container_filters .selected {
   background-color: var(--height_color_02);
   border-radius: 30px;
   color: var(--dark_color);
