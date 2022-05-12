@@ -3,6 +3,8 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Ingredients from '../components/Ingredients';
 
+import '../CSS/page_explore_drinks_ingredientes.css';
+
 export default function ExploreDrinksIngredients() {
   const [ingredients, setIngredients] = useState();
   useEffect(() => {
@@ -16,7 +18,7 @@ export default function ExploreDrinksIngredients() {
     DrinksIngredients();
   }, []);
   return (
-    <section>
+    <section className="container_page_explore_drinks_ingredientes">
       <Header title="Explore Ingredients" />
       <div className="conteiner_drinks_ingredientes">
         {ingredients

@@ -1,0 +1,73 @@
+.container_page_explore_drinks_ingredientes:before {
+  background: url('../images/noisebg.png') #f3f1f1;
+  content: '';
+  height: 100vh;
+  max-width: 100%;
+  position: fixed;
+  width: 100vw;
+}
+
+.conteiner_drinks_ingredientes {
+  align-items: center;
+  display: grid;
+  flex-direction: column;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  max-width: 100%;
+  padding: 0 20px 80px;
+  position: absolute;
+  top: 180px;
+  width: 100vw;
+
+}
+
+.image_ingredient {
+  height: 100px;
+  object-fit: contain;
+  width: 100px;
+}
+
+.card_ingredient {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+}
+
+
+.name_ingredient {
+  color: var(--dark_color);
+  font-family: Volkhov , serif;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.name_ingredient:before {
+  background-color: var(--dark_color);
+  content: '';
+  height: 5px;
+  left: 50%;
+  position: absolute;
+  top: -10px;
+  transform: translateX(-50%);
+  width: 32px;
+}
+
+.name_ingredient:after {
+  background-color: var(--dark_color);
+  content: '';
+  height: 1px;
+  left: 50%;
+  position: absolute;
+  top: -8px;
+  transform: translateX(-50%);
+  width: 120px;
+}

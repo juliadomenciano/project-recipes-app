@@ -17,7 +17,7 @@
   max-width: 100%;
   padding: 0 20px 80px;
   position: absolute;
-  top: 150px;
+  top: 180px;
   width: 100vw;
 }
 
@@ -46,7 +46,7 @@
   background-size: contain;
   display: flex;
   flex-direction: column;
-  height: calc(100% - 60px);
+  height: calc(100% - 70px);
   justify-content: flex-end;
   width: 60vw;
 }
@@ -61,7 +61,7 @@
   background-size: contain;
   display: flex;
   flex-direction: column;
-  height: calc(100% - 60px);
+  height: calc(100% - 70px);
   justify-content: flex-end;
   width: 60vw;
 }
