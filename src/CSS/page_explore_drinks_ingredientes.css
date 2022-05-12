@@ -11,7 +11,7 @@
   align-items: center;
   display: grid;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
   grid-template-columns: 1fr 1fr;
   max-width: 100%;
   padding: 0 20px 80px;
