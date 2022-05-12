@@ -1,0 +1,67 @@
+.container_profile:before {
+  background: url('../images/noisebg.png') #f3f1f1;
+  content: '';
+  height: 100vh;
+  max-width: 100%;
+  position: fixed;
+  width: 100vw;
+}
+
+.profile {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 100%;
+  padding: 0 20px 80px;
+  position: absolute;
+  top: 180px;
+  width: 100vw;
+}
+
+.profile a {
+  width: 100%;
+}
+
+.done_recipes {
+  align-self: flex-end;
+  background-color: var(--height_color_02);
+  border: var(--height_color_02) 1px solid;
+  color: var(--dark_color);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  height: 70px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.favorite_recipes {
+  align-self: flex-end;
+  background-color: var(--height_color_02);
+  border: var(--height_color_02) 1px solid;
+  color: var(--dark_color);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  height: 70px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.logout {
+  align-self: flex-end;
+  background-color: white;
+  border: var(--height_color_02) 1px solid;
+  color: var(--height_color_02);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  height: 70px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  width: 100%;
+}
+
