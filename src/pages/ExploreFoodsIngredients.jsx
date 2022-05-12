@@ -3,6 +3,8 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Ingredients from '../components/Ingredients';
 
+import '../CSS/page_explore_food_ingredientes.css';
+
 export default function ExploreFoodsIngredients() {
   const [ingredients, setIngredients] = useState();
   useEffect(() => {
@@ -16,7 +18,7 @@ export default function ExploreFoodsIngredients() {
     foodIngredients();
   }, []);
   return (
-    <section>
+    <section className="container_page_explore_foods_ingredientes">
       <Header title="Explore Ingredients" />
       <div className="conteiner_foods_ingredidentes">
         {ingredients

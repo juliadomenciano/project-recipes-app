@@ -31,13 +31,18 @@ function Ingredients(props) {
       data-testid={ `${index}-ingredient-card` }
       onClick={ () => redirectToDetails(name) }
       aria-hidden="true"
+      className="card_ingredient"
     >
       <img
         src={ foodOrDrink }
         alt={ name }
         data-testid={ `${index}-card-img` }
+        className="image_ingredient"
       />
-      <h2 data-testid={ `${index}-card-name` }>
+      <h2
+        data-testid={ `${index}-card-name` }
+        className="name_ingredient"
+      >
         { name }
       </h2>
 

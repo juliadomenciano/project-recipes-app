@@ -46,7 +46,7 @@
   background-size: contain;
   display: flex;
   flex-direction: column;
-  height: calc(100% - 50px);
+  height: calc(100% - 60px);
   justify-content: flex-end;
   width: 60vw;
 }
@@ -61,7 +61,7 @@
   background-size: contain;
   display: flex;
   flex-direction: column;
-  height: calc(100% - 50px);
+  height: calc(100% - 60px);
   justify-content: flex-end;
   width: 60vw;
 }
