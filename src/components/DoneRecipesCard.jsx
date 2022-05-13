@@ -22,7 +22,10 @@ export default function DoneRecipesCard(props) {
   useEffect(() => () => clearTimeout(), []);
 
   return (
-    <section key={ index }>
+    <section
+      key={ index }
+      className="done_item"
+    >
       <Link to={ `/${foodOrDrink}s/${id}` }>
         <img
           className="doneImg"
@@ -32,46 +35,63 @@ export default function DoneRecipesCard(props) {
         />
       </Link>
 
-      <div>
+      <div className="done_info">
         {
           foodOrDrink === 'food'
             ? (
-              <p data-testid={ `${index}-horizontal-top-text` }>
+              <p
+                data-testid={ `${index}-horizontal-top-text` }
+                className="info"
+              >
                 {`${nationality} - ${category}`}
               </p>
             )
             : (
-              <p data-testid={ `${index}-horizontal-top-text` }>
+              <p
+                data-testid={ `${index}-horizontal-top-text` }
+                className="info"
+              >
                 {alcoholic}
               </p>
             )
         }
         <Link to={ `/${foodOrDrink}s/${id}` }>
-          <h2 data-testid={ `${index}-horizontal-name` }>
+          <h2
+            data-testid={ `${index}-horizontal-name` }
+            className="info_title"
+          >
             {recipeName}
           </h2>
         </Link>
-        <p data-testid={ `${index}-horizontal-done-date` }>
+        <div className="container_tag">
+          { tagName
+              && tagName.map((tag, idx) => (
+                <p
+                  data-testid={ `${index}-${tag}-horizontal-tag` }
+                  key={ `tag${idx}` }
+                >
+                  { tag }
+                </p>
+              ))}
+        </div>
+        <p
+          data-testid={ `${index}-horizontal-done-date` }
+          className="done_date"
+        >
           { doneDate }
         </p>
-        <button
-          data-testid={ `${index}-horizontal-share-btn` }
-          type="button"
-          src={ shareIcon }
-          onClick={ shareRecipe }
-        >
-          <img src={ shareIcon } alt="ícone para compartilhar" />
-        </button>
-        { linkCopied && <p className="alert_link_copied">Link copied!</p> }
-        { tagName
-            && tagName.map((tag, idx) => (
-              <p
-                data-testid={ `${index}-${tag}-horizontal-tag` }
-                key={ `tag${idx}` }
-              >
-                { tag }
-              </p>
-            ))}
+        <div className="social_info_done">
+          <button
+            data-testid={ `${index}-horizontal-share-btn` }
+            type="button"
+            src={ shareIcon }
+            onClick={ shareRecipe }
+            className="button_share"
+          >
+            <img src={ shareIcon } alt="ícone para compartilhar" />
+          </button>
+          { linkCopied && <p className="alert_link_copied_done">Link copied!</p> }
+        </div>
       </div>
     </section>
   );
