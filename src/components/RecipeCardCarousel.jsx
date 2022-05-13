@@ -37,21 +37,21 @@ class RecipeCardCarousel extends React.Component {
         <Link to={ `/foods/${id}` }>
           <section data-testid={ `${index}-recipe-card` }>
             <div
-              className="cards"
+              className="cards_carousel"
               data-testid={ testid ? testid[0] : `data-testid=${index}-recipe-card` }
             >
               <div
                 data-testid={ testid ? testid[1] : '' }
-                className="card"
+                className="card_carousel"
               >
                 <h1
                   data-testid={ `${index}-card-name` }
-                  className="card_title"
+                  className="card_title_carousel"
                 >
                   { name }
                 </h1>
                 <img
-                  className="card_image"
+                  className="card_image_carousel"
                   src={ image }
                   alt={ `imagem da receita ${name}` }
                   data-testid={ `${index}-card-img` }

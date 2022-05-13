@@ -82,7 +82,7 @@ function RecipeDetailCard(props) {
       </div>
       <div className="recommended_recipe_container">
         <h2>Recommended</h2>
-        <section className="carousel">
+        <section className="carousel food">
           {
             results && resultsDrinks && (
               resultsDrinks.map((drink, index) => (index < magicNumber && (

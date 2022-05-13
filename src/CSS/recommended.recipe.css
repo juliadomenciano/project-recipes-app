@@ -1,6 +1,6 @@
 .recommended_recipe_container {
   background: url('../images/noisebg.png') #f3f1f1;
-  padding: 30px 60px 130px;
+  padding: 40px 0 130px;
 }
 
 .recommended_recipe_container h2 {
@@ -9,23 +9,65 @@
   font-size: 24px;
   font-style: italic;
   font-weight: 900;
+  left: 20px;
   line-height: 23px;
   margin-bottom: 24px;
-  transform: translateX(-40px);
+
+  /* transform: translateX(-40px); */
 }
 
 .carousel {
-  background-color: olive;
+
+  /* background-color: olive; */
   display: flex;
   flex-direction: row;
+  gap: 20px;
   overflow-x: scroll;
+  padding: 0 20px;
   scroll-behavior: smooth;
   width: 100%;
 }
 
-.carousel .cards image {
+.card_carousel {
+  display: flex;
+  flex-direction: column-reverse;
+  min-height: 20px;
+}
+
+.card_image_carousel {
+  border-radius: 10px;
   height: 155px;
   object-fit: contain;
-  overflow: hidden;
   width: 155px;
+}
+
+.card_title_carousel {
+  color: var(--dark_color);
+  font-family: Volkhov , serif;
+  font-size: 17px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 29px;
+  margin-top: 30px;
+  padding: 0 20px;
+}
+
+.carousel.food .card_title_carousel:before {
+  color: var(--height_color_02);
+  content: 'Drink';
+  font-family: Lato , sans-serif;
+  font-size: 14px;
+  position: absolute;
+  text-transform: uppercase;
+  top: -25px;
+}
+
+.carousel.drink .card_title_carousel:before {
+  color: var(--height_color_02);
+  content: 'Food';
+  font-family: Lato , sans-serif;
+  font-size: 14px;
+  position: absolute;
+  text-transform: uppercase;
+  top: -25px;
 }

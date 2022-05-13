@@ -71,8 +71,7 @@ function RecipeDetailsCardDrink(props) {
       </div>
       <div className="recommended_recipe_container">
         <h2>Recommended</h2>
-
-        <section className="carousel">
+        <section className="carousel drink">
           {
             results && (
               results.map((meal, index) => (index < magicNumber && (
