@@ -3,10 +3,10 @@ import React, { useContext, useEffect, useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import FoodsContext from '../context/FoodsContext/FoodsContext';
 import { handleContinueRecipe } from '../helpers/RecipeDetailHelpers';
-import CSS from '../modules/RecipeCard.module.css';
+// import CSS from '../modules/RecipeCard.module.css';
 import FavoriteAndShareButton from './FavoriteAndShareButton';
 import IngredientsList from './IngredientsList';
-import RecipeCard from './RecipeCard';
+import RecipeCardCarousel from './RecipeCardCarousel';
 import StartRecipeButton from './StartRecipeButton';
 
 import '../CSS/page_details.css';
@@ -71,11 +71,12 @@ function RecipeDetailsCardDrink(props) {
       </div>
       <div className="recommended_recipe_container">
         <h2>Recommended</h2>
-        <section className={ CSS.carousel }>
+
+        <section className="carousel">
           {
             results && (
               results.map((meal, index) => (index < magicNumber && (
-                <RecipeCard
+                <RecipeCardCarousel
                   key={ index }
                   testid={ [
                     `${index}-recomendation-card`, `${index}-recomendation-title`] }

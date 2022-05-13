@@ -13,3 +13,19 @@
   margin-bottom: 24px;
   transform: translateX(-40px);
 }
+
+.carousel {
+  background-color: olive;
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+.carousel .cards image {
+  height: 155px;
+  object-fit: contain;
+  overflow: hidden;
+  width: 155px;
+}

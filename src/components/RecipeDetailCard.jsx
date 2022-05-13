@@ -6,11 +6,10 @@ import FoodsContext from '../context/FoodsContext/FoodsContext';
 import '../CSS/page_details.css';
 import '../CSS/recommended.recipe.css';
 import '../CSS/status_recipe.css';
-import CSS from '../modules/RecipeCard.module.css';
 import ContinueRecipeButton from './ContinueRecipeButton';
 import FavoriteAndShareButton from './FavoriteAndShareButton';
 import IngredientsList from './IngredientsList';
-import RecipeCard from './RecipeCard';
+import RecipeCardCarousel from './RecipeCardCarousel';
 import StartRecipeButton from './StartRecipeButton';
 
 function RecipeDetailCard(props) {
@@ -83,11 +82,11 @@ function RecipeDetailCard(props) {
       </div>
       <div className="recommended_recipe_container">
         <h2>Recommended</h2>
-        <section className={ CSS.carousel }>
+        <section className="carousel">
           {
             results && resultsDrinks && (
               resultsDrinks.map((drink, index) => (index < magicNumber && (
-                <RecipeCard
+                <RecipeCardCarousel
                   key={ index }
                   testid={ [
                     `${index}-recomendation-card`, `${index}-recomendation-title`] }
