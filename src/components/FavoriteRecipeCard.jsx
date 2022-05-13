@@ -25,7 +25,10 @@ export default function FavoriteRecipeCard(props) {
   }, [favorite, setFavorite]);
 
   return (
-    <section key={ index }>
+    <section
+      key={ index }
+      className="favorite_item"
+    >
       <Link to={ `/${foodOrDrink}/${id}` }>
         <img
           className="doneImg"
@@ -35,43 +38,55 @@ export default function FavoriteRecipeCard(props) {
         />
       </Link>
 
-      <div>
+      <div className="favorite_info">
         {
           foodOrDrink === 'foods'
             ? (
-              <p data-testid={ `${index}-horizontal-top-text` }>
+              <p
+                data-testid={ `${index}-horizontal-top-text` }
+                className="info"
+              >
                 {`${nationality} - ${category}`}
               </p>
             )
             : (
-              <p data-testid={ `${index}-horizontal-top-text` }>
+              <p
+                data-testid={ `${index}-horizontal-top-text` }
+                className="info"
+              >
                 {alcoholic}
               </p>
             )
         }
         <Link to={ `/${foodOrDrink}/${id}` }>
-          <h2 data-testid={ `${index}-horizontal-name` }>
+          <h2
+            data-testid={ `${index}-horizontal-name` }
+            className="info_title"
+          >
             {recipeName}
           </h2>
         </Link>
-        <button
-          data-testid={ `${index}-horizontal-share-btn` }
-          type="button"
-          src={ shareIcon }
-          onClick={ shareRecipe }
-        >
-          {
-            copied
-              ? <span>Link copied!</span>
-              : <img src={ shareIcon } alt="ícone para compartilhar" />
-          }
-        </button>
-        <FavoriteButtonPage
-          data={ id }
-          foodOrDrink={ foodOrDrink }
-          setFavorite={ setFavorite }
-          index={ index }
-        />
+        <div className="social_info">
+          <button
+            data-testid={ `${index}-horizontal-share-btn` }
+            type="button"
+            src={ shareIcon }
+            onClick={ shareRecipe }
+            className="button_share"
+          >
+            {
+              copied
+                ? <span>Link copied!</span>
+                : <img src={ shareIcon } alt="ícone para compartilhar" />
+            }
+          </button>
+          <FavoriteButtonPage
+            data={ id }
+            foodOrDrink={ foodOrDrink }
+            setFavorite={ setFavorite }
+            index={ index }
+          />
+        </div>
       </div>
     </section>
   );

@@ -35,7 +35,7 @@ export default function ExploreFoodsNationalities() {
   return (
     <section className="container_page_foods_nationalities">
       <Header title="Explore Nationalities" />
-      <form>
+      <form className="selected_nationalities">
         <label htmlFor="filter">
           <select
             data-testid="explore-by-nationality-dropdown"

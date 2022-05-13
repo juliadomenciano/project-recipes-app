@@ -69,6 +69,7 @@ function Foods(props) {
             data-testid="All-category-filter"
             type="button"
             onClick={ () => showAllRecipes() }
+            className="selected"
           >
             All
           </button>

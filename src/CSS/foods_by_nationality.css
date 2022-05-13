@@ -10,16 +10,13 @@
 /* Comidas e bebidas */
 .container_foods_by_nationalities {
   align-items: center;
-
-  /* background-color: aquamarine; */
-  background: tomato;
   display: flex;
   flex-flow: wrap;
   flex-direction: row;
   max-width: 100%;
   padding: 10px 20px 80px;
   position: absolute;
-  top: 170px;
+  top: 200px;
   width: 100vw;
 }
 
@@ -32,7 +29,6 @@
   border: solid 1px var(--dark_color);
   display: flex;
   flex-direction: column-reverse;
-  grid-gap: 20px;
   margin-top: 30px;
   width: 100%;
 }
@@ -43,6 +39,30 @@
   width: 100%;
 }
 
+.selected_nationalities {
+
+  /* background-color: aquamarine; */
+  height: 40px;
+  padding: 0 20px;
+  position: relative;
+  top: 100px;
+}
+
+.selected_nationalities label {
+  background-color: white;
+  border-radius: 4px;
+  height: 100%;
+  padding: 0 40px;
+  width: 100%;
+
+}
+
+.selected_nationalities label select {
+
+  /* background-color: aqua; */
+  height: 100%;
+  width: 100%;
+}
 
 .card_container_foods .card {
 

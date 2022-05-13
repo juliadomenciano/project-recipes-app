@@ -1,0 +1,178 @@
+.container_page_favorite:before {
+  background: url('../images/noisebg.png') #f3f1f1;
+  content: '';
+  height: 100vh;
+  max-width: 100%;
+  position: fixed;
+  width: 100vw;
+}
+
+/* Comidas e bebidas */
+.main_container_favorite {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  padding: 10px 20px 80px;
+  position: absolute;
+  top: 170px;
+  width: 100vw;
+}
+
+.container_menu {
+  align-items: center;
+
+  /* background-color: olive; */
+  display: flex;
+  gap: 10px;
+  height: 30px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.container_menu button {
+  background-color: white;
+  border-radius: 30px;
+  color: var(--dark_color);
+  font-size: 14px;
+  font-weight: 900;
+  height: 100%;
+  width: 100%;
+}
+
+.container_favorite {
+
+  /* background-color: aqua; */
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+  padding-top: 40px;
+  width: 100%;
+}
+
+.card_container_foods, .card_container_drinks {
+
+  /* border: solid 1px; */
+  display: flex;
+  flex-direction: column;
+  grid-gap: 20px;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.favorite_item {
+
+  /* background-color: white; */
+  display: grid;
+  grid-template-columns: 129px 1fr;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+
+.favorite_item:before {
+  background-color: white;
+  border-radius: 10px;
+  content: '';
+  height: calc(100% + 40px);
+  position: absolute;
+  right: 0;
+  top: -20px;
+  width: calc(100% - 65px);
+  z-index: -1;
+
+}
+
+.favorite_item > a {
+  border-radius: 10px;
+  display: inline-block;
+  height: 129px;
+  overflow: hidden;
+  position: relative;
+  width: 129px;
+}
+
+.favorite_item > a > img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.favorite_info {
+
+  /* background-color: blueviolet; */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 20px;
+  position: relative;
+}
+
+.info {
+  color: var(--height_color_02);
+  font-family: Volkhov , serif;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 900;
+  line-height: 20px;
+}
+
+.favorite_info > a {
+  flex-grow: 1;
+}
+
+.info_title {
+
+  /* background-color: tomato; */
+  color: var(--dark_color);
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  font-weight: 900;
+  height: 100%;
+  justify-content: center;
+  line-height: 18px;
+  padding-bottom: 10px;
+}
+
+.social_info {
+  bottom: 0;
+  display: flex;
+  gap: 20px;
+  position: absolute;
+  right: 0;
+  transform: translate(-20px, 45px);
+}
+
+
+.social_info .button_share {
+  background: url('../images/compartilhar.png') var(--height_color_03);
+  background-position: 45% center;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 50px;
+  overflow: hidden;
+  text-indent: -1000%;
+
+  /* transform: translateY(-25px); */
+  width: 50px;
+}
+
+.social_info button:last-of-type {
+  align-items: center;
+  background: var(--height_color_03);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  overflow: hidden;
+
+  /* transform: translateY(-25px); */
+  width: 50px;
+}
