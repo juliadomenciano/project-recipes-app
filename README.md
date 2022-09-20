@@ -1,6 +1,6 @@
 # Welcome to the EasyCooking project repository!
 
-![Video EasyCooking](./apresentacao_final_video.mp4)
+![Gif EasyCooking](./easycooking.gif)
 
 ## Description
 
