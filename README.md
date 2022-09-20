@@ -31,7 +31,7 @@ The layout focuses on mobile devices, so the prototype was developed for smaller
   * Create custom Hooks
 
 
-# Imagens
+# Images
 
   ![Login](./home.png)
   ![Drinks](./drinks.png)
